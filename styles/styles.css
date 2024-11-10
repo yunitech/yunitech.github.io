@@ -1,0 +1,386 @@
+/* General reset and styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    opacity: 0;
+    animation: fadeIn 0.2s ease-in forwards;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background-color: #121212; /* Dark background for tech style */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* About Section Styling */
+.about-container {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Two columns: image and text */
+    align-items: start;
+    gap: 20px; /* Space between image and text */
+    margin: 0 auto;
+}
+
+.profile-photo {
+    float: left;
+    width: 200px; /* Fixed width */
+    margin-right: 5px;
+    border-radius: 10%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.4); /* Green glow around image */
+}
+
+.intro-text {
+    color: #cccccc;
+}
+
+.intro-text p {
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    margin-top: 0px;
+    text-align: justify;
+    overflow: hidden; /* Clear float for the text */
+}
+
+/* Header styling */
+header {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px;
+    border-bottom: 3px solid #00ff88; /* Neon green border for tech vibe */
+}
+
+/* Full-width header styling for the projects page */
+.projects-header {
+    width: 100%;
+    height: 150px; /* Set height as desired */
+    background-image: url('../images/projects-header.png'); /* Set your background image */
+    background-size: cover; /* Ensures the image covers the entire header area */
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between; /* Spaces out content evenly */
+    align-items: center; /* Centers items vertically */
+    color: #ffffff;
+}
+
+/* Optional overlay on header content for better text readability */
+.header-content {
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    color: #ffffff;
+    margin-bottom: -90px;
+}
+
+.projects-page-logo {
+    width: 60px;
+    height: auto;
+}
+
+.projects-page-title {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+
+header h1 {
+    font-size: 2.5rem;
+    color: #00ff88; /* Neon green for main title */
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    margin-top: 5px;
+}
+
+/* Navigation styling */
+header nav {
+    margin-top: 10px;
+}
+
+header nav a {
+    color: #009c53; /* Neon link color */
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #ff00ff; /* Magenta on hover for contrast */
+}
+
+/* Section styling */
+section {
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 900px;
+    background-color: #1a1a1a; /* Dark background for sections */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.2); /* Green glow effect */
+}
+
+.portfolio-section {
+    background-color: transparent;
+    box-shadow: none; /* Green glow effect */
+}
+
+ul li {
+    padding: 5px 0;
+}
+/* Styling for Main Navigation (cross-page links) */
+.main-nav {
+    width: 100%; /* Make sure nav takes full width of header */
+    margin-top: 15px;
+    text-align: center;
+}
+
+.main-nav a {
+    color: #00af5d;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #ff00ff;
+}
+section h2 {
+    color: #00ff88;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Hyperlink styling in text */
+section a {
+    color: #00ff88;
+    text-decoration: none;
+}
+
+section a:hover {
+    color: #ff00ff;
+}
+/* Styling for Section Navigation (in-page links) */
+.section-nav {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.section-nav a {
+    color: #e0e0e06c;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: normal;
+    transition: color 0.3s;
+}
+
+.section-nav a:hover {
+    color: #00ff88;
+}
+
+.project {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid #333;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3); /* Magenta glow effect */
+}
+
+.project h3 {
+    color: #ff00ff; /* Magenta for project titles for contrast */
+}
+
+.project p {
+    color: #cccccc;
+}
+
+/* Contact section styling */
+#contact a {
+    color: #00ff88;
+    text-decoration: underline;
+}
+
+#contact a:hover {
+    color: #ff00ff;
+}
+
+/* Footer styling */
+footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    border-top: 3px solid #00ff88;
+}
+
+footer p {
+    color: #888888;
+}
+
+
+
+/* -------------------------------------------*/
+
+/* Grid layout for portfolio section */
+/* Portfolio section layout with CSS Grid for two columns */
+.portfolio-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 768px) {
+    .portfolio-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Project card styling */
+.project-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    cursor: pointer; /* Makes the card clickable */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3); /* Magenta glow effect */
+}
+
+.project-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-details {
+    padding: 15px;
+}
+
+.project-details h3 {
+    color: #00ff88;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.project-details p {
+    font-size: 0.9rem;
+    margin: 10px 0;
+}
+
+/* Style tools list to match previous skills-list */
+.tools-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tools-list li {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.skills-list li {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.project-links {
+    margin-top: 10px;
+}
+
+.project-links a {
+    color: #00ff88;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.project-links a:hover {
+    color: #ff00ff;
+}
+
+
+
+
+
+/* Modal container styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: auto;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 20px;
+    margin: auto;
+    width: 90%;
+    max-width: 800px;
+    color: #e0e0e0;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    cursor: pointer;
+}

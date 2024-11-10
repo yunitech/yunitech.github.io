@@ -1,0 +1,149 @@
+/* General Styling for Modal */
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: auto;
+    padding: 0px;
+}
+
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+body.project-modal {
+    font-family: Arial, sans-serif;
+    color: #e0e0e0;
+    background-color: #121212;
+    margin: 0;
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 0px;
+    width: 90%;
+    max-width: 800px;
+    color: #e0e0e0;
+    overflow: hidden; /* Prevent any overflow */
+}
+
+.project-header {
+    position: relative;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding: 0px;
+    color: #fff;
+    margin-bottom: 80px;
+}
+
+.header-content {
+    display: flex;
+    align-items: flex-start; /* Center items vertically */
+    flex-direction: column; /* Stack items vertically */
+    box-sizing: border-box;
+    margin-bottom: -80px;
+    margin-left: 20px;
+}
+
+.project-logo {
+    width: 60px;
+    height: auto;
+}
+
+.project-name {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Properties Section */
+.project-properties {
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+/* Reduces line spacing in the project properties list */
+.project-properties ul {
+    padding: 0;
+    margin: 0;
+    list-style-position: inside; /* Optional: keeps bullet points inside the list box */
+}
+
+.project-properties li {
+    line-height: 1.4; /* Adjusts line spacing */
+    margin-bottom: 5px; /* Reduces space between items */
+}
+
+.project-properties ul,
+.project-properties ul ul {
+    padding: 0;
+    margin: 0;
+    list-style-position: inside;
+}
+
+.project-properties ul > li {
+    line-height: 1; /* Adjusts line spacing within each list item */
+    margin-bottom: 2px; /* Reduces space between list items */
+}
+
+.project-properties ul ul > li {
+    margin-bottom: 2px; /* Less space for nested list items */
+    padding-left: 15px; /* Optional: adds indentation for nested items */
+}
+
+
+/* Section Styling */
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #00ff88;
+}
+
+.section-image {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+/* Specific CSS targeting the external link icon within project-result */
+.project-result .external-link img {
+    width: 10px !important; /* Force width */
+    height: 10px !important; /* Force height */
+    vertical-align: middle;
+    margin-left: 8px; /* Optional: space between text and icon */
+}
+
+
+/* Embedded Video */
+.embed-link {
+    width: 100%;
+    height: 315px;
+    margin-top: 10px;
+    border-radius: 8px;
+}

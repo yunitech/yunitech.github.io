@@ -1,0 +1,144 @@
+/* General Portfolio Page Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    opacity: 0;
+    animation: fadeIn 0.2s ease-in forwards;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background-color: #121212; /* Dark background for tech style */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Header styling */
+header {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px;
+    border-bottom: 3px solid #00ff88; /* Neon green border for tech vibe */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #00ff88; /* Neon green for main title */
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    margin-top: 5px;
+}
+
+/* Navigation styling */
+header nav {
+    margin-top: 10px;
+}
+
+header nav a {
+    color: #009c53; /* Neon link color */
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #ff00ff; /* Magenta on hover for contrast */
+}
+
+
+.portfolio-hero {
+    text-align: center;
+    padding: 40px;
+    background-color: #1a1a1a;
+}
+
+.portfolio-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3); /* Magenta glow effect */
+}
+
+.project-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-details {
+    padding: 20px;
+}
+
+.project-details h3 {
+    color: #00ff88;
+    font-size: 1.5rem;
+}
+
+.project-details p {
+    font-size: 0.9rem;
+    margin: 10px 0;
+}
+
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.skills-list li {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.project-links {
+    margin-top: 10px;
+}
+
+.project-links a {
+    color: #00ff88;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.project-links a:hover {
+    color: #ff00ff;
+}

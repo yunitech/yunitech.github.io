@@ -1,0 +1,138 @@
+{
+    "project1": {
+        "headerImage": "../images/time_control_mechanics_header.png",
+        "logo": "../images/time_control_mechanics_logo.png",
+        "projectName": "Time Control Mechanics",
+        "projectDescription": "Recreated core gameplay mechanics focusing on AI and user control.",
+        "projectImage": "../images/time_control_mechanics.png",
+        "projectType": "Game Development",
+        "date": "September 2024",
+        "coreFeatures": [
+            "Animation (Character Animation, State Machines, Layers)",
+            "Lyra Animation Set",
+            "Audio (Meta Sound, Audio Effects)",
+            "Doors, Weapons, Explosions",
+            "Enhanced Input integrated with GAS",
+            "Gameplay Mechanics"
+        ],
+        "systems": [
+            "Gameplay Ability System (GAS)",
+            "Gameplay Message Router",
+            "Sci-Fi Interior using Procedural Generation (PCG)"
+        ],
+        "tools": [
+            "C++",
+            "Blueprint",
+            "Unreal Material Editor",
+            "Meta Sound"
+        ],
+        "status": "WIP",
+        "design": {
+            "description": "Insights into the design process and creative approach...",
+            "image": "../images/design-image.jpg"
+        },
+        "result": {
+            "description": "Explanation of the final outcome of the project...",
+            "embedLink": "https://youtu.be/u5z1X-DF2Yk?si=CsKiyza6eKJ_u1za"
+        }
+    },
+    "project2": {
+        "headerImage": "../images/dynamic_heli_dust_header.png",
+        "logo": "../images/dynamic_heli_dust_logo.png",
+        "projectName": "Dynamic Helicopter Dust Effects",
+        "projectDescription": "Developed AI for NPC behavior using advanced particle systems.",
+        "projectImage": "../images/dynamic_heli_dust.png",
+        "projectType": "Simulation and Visual Effects",
+        "date": "March 2025",
+        "coreFeatures": "Realistic dust simulation, optimized particle effects",
+        "systems": "Unreal Engine Niagara, Physics Systems",
+        "tools": [
+            "C++",
+            "Blueprint",
+            "Unreal Material Editor",
+            "Meta Sound"
+        ],        
+        "otherFeatures": "Dynamic lighting, multi-platform optimization",
+        "status": "In Development",
+        "idea": {
+            "description": "Concept of integrating dynamic environmental interactions with helicopters...",
+            "image": "../images/heli_dust_idea.jpg"
+        },
+        "design": {
+            "description": "Details on the visual design process, focusing on realism and performance...",
+            "image": "../images/heli_dust_design.jpg"
+        },
+        "result": {
+            "description": "Preview of results achieved with particle simulation...",
+            "embedLink": "https://youtu.be/exampleVideoLink"
+        }
+    },
+    "project3": {
+        "headerImage": "../images/time_control_mechanics_header.png",
+        "logo": "../images/time_control_mechanics_logo.png",
+        "projectName": "Time Control Mechanics",
+        "projectDescription": "Recreated core gameplay mechanics focusing on AI and user control.",
+        "projectImage": "../images/time_control_mechanics.png",
+        "projectType": "Game Development",
+        "date": "September 2024",
+        "coreFeatures": [
+            "Animation (Character Animation, State Machines, Layers)",
+            "Lyra Animation Set",
+            "Audio (Meta Sound, Audio Effects)",
+            "Doors, Weapons, Explosions",
+            "Enhanced Input integrated with GAS",
+            "Gameplay Mechanics"
+        ],
+        "systems": [
+            "Gameplay Ability System (GAS)",
+            "Gameplay Message Router",
+            "Sci-Fi Interior using Procedural Generation (PCG)"
+        ],
+        "tools": [
+            "C++",
+            "Blueprint",
+            "Unreal Material Editor",
+            "Meta Sound"
+        ],
+        "status": "WIP",
+        "design": {
+            "description": "Insights into the design process and creative approach...",
+            "image": "../images/design-image.jpg"
+        },
+        "result": {
+            "description": "Explanation of the final outcome of the project...",
+            "embedLink": "https://youtu.be/u5z1X-DF2Yk?si=CsKiyza6eKJ_u1za"
+        }
+    },
+    "project4": {
+        "headerImage": "../images/dynamic_heli_dust_header.png",
+        "logo": "../images/dynamic_heli_dust_logo.png",
+        "projectName": "Dynamic Helicopter Dust Effects",
+        "projectDescription": "Developed AI for NPC behavior using advanced particle systems.",
+        "projectImage": "../images/dynamic_heli_dust.png",
+        "projectType": "Simulation and Visual Effects",
+        "date": "March 2025",
+        "coreFeatures": "Realistic dust simulation, optimized particle effects",
+        "systems": "Unreal Engine Niagara, Physics Systems",
+        "tools": [
+            "C++",
+            "Blueprint",
+            "Unreal Material Editor",
+            "Meta Sound"
+        ],        
+        "otherFeatures": "Dynamic lighting, multi-platform optimization",
+        "status": "In Development",
+        "idea": {
+            "description": "Concept of integrating dynamic environmental interactions with helicopters...",
+            "image": "../images/heli_dust_idea.jpg"
+        },
+        "design": {
+            "description": "Details on the visual design process, focusing on realism and performance...",
+            "image": "../images/heli_dust_design.jpg"
+        },
+        "result": {
+            "description": "Preview of results achieved with particle simulation...",
+            "embedLink": "https://youtu.be/exampleVideoLink"
+        }
+    }
+}
