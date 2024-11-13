@@ -2,18 +2,16 @@
     "project1": {
         "headerImage": "../images/time_control_mechanics_header.png",
         "logo": "../images/time_control_mechanics_logo.png",
-        "projectName": "Time Control Mechanics",
-        "projectDescription": "Recreated core gameplay mechanics focusing on AI and user control.",
-        "projectImage": "../images/time_control_mechanics.png",
-        "projectType": "Game Development",
-        "date": "September 2024",
+        "projectName": "GAS Core",
+        "projectDescription": "An implementation of the Gameplay Ability System for a Shooter Game taking the best practices exposed in Lyra Starter Game.",
+        "projectImage": "../images/gas_core.png",
+        "projectType": "Game Template",
+        "date": "May 2024",
         "coreFeatures": [
-            "Animation (Character Animation, State Machines, Layers)",
-            "Lyra Animation Set",
-            "Audio (Meta Sound, Audio Effects)",
-            "Doors, Weapons, Explosions",
-            "Enhanced Input integrated with GAS",
-            "Gameplay Mechanics"
+            "Character Animation and State Machines, including layered animation with Lyra Animation Set",
+            "Audio integration with Meta Sound and custom audio effects for doors, weapons, and explosions",
+            "Enhanced Input integration with GAS for dynamic gameplay controls",
+            "Comprehensive gameplay mechanics for shooter-based interactions"
         ],
         "systems": [
             "Gameplay Ability System (GAS)",
@@ -24,15 +22,16 @@
             "C++",
             "Blueprint",
             "Unreal Material Editor",
-            "Meta Sound"
+            "Meta Sound",
+            "PCG"
         ],
         "status": "WIP",
         "design": {
-            "description": "Insights into the design process and creative approach...",
+            "description": "Focused on achieving immersive sci-fi environments with modular and dynamically generated assets, alongside responsive, player-centered animations and audio cues.",
             "image": "../images/design-image.jpg"
         },
         "result": {
-            "description": "Explanation of the final outcome of the project...",
+            "description": "Demonstrates advanced shooter gameplay mechanics with smooth animation transitions, responsive audio, and procedurally generated environments to enhance replayability.",
             "embedLink": "https://www.youtube.com/embed/u5z1X-DF2Yk?si=CsKiyza6eKJ_u1za"
         }
     },

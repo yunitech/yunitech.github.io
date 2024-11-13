@@ -144,24 +144,29 @@ section {
 ul li {
     padding: 5px 0;
 }
-/* Styling for Main Navigation (cross-page links) */
+/* Tab-style Main Navigation */
 .main-nav {
-    width: 100%; /* Make sure nav takes full width of header */
-    margin-top: 15px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #1a1a1a;
+    padding: 10px;
+    border-bottom: 3px solid #00ff88;
 }
 
 .main-nav a {
-    color: #00af5d;
-    margin: 0 20px;
+    padding: 12px 24px;
+    color: #e0e0e0;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
+    border-radius: 5px 5px 0 0;
 }
 
-.main-nav a:hover {
-    color: #ff00ff;
+.main-nav a:hover, .main-nav a.active {
+    background-color: #00ff88;
+    color: #1a1a1a;
 }
+
 section h2 {
     color: #00ff88;
     font-size: 1.8rem;
