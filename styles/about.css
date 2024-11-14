@@ -1,0 +1,39 @@
+﻿/* About Section Styling */
+.about-container {
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-photo {
+    float: left;
+    width: 180px;
+    margin: 0 15px 10px 0;
+    border-radius: 10%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+}
+
+.about-text p {
+    text-align: justify;
+    margin-top: 0;
+}
+
+
+/* Skills List */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+    .skills-list li {
+        background-color: #333;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+    }
