@@ -1,0 +1,119 @@
+﻿/* Full-width header styling for the projects page */
+.projects-header {
+    width: 100%;
+    height: 150px; /* Set height as desired */
+    background-image: url('/images/projects-header.png'); /* Set your background image */
+    background-size: cover; /* Ensures the image covers the entire header area */
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: end; /* Spaces out content evenly */
+    align-items: center; /* Centers items vertically */
+    color: #ffffff;
+}
+
+/* Projects Portfolio Section */
+.portfolio-section {
+    background-color: transparent;
+    box-shadow: none; /* Green glow effect */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .portfolio-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Project Card */
+.project-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+    }
+
+.project-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-details {
+    padding: 15px;
+}
+
+    .project-details h3 {
+        color: #00ff88;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .project-details p {
+        font-size: 0.9rem;
+        margin: 10px 0;
+    }
+
+/* Tools List */
+.tools-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+    .tools-list li {
+        background-color: #333;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+    }
+
+/* Modal container styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: auto;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 20px;
+    margin: auto;
+    width: 90%;
+    max-width: 800px;
+    color: #e0e0e0;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    cursor: pointer;
+}
