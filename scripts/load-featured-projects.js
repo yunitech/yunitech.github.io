@@ -15,7 +15,7 @@ fetch('projects/project-data.json')
                     <img src="${projectData.projectImage}" alt="${projectData.projectName} Screenshot">
                     <h3>${projectData.projectName}</h3>
                     <p>${projectData.projectDescription}</p>
-                    <a href="${projectData.result.embedLink}" target="_blank" class="view-project-btn">View Project</a>
+                    <a href="${projectData.result.embedLink}" target="_blank" class="view-project-btn">View Demo</a>
                 `;
             }
         });
