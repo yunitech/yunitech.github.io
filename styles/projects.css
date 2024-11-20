@@ -30,6 +30,17 @@
     }
 }
 
+.projects-instruction {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #00ff88; /* Matches the neon green theme */
+    margin: 5px auto;
+    padding: 0px 0;
+    max-width: 800px;
+    line-height: 1.0;
+}
+
+
 /* Project Card */
 .project-card {
     background-color: #1a1a1a;
@@ -41,10 +52,10 @@
     overflow: hidden;
 }
 
-    .project-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
-    }
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+}
 
 .project-image {
     width: 100%;

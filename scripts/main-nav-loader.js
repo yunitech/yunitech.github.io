@@ -14,3 +14,23 @@ document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.add("active");
     }
 });
+
+function updateActiveNavLink() {
+    const currentPath = window.location.pathname;
+    const mainNavLinks = document.querySelectorAll(".main-nav a");
+
+    mainNavLinks.forEach(link => {
+        const linkPath = new URL(link.href).pathname;
+        
+        if (linkPath === currentPath) {
+            link.classList.add("active");
+            console.log("active: ", linkPath);
+        } else {
+            link.classList.remove("active");
+            console.log("Inactive: ", linkPath);
+        }
+    });
+}
+
+// Initial check when the page loads
+updateActiveNavLink();
