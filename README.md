@@ -1,6 +1,6 @@
 # Welcome to Yunitech
 
-Hey there! I'm Yuniel, a game developer and Unreal Engine programmer with a passion for technology and innovation.
+This repository contains the source code for YuniTech, a personal website designed to showcase the skills, portfolio, and journey of Yuniel Montalván Figueredo, an Unreal Engine programmer. The website is a professional hub, serving as both a portfolio and a personal branding platform.
 
 ## About Me
 I'm originally from Cuba and currently based in Budva, Montenegro. Technology, programming, and science fiction have always been my true calling. My journey has led me to focus on game development, specializing in Unreal Engine and C++.
@@ -26,6 +26,4 @@ I’m always looking to improve my skills and connect with like-minded developer
 Let’s connect, share knowledge, and push the boundaries of what's possible in game development!
 
 ---
-
-Feel free to reach out if you're interested in game dev collaboration or simply want to talk tech!
 
