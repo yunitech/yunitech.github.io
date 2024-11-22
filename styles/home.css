@@ -101,31 +101,31 @@
     text-align: center;
 }
 
-.projects-grid {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
+/* Highlighted Skills Section */
+.highlighted-skills {
+    text-align: center;
 }
 
-.project-card {
-    background: #333;
-    border-radius: 8px;
-    padding: 20px;
-    color: #e0e0e0;
-    max-width: 300px;
-    text-align: left;
-}
-
-    .project-card img {
-        width: 100%;
-        border-radius: 8px;
+    .highlighted-skills h2 {
+        color: #00ff88; /* Neon green for title */
+        font-size: 1.8rem;
+        margin-bottom: 20px;
     }
 
-.view-project-btn {
-    color: #00ff88;
-    text-decoration: none;
+.highlighted-skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 10px;
 }
 
-.skills-list li {
-    list-style: none;
-}
+    .highlighted-skills-list li {
+        color: #fff;
+        padding: 0px;
+        border-radius: 4px;
+        font-size: 1rem;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
