@@ -28,6 +28,7 @@
     <!-- Portfolio Section Placeholder -->
     <section class="portfolio-section">
         <!-- Dynamically loaded project cards -->
+        <div class="cards-container" id="cards-container"></div>
     </section>
 
     <!-- Modal Container -->
@@ -38,13 +39,20 @@
         </div>
     </div>
 
+    <script src="scripts/cards-manager.js"></script>
+<script>
+    CardsManager.init({
+        container: "#cards-container",
+        dataUrl: "projects/project-data.json",
+        specifiedIds: [], // Specify projects or leave empty to load all
+    });
+</script>
+
     <!-- Placeholder for the cloned navigation at the bottom -->
     <div class="section-nav-clone-placeholder"></div>
-
     <script src="../scripts/clone-section-nav.js"></script>
 
-    <!-- JavaScript to handle modal loading -->
-    <script src="../scripts/modal-loader.js"></script>    
+
 
     <!-- Footer -->
     <footer>
