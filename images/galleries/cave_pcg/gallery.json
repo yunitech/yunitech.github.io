@@ -1,10 +1,14 @@
 {
     "gallery": [
-        { "image": "image1.png", "caption": "Cave Entrance with Natural Lighting" },
+        { "image": "image1.png", "caption": "Cave Interior with Natural Lighting" },
         { "image": "image2.png", "caption": "Underground Water Pool with Subtle Reflections" },
+        { "image": "image3.png", "caption": "Gameplay" },
         { "image": "image4.png", "caption": "Narrow Path with Procedurally Generated Rocks" },
-        { "image": "image5.png", "caption": "Cave Entrance with Natural Lighting" },
-        { "image": "image6.png", "caption": "Underground Water Pool with Subtle Reflections" },
-        { "image": "image7.png", "caption": "God Ray" }
+        { "image": "image5.png", "caption": "Dark Rock Theme Cave" },
+        { "image": "image6.png", "caption": "Light Rock Theme Cave" },
+        { "image": "image7.png", "caption": "God Ray" },
+        { "image": "image8.png", "caption": "Smooth Soil-Rock Transition" },
+        { "image": "image9.png", "caption": "Smooth Soil-Rock Transition" },
+        { "image": "image10.png", "caption":"Cave Entrance with Natural Lighting" }
     ]
 }
