@@ -269,7 +269,7 @@
     }
 },
 "project4": {
-    "headerImage": "../images/galleries/cave_pcg/cave_pcg_header.png",
+    "headerImage": "../images/galleries/cave_pcg/image10.png",
     "logo": "../images/yuniel_logo.png",
     "projectName": "PCG Cave Interior",
     "projectDescription": "A dynamic procedural cave generation system showcasing the versatility of PCG tools in Unreal Engine.",
