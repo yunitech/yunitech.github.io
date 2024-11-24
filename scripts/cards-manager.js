@@ -152,7 +152,7 @@ function populateCard(card, project, id) {
             // Helper function to add list items from arrays
             function addListItems(parentElement, items) {
                 items.forEach(item => {
-                    const listItem = document.createElement("li");
+                    const listItem = document.createElement("ul");
                     listItem.textContent = item;
                     parentElement.appendChild(listItem);
                 });
@@ -163,51 +163,140 @@ function populateCard(card, project, id) {
                 "Project Type": project.projectType,
                 "Date": project.date,
                 "Core Features": project.coreFeatures,
-                "Systems and Frameworks": project.systems,
-                "Tools and Technologies": project.tools,
                 "Other Features": project.otherFeatures,
+                "Tools and Technologies": project.tools,
+                "Systems and Frameworks": project.systems,
                 "Status": project.status
             };
 
             // Loop over each property and render appropriately
-            for (const [key, value] of Object.entries(properties)) {
-                if (value) {
+            Object.entries(properties).forEach(([key, value]) => {
+                if (value && value.length > 0) {
                     const listItem = document.createElement("li");
-                    listItem.innerHTML = `<strong>${key}:</strong> `;
+            
+                    // Property Name
+                    const propertyName = document.createElement("strong");
+                    propertyName.textContent = key;
+                    listItem.appendChild(propertyName);
+                    
+                    //console.log(key + ": " + value.leng);
 
-                    if (Array.isArray(value)) {
-                        // If the value is an array, create a sublist
-                        const sublist = document.createElement("ul");
-                        addListItems(sublist, value); // Add each item to the sublist
-                        listItem.appendChild(sublist);
+                    // Property Value
+                    if (Array.isArray(value) && value.length > 0) {
+                        value.forEach(item => {
+                            const propertyValue = document.createElement("span");
+                            propertyValue.textContent = item;
+                            propertyValue.classList.add("array-item"); // Add class for array items
+                            listItem.appendChild(propertyValue);
+                        });
                     } else {
-                        // If the value is a string, add it directly
-                        listItem.innerHTML += value;
+                        const propertyValue = document.createElement("span");
+                        propertyValue.textContent = value;
+                        listItem.appendChild(propertyValue);
                     }
-
-                    propertiesList.appendChild(listItem); // Add the formatted item to properties list
+            
+                    propertiesList.appendChild(listItem);
                 }
-            }
+            });
+            
+
 
             // Handle other sections, such as Idea, Design, and Result, similarly
             if (project.idea) {
                 document.getElementById("ideaDescription").textContent = project.idea.description || "";
-                document.getElementById("ideaImage").src = project.idea.image || "";
+                const ideaImage = document.getElementById("ideaImage");
+                if (project.idea.image) {
+                    ideaImage.src = project.idea.image;
+                    ideaImage.style.display = "block";
+                }else{
+                    ideaImage.style.display = "none";
+                }
+                // Hide the idea section if no content
+                if (project.idea.description == "" && project.idea.image == "")
+                    document.getElementById("ideaSection").style.display = "none";
             } else {
                 document.getElementById("ideaSection").style.display = "none";
             }
 
             if (project.design) {
-                document.getElementById("designDescription").textContent = project.design.description || "";
-                document.getElementById("designImage").src = project.design.image || "";
+                const designSection = document.getElementById("designSection");
+                const designDescription = document.getElementById("designDescription");
+                const designList = document.createElement("ul");
+                designList.classList.add("design-list");
+
+                // Handle design image
+                const designImage = document.getElementById("designImage");
+                if (project.design.image && project.design.image != "") {
+                    designImage.src = project.design.image;
+                    designImage.alt = "Design Section Image"; // Set a default alt text
+                    designImage.style.display = "block"; // Ensure it is visible if the image is provided
+                    designList.appendChild(designImage);
+                } else {
+                    designImage.style.display = "none"; // Hide the image if not provided
+                }
+
+                // Populate design description
+                if (project.design.description && project.design.description.length > 0) {
+                    if (Array.isArray(project.design.description)) {
+                        project.design.description.forEach(desc => {
+                            if (desc.length > 0) {
+                                const descParagraph = document.createElement("p");
+                                descParagraph.textContent = desc;
+                                designDescription.appendChild(descParagraph);
+                            }
+                        });
+                    }else{
+                        const descParagraph = document.createElement("p");
+                        descParagraph.textContent = project.design.description;
+                        designDescription.appendChild(descParagraph);
+                    }
+                    if (designDescription.childNodes.length > 0)
+                    designList.appendChild(designDescription);
+                }
+
+                // Populate core elements
+                if (project.design.coreElements && Array.isArray(project.design.coreElements)) {
+                    project.design.coreElements.forEach(item => {
+                        const listItem = document.createElement("li");
+                        // Element name if not empty
+                        if (item.element.length > 0)
+                        {
+                            const elementName = document.createElement("strong");
+                            elementName.textContent = item.element;
+                            listItem.appendChild(elementName);
+                        }
+                        // Description (on a new line)
+                        if (item.description.length > 0)
+                        {
+                            const elementDescription = document.createElement("p");
+                            elementDescription.textContent = item.description;
+                            listItem.appendChild(elementDescription);
+                        }  
+                        if (listItem.childNodes.length > 0)
+                        designList.appendChild(listItem);
+                    });
+                }
+                
+                // Append the list to the design section if it exists
+                if (designList.childNodes.length > 0) {
+                    designSection.appendChild(designList);
+                } else {
+                    designSection.style.display = "none"; // Hide if no data provided
+                }
             } else {
-                document.getElementById("designSection").style.display = "none";
+                document.getElementById("designSection").style.display = "none"; // Hide if no design data
             }
 
             if (project.result) {
                 document.getElementById("resultDescription").textContent = project.result.description || "";
                 document.getElementById("embedLink").src = project.result.embedLink || "";
-                document.getElementById("externalLink").href = project.result.embedLink || "";
+
+                const externalLink = document.getElementById("externalLink");
+                if (project.result.externalLink && project.result.externalLink.length > 0) {
+                    externalLink.href = project.result.externalLink;
+                }else{
+                    externalLink.style.display = "none";
+                }        
             } else {
                 document.getElementById("resultSection").style.display = "none";
             }

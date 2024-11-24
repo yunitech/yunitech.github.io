@@ -8,129 +8,265 @@
         "projectType": "Game Template",
         "date": "May 2024",
         "coreFeatures": [
-            "Character Animation and State Machines, including layered animation with Lyra Animation Set",
-            "Audio integration with Meta Sound and custom audio effects for doors, weapons, and explosions",
-            "Enhanced Input integration with GAS for dynamic gameplay controls",
-            "Comprehensive gameplay mechanics for shooter-based interactions"
+            "Sci-Fi Interior with portals for enemy spawning.",
+            "Character layered animations with Lyra animation set.",
+            "On character bullet impacts.",
+            "Hit reacttion.",
+            "Modular Character Parts System.",
+            "Inventory System.",
+            "Equipment System.",
+            "Interaction System.",
+            "Audio integration with Meta Sound and custom audio effects for doors, weapons, and explosions.",
+            "Enhanced Input integration with GAS for dynamic gameplay controls.",
+            "Comprehensive gameplay mechanics for shooter-based interactions."
         ],
         "systems": [
             "Gameplay Ability System (GAS)",
             "Gameplay Message Router",
-            "Sci-Fi Interior using Procedural Generation (PCG)"
+            "Procedural Content Generation (PCG)"
         ],
         "tools": [
+            "UE 5.3",
             "C++",
             "Blueprint",
             "Unreal Material Editor",
             "Meta Sound",
             "PCG"
         ],
-        "status": "WIP",
+        "status": "",
+        "idea": {
+            "image": "",
+            "description": ""
+        },
         "design": {
-            "description": "Focused on achieving immersive sci-fi environments with modular and dynamically generated assets, alongside responsive, player-centered animations and audio cues.",
-            "image": "../images/design-image.jpg"
+            "image": "../images/gas_core_design.png",
+            "description": [
+                "The design of this project revolves around leveraging the Gameplay Ability System (GAS) to create a highly scalable and modular framework for gameplay mechanics. The system enables dynamic ability execution and event-driven responses, ensuring seamless integration with other game systems. Each ability is designed to be reusable and configurable, promoting flexibility and efficiency in both development and testing phases. This approach not only streamlines the implementation of complex mechanics but also allows for rapid iteration and expansion of new gameplay features. Here is the list of abilities:"
+            ],
+            "coreElements": [
+                {
+                    "element": "GA_ADS",
+                    "description": "Enables precise aiming functionality for the player, improving shooting accuracy while active."
+                },
+                {
+                    "element": "GA_AutoReload",
+                    "description": "Automatically triggers the appropriate reload ability for the weapon in use when ammo runs out during firing."
+                },
+                {
+                    "element": "GA_Crouch",
+                    "description": "Provides the player with the ability to crouch, altering movement dynamics for stealth or cover."
+                },
+                {
+                    "element": "GA_Death",
+                    "description": "Manages player death, including animations, game state updates, and player camera mode transition."
+                },
+                {
+                    "element": "GA_DropWeapon",
+                    "description": "Handles weapon removal from the inventory, spawns a pickup object, and transfers the remaining ammo into it."
+                },
+                {
+                    "element": "GA_Grenade",
+                    "description": "Grants the ability to throw grenades with specific mechanics, such as trajectory, explosion timing, and damage application."
+                },
+                {
+                    "element": "GA_Interaction",
+                    "description": "Facilitates interaction with objects, leveraging GAS to dynamically grant the player context-specific abilities (e.g., collect, pick up weapon)."
+                },
+                {
+                    "element": "GA_Jog",
+                    "description": "Allows the player to jog while the input is held, providing faster traversal without sprint mechanics."
+                },
+                {
+                    "element": "GA_Jump",
+                    "description": "Implements the ability to jump, including physics and animation synchronization."
+                },
+                {
+                    "element": "GA_Melee",
+                    "description": "Enables melee attacks with specific animations and hit detection for close-range combat."
+                },
+                {
+                    "element": "GA_WeaponFire",
+                    "description": "Serves as the parent ability for all weapon fire types, supporting extensibility for various weapon behaviors."
+                },
+                {
+                    "element": "GA_WeaponReload",
+                    "description": "Functions as the parent ability for all reload mechanics, ensuring consistency and modularity across different weapon types."
+                },
+                {
+                    "element": "GA_QuickbarSlots",
+                    "description": "Manages weapon switching via quickbar slots, enabling efficient transitions between equipped items."
+                },
+                {
+                    "element": "GA_SpawnEffect",
+                    "description": "Creates a visually engaging spawning effect for enemies, often involving a portal."
+                },
+                {
+                    "element": "GA_TimeDelation",
+                    "description": "Initiates a slow-motion effect with a visually stunning expanding wave and sound boom, exempting the player from the slowdown."
+                }
+            ]   
         },
         "result": {
-            "description": "Demonstrates advanced shooter gameplay mechanics with smooth animation transitions, responsive audio, and procedurally generated environments to enhance replayability.",
+            "description": "Demonstrates the power and flexibility of the Gameplay Ability System (GAS), delivering a robust, modular framework for complex gameplay mechanics. Its scalable design ensures seamless integration and adaptability across diverse game scenarios, setting a strong foundation for future development.",
             "embedLink": "https://www.youtube.com/embed/u5z1X-DF2Yk?si=CsKiyza6eKJ_u1za"
         }
     },
     "project2": {
         "headerImage": "../images/dynamic_heli_dust_header.png",
         "logo": "../images/yuniel_logo.png",
-        "projectName": "Dynamic Helicopter Dust Effects",
-        "projectDescription": "Developed AI for NPC behavior using advanced particle systems.",
+        "projectName": "Heli with Dynamic Dust",
+        "projectDescription": "A feature plugin where helicopter dust dynamically reacts to the environment. It adjusts color to match the surface and varies intensity based on rotor speed and height.",
         "projectImage": "../images/dynamic_heli_dust.png",
-        "projectType": "Simulation and Visual Effects",
-        "date": "March 2025",
-        "coreFeatures": "Realistic dust simulation, optimized particle effects",
-        "systems": "Unreal Engine Niagara, Physics Systems",
-        "tools": [
-            "C++",
-            "Blueprint",
-            "Unreal Material Editor",
-            "Meta Sound"
+        "projectType": [
+            "Game Feature", 
+            "Plugin"
         ],
-        "otherFeatures": "Dynamic lighting, multi-platform optimization",
-        "status": "In Development",
-        "idea": {
-            "description": "Concept of integrating dynamic environmental interactions with helicopters...",
-            "image": "../images/heli_dust_idea.jpg"
-        },
-        "design": {
-            "description": "Details on the visual design process, focusing on realism and performance...",
-            "image": "../images/heli_dust_design.jpg"
-        },
-        "result": {
-            "description": "Preview of results achieved with particle simulation...",
-            "embedLink": "https://www.youtube.com/embed/BOTFblhit9g"
-        }
-    },
-    "project3": {
-        "headerImage": "../images/gas_core_header.png",
-        "logo": "../images/yuniel_logo.png",
-        "projectName": "GAS Core",
-        "projectDescription": "An implementation of the Gameplay Ability System for a Shooter Game taking the best practices exposed in Lyra Starter Game.",
-        "projectImage": "../images/gas_core.png",
-        "projectType": "Game Template",
-        "date": "May 2024",
+        "date": "March 2024",
         "coreFeatures": [
-            "Character Animation and State Machines, including layered animation with Lyra Animation Set",
-            "Audio integration with Meta Sound and custom audio effects for doors, weapons, and explosions",
-            "Enhanced Input integration with GAS for dynamic gameplay controls",
-            "Comprehensive gameplay mechanics for shooter-based interactions"
+            "Dynamic Dust Effect System",
+            "Playable Helicopter"
         ],
         "systems": [
-            "Gameplay Ability System (GAS)",
-            "Gameplay Message Router",
-            "Sci-Fi Interior using Procedural Generation (PCG)"
+            "Chaos Vehicles Plugin",
+            "Niagara System"
         ],
         "tools": [
-            "C++",
+            "UE 5.3",
             "Blueprint",
-            "Unreal Material Editor",
             "Meta Sound",
-            "PCG"
+            "Unreal Material Editor"
         ],
-        "status": "WIP",
-        "design": {
-            "description": "Focused on achieving immersive sci-fi environments with modular and dynamically generated assets, alongside responsive, player-centered animations and audio cues.",
-            "image": "../images/design-image.jpg"
-        },
-        "result": {
-            "description": "Demonstrates advanced shooter gameplay mechanics with smooth animation transitions, responsive audio, and procedurally generated environments to enhance replayability.",
-            "embedLink": "https://www.youtube.com/embed/u5z1X-DF2Yk?si=CsKiyza6eKJ_u1za"
-        }
-    },
-    "project4": {
-        "headerImage": "../images/dynamic_heli_dust_header.png",
-        "logo": "../images/yuniel_logo.png",
-        "projectName": "Dynamic Helicopter Dust Effects",
-        "projectDescription": "Developed AI for NPC behavior using advanced particle systems.",
-        "projectImage": "../images/dynamic_heli_dust.png",
-        "projectType": "Simulation and Visual Effects",
-        "date": "March 2025",
-        "coreFeatures": "Realistic dust simulation, optimized particle effects",
-        "systems": "Unreal Engine Niagara, Physics Systems",
-        "tools": [
-            "C++",
-            "Blueprint",
-            "Unreal Material Editor",
-            "Meta Sound"
+        "otherFeatures": [
+            "AI Takeoff Controller"
         ],
-        "otherFeatures": "Dynamic lighting, multi-platform optimization",
-        "status": "In Development",
+        "status": "",
         "idea": {
-            "description": "Concept of integrating dynamic environmental interactions with helicopters...",
-            "image": "../images/heli_dust_idea.jpg"
+            "image": "",
+            "description": "The idea behind this project was to create an immersive feature where helicopter dust dynamically interacts with its environment, enhancing realism. The dust effect adapts its color to match the surface beneath the helicopter, seamlessly blending with different terrains. Additionally, the intensity of the dust changes in real-time, influenced by the rotor speed and the helicopter's proximity to the ground, providing a visually accurate and responsive experience. This approach ensures a deeper connection between the helicopter and its environment, showcasing attention to detail and technical precision."
         },
         "design": {
-            "description": "Details on the visual design process, focusing on realism and performance...",
-            "image": "../images/heli_dust_design.jpg"
+            "image": "../images/heli_dynamic_dust_design.png",
+            "description": [
+                "The design prioritizes modularity and reusability, leveraging dynamic actor tags to enable seamless integration into any level with minimal adjustments. This flexibility allows the system to adapt to diverse environments, from landscapes with varied surface colors to large, complex actors, ensuring maximum versatility and efficient deployment."
+            ],
+            "coreElements": [
+                {
+                    "element": "HeliBase (Wheeled Vehicle Pawn)",
+                    "description": "Provides helicopter base functionality, including state-related variables and event dispatchers."
+                },
+                {
+                    "element": "HeliDustHandler (Actor Component)",
+                    "description": "Handles system logic based on the owner's state."
+                },
+                {
+                    "element": "DustEffect (Actor)",
+                    "description": "Manages the dynamic dust effect using the Niagara System."
+                },
+                {
+                    "element": "DustBank (Data Table)",
+                    "description": "Maps dust colors to surface types using tags for diverse landscapes."
+                },
+                {
+                    "element": "HeliFunctionLibrary (Blueprint Function Library)",
+                    "description": "Provides helper calculation functions for the system."
+                }
+            ]
         },
         "result": {
-            "description": "Preview of results achieved with particle simulation...",
+            "description": "A fully implemented feature showcasing dynamic environmental interaction. Dust effects react realistically to surface and speed variations.",
             "embedLink": "https://www.youtube.com/embed/BOTFblhit9g"
         }
+    },
+"project3": {
+    "headerImage": "../images/bird_ai_system_header.png",
+    "logo": "../images/yuniel_logo.png",
+    "projectName": "Bird AI System",
+    "projectDescription": "An advanced simulation of bird populations within an animal ecosystem, designed for dynamic interactions and behaviors.",
+    "projectImage": "../images/bird_ai_system.png",
+    "projectType": ["Game Feature"],
+    "date": "October 2023",
+    "coreFeatures": [
+        "Automatic detection of NavMesh bounds directly within the editor.",
+        "Dynamic random walk patterns for lifelike ground movement.",
+        "Realistic flying behaviors with randomized flight paths.",
+        "Obstacle avoidance tailored for dynamic and seamless navigation during flight.",
+        "Nest building mechanics with resource gathering support.",
+        "Flocking behavior for coordinated group dynamics.",
+        "Comprehensive reproduction cycle simulation.",
+        "Context-aware reactions to perceived threats.",
+        "Flexible settings for population control and balance."
+    ],
+    "systems": [],
+    "tools": ["UE 5.2", "Blueprints", "Animation Blueprint", "Behavioral Trees", "EQS"],
+    "otherFeatures": ["Playable Bird functionality, enabling direct player control and interaction within the ecosystem."],
+    "status": "",
+    "idea": {
+        "image": "../images/bird_ai_system_idea.png",
+        "description": [
+            "This project aims to create a dynamic model that simulates the natural behaviors and interactions of bird populations within an animal ecosystem. It focuses on creating realistic bird AI that integrates seamlessly with environments, enabling lifelike responses to threats and habitat changes."
+        ]
+    },
+    "design": {
+        "image": "../images/bird_ai_system_design.png",
+        "description": [
+            "The Bird AI System emphasizes adaptability and realism through its modular and reusable design. Leveraging Blueprints, Behavioral Trees, and Blueprint Interfaces, it simulates dynamic interactions and complex behaviors within an ecosystem. The system supports both flocking and individual behaviors, ensuring flexibility in various scenarios. Its seamless integration into levels enables dynamic population control, nest-building mechanics, and resource management, offering developers a versatile tool for creating immersive ecosystems."
+        ],
+        "coreElements": [
+            {
+                "element": "BP_Animal (Character)",
+                "description": "Parent class for all animals within the ecosystem, establishing shared traits and behaviors."
+            },
+            {
+                "element": "BP_Animal_Flock (BP_Animal)",
+                "description": "Parent class for all animals exhibiting flock behaviors, supporting group dynamics within the system."
+            },
+            {
+                "element": "BP_BirdBase (BP_Animal_Flock)",
+                "description": "Derived class supporting both AI- and player-controlled birds with individualized behaviors."
+            },
+            {
+                "element": "BPC_FlockSystem (Actor Component)",
+                "description": "Manages flocking behaviors, ensuring realistic interactions and group coordination among birds."
+            },
+            {
+                "element": "BPC_EnergyManager (Actor Component)",
+                "description": "Regulates animal activity based on energy levels, introducing realistic limitations on behavior."
+            },
+            {
+                "element": "Behavioral Trees",
+                "description": "Behavioral Trees define bird behaviors across various life stages, including routine actions, nest building, parenting, and reproduction, enhancing AI realism and adaptability within the ecosystem."
+            },
+            {
+                "element": "Blueprint Interfaces",
+                "description": "Handles character data, predator interactions, and threat alerts through standardized communication."
+            },
+            {
+                "element": "Bird Spot (Actor)",
+                "description": "Spawns initial bird populations, serves as a landing and walking point, and controls population balance."
+            },
+            {
+                "element": "BlueprintFunctionLibrary",
+                "description": "Provides calculation helper functions for reusable and optimized logic."
+            },
+            {
+                "element": "BP_NestPoint",
+                "description": "Marks suitable locations for nest building, manages building stages, and tracks resource usage."
+            },
+            {
+                "element": "BP_Nest",
+                "description": "Tracks the nest and owner states, initiating deterioration when abandoned and releasing resources."
+            },
+            {
+                "element": "BP_Stick",
+                "description": "Can be picked up, transported, and used as a resource for nest construction."
+            }
+        ]
+    },
+    "result": {
+        "description": "The Bird AI System successfully creates an engaging and realistic ecosystem simulation, offering players an immersive experience with dynamic bird populations and behaviors.",
+        "embedLink": "https://www.youtube.com/embed/5BkNVLZjq7g",
+        "externalLink": "https://www.youtube.com/watch?v=5BkNVLZjq7g"
     }
+}
+
 }
