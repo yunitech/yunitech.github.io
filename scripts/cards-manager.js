@@ -31,6 +31,14 @@ const CardsManager = (() => {
         document.head.appendChild(script);
     }
 
+    function loadGalleryScript(scriptUrl, callback) {
+        const script = document.createElement("script");
+        script.src = scriptUrl;
+        script.onload = callback;
+        document.head.appendChild(script);
+    }
+    
+
     // Fetch project data and render cards
     async function loadCards(containerEl, dataUrl, specifiedIds) {
         const templateUrl = "projects/card-template.html"; // Default template URL
@@ -184,10 +192,12 @@ function populateCard(card, project, id) {
                     // Property Value
                     if (Array.isArray(value) && value.length > 0) {
                         value.forEach(item => {
-                            const propertyValue = document.createElement("span");
-                            propertyValue.textContent = item;
-                            propertyValue.classList.add("array-item"); // Add class for array items
-                            listItem.appendChild(propertyValue);
+                            if (item.length > 0){
+                                const propertyValue = document.createElement("span");
+                                propertyValue.textContent = item;
+                                propertyValue.classList.add("array-item"); // Add class for array items
+                                listItem.appendChild(propertyValue); 
+                            }
                         });
                     } else {
                         const propertyValue = document.createElement("span");
@@ -199,8 +209,6 @@ function populateCard(card, project, id) {
                 }
             });
             
-
-
             // Handle other sections, such as Idea, Design, and Result, similarly
             if (project.idea) {
                 document.getElementById("ideaDescription").textContent = project.idea.description || "";
@@ -287,16 +295,42 @@ function populateCard(card, project, id) {
                 document.getElementById("designSection").style.display = "none"; // Hide if no design data
             }
 
-            if (project.result) {
-                document.getElementById("resultDescription").textContent = project.result.description || "";
-                document.getElementById("embedLink").src = project.result.embedLink || "";
 
+            if (project.gallery && project.gallery.length > 0) {
+                loadGalleryScript("scripts/gallery-manager.js", () => {
+                    loadGallerySection(project.gallery, "#gallery-placeholder");
+                });
+            } else {
+                // hide?
+            }
+            
+
+            if (project.result) {
+                const resultDescription = document.getElementById("resultDescription");
+                const embedLink = document.getElementById("embedLink");
                 const externalLink = document.getElementById("externalLink");
+                let elements = 0;
+                if (project.result.description && project.result.description.length > 0) {
+                    resultDescription.textContent = project.result.description;
+                    elements++;
+                }else{
+                    resultDescription.style.display = "none";
+                }
+
+                if (project.result.embedLink && project.result.embedLink.length > 0) {
+                    embedLink.src = project.result.embedLink;
+                    elements++;
+                }else{
+                    embedLink.style.display = "none";
+                }                
+
                 if (project.result.externalLink && project.result.externalLink.length > 0) {
                     externalLink.href = project.result.externalLink;
+                    elements++;
                 }else{
                     externalLink.style.display = "none";
-                }        
+                }
+                if (elements == 0) document.getElementById("resultSection").style.display = "none";
             } else {
                 document.getElementById("resultSection").style.display = "none";
             }

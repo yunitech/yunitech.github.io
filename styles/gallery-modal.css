@@ -1,0 +1,70 @@
+/* General styling for the gallery */
+.project-gallery {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.gallery-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.gallery-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Start with all images hidden */
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+    border: 1px solid #00944f;
+    border-radius: 8px;
+}
+
+.gallery-container img.active {
+    opacity: 1; /* Only the active image is visible */
+    z-index: 2;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    z-index: 3;
+}
+
+.gallery-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.gallery-controls button {
+    background-color: #1a1a1a;
+    color: #00ff88;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.gallery-controls button:hover {
+    background-color: #00ff88;
+    color: #1a1a1a;
+}

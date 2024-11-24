@@ -2,7 +2,7 @@
     "project1": {
         "headerImage": "../images/gas_core_header.png",
         "logo": "../images/yuniel_logo.png",
-        "projectName": "GAS Core",
+        "projectName": "FPS GAS Core",
         "projectDescription": "An implementation of the Gameplay Ability System for a Shooter Game taking the best practices exposed in Lyra Starter Game.",
         "projectImage": "../images/gas_core.png",
         "projectType": "Game Template",
@@ -267,6 +267,188 @@
         "embedLink": "https://www.youtube.com/embed/5BkNVLZjq7g",
         "externalLink": "https://www.youtube.com/watch?v=5BkNVLZjq7g"
     }
+},
+"project4": {
+    "headerImage": "../images/galleries/cave_pcg/cave_pcg_header.png",
+    "logo": "../images/yuniel_logo.png",
+    "projectName": "PCG Cave Interior",
+    "projectDescription": "A dynamic procedural cave generation system showcasing the versatility of PCG tools in Unreal Engine.",
+    "projectImage": "../images/galleries/cave_pcg/image1.png",
+    "projectType": ["Procedural Content Generation Showcase"],
+    "date": "January 2023",
+    "coreFeatures": [
+        "Procedural cave generation for diverse and realistic environments.",
+        "Node-based customization for material and lighting setups.",
+        "Adaptable to various game styles, ensuring maximum flexibility."
+    ],
+    "systems": ["PCG Framework"],
+    "tools": ["UE 5.2", "Blueprints", "Material Editor", "Unreal Modeling Tool"],
+    "otherFeatures": [],
+    "status": "Completed",
+    "idea": {
+        "image": "",
+        "description": [
+            "The project explores the use of Procedural Content Generation (PCG) to create realistic and immersive cave systems. By leveraging PCG, developers can automate the creation of intricate cave layouts with dynamic materials and lighting, enhancing realism and efficiency."
+        ]
+    },
+    "design": {
+        "image": "images/cave_pcg_design.png",
+        "description": [
+            "The design of the PCG Cave Interior system prioritizes modularity and reusability. It integrates Unreal Engine's PCG framework with customized materials and lighting, ensuring an efficient and scalable workflow. The system supports seamless integration into various game levels, offering designers complete control over the aesthetic and functional aspects of cave environments."
+        ],
+        "coreElements": [
+             {
+                "element": "PCG_CaveMaster (PCG Graph)",
+                "description": "The PCG  graph serves as the central generator for creating the main cave interior, including the floor, walls, ceiling, and their respective decorations. It offers dynamic procedural generation capabilities, enabling variations in cave layouts and aesthetics. Controlled by the owner actor, the graph supports extensive customization and ensures flexibility for diverse environment designs."
+            },           
+            {
+                "element": "BP_CaveGenerator (Actor)",
+                "description": "Serves as the owner actor for the cave system, enabling the user to design custom cave layouts by manipulating a closed spline. It allows dynamic cave shaping by dragging and extending spline points to achieve the desired form. The generator integrates seamlessly with PCG_CaveMaster for procedural creation and includes settings for adjusting generation parameters such as scale, density, material variations, among others."
+            },
+            {
+                "element": "BP_PathMaker (Actor)",
+                "description": "Utilizes the graph interception feature to selectively remove portions of the cave mesh, enabling the creation of paths, hallways, or openings. This actor facilitates interconnecting multiple rooms or adding design features such as light shafts or aesthetic voids, enhancing the cave's functional and visual complexity."
+
+            },
+            {
+                "element": "M_MasterCave (Material)",
+                "description": "Base material designed to combine multiple textures, offering versatile customization options to create a variety of cave themes. It dynamically adjusts aspects such as surface appearance and detail, enabling the generation of unique and visually distinct cave environments. This material supports seamless integration with PCG-generated assets, ensuring consistency across different cave designs."
+            }
+        ]
+    },
+    "gallery": "cave_pcg",
+    "result": {
+        "description": "The project demonstrates the power of PCG for creating engaging and efficient cave environments. The flexible system supports diverse use cases, offering both developers and designers a streamlined approach to procedural content creation.",
+        "embedLink": "https://www.youtube.com/embed/3uLINO5Fib8",
+        "externalLink": "https://www.youtube.com/watch?v=3uLINO5Fib8"
+    }
+},
+"project5": {
+    "headerImage": "../images/galleries/labyrinth/image2.png",
+    "logo": "../images/yuniel_logo.png",
+    "projectName": "Labyrinth System",
+    "projectDescription": "A dynamic labyrinth feature designed to adapt and evolve based on player progress, enhancing narrative-driven gameplay.",
+    "projectImage": "../images/galleries/labyrinth/image2.png",
+    "projectType": ["Game Feature"],
+    "date": "April 2023",
+    "coreFeatures": [
+        "Dynamic labyrinth structure changes triggered by in-game events.",
+        "Customizable labyrinth states defined in advance by game designers.",
+        "Interactive wall actors capable of toggling their state to create new pathways.",
+        "Matrix-based system for dynamically evolving level layouts."
+    ],
+    "systems": [],
+    "tools": ["UE 5.2", "Blueprints"],
+    "otherFeatures": [],
+    "status": "",
+    "idea": {
+        "image": "",
+        "description": [
+            "Developed as part of a collaboration with a scriptwriter, the Labyrinth System brings a dynamic and engaging level design to life. Its ever-changing layout reacts to player progress, creating new pathways and keeping gameplay unpredictable and challenging."
+        ]
+    },
+    "design": {
+        "image": "",
+        "description": [
+            "The Labyrinth System leverages Unreal Engine’s actor-based system to generate flexible and adaptive pathways. Walls designed as 'switchers' toggle states to alter the labyrinth, creating limitless exploration possibilities while maintaining narrative coherence."
+        ],
+        "coreElements": [
+            {
+                "element": "Dynamic Labyrinth Actors",
+                "description": "Matrix of actors forming the labyrinth, enabling dynamic layout changes with predefined states."
+            },
+            {
+                "element": "Wall Actors",
+                "description": "Equipped with toggling capabilities to dynamically create or block pathways."
+            },
+            {
+                "element": "State Mapping",
+                "description": "Maps defining the state of each wall actor, ensuring synchronized and cohesive changes."
+            }
+        ]
+    },
+    "gallery": "labyrinth",
+    "result": {
+        "description": "The Labyrinth System successfully integrates into the narrative-driven gameplay, providing a unique and engaging player experience. The dynamic labyrinth reacts to player actions, maintaining interest and challenge throughout the game.",
+        "embedLink": ""
+    }
+},
+"project6": {
+    "headerImage": "../images/zombie_apocalypse_header.png",
+    "logo": "../images/yuniel_logo.png",
+    "projectName": "Top-down Zombie Apocalypse Survival",
+    "projectDescription": "A survival-based game core featuring strategic gameplay elements, realistic AI behaviors, and a modular inventory system.",
+    "projectImage": "../images/zombie_apocalypse.png",
+    "projectType": ["Game Core"],
+    "date": "August 2024",
+    "coreFeatures": [
+        "Rich UMG-based UI for player interaction and feedback.",
+        "Dynamic zombie AI capable of random movement, perception through sight and hearing, and hostile behavior toward players.",
+        "Player movement with smooth and responsive controls utilizing Enhanced Input and the Gameplay Ability System.",
+        "Damage system influenced by insulation attributes, enabling advanced gameplay effects and realistic damage calculation.",
+        "Comprehensive health system with real-time updates and customizable health change events.",
+        "Inventory system supporting item stacking, consumption, and inter-container transfers.",
+        "Backpack system allowing for inventory capacity expansion through equippable gear.",
+        "Interactive hover-over tooltips for detailed item information."
+    ],
+    "systems": [
+        "Enhanced Input System",
+        "Gameplay Ability System (GAS)",
+        "Behavioral Tree",
+        "Environment Query System",
+        "UMG"
+    ],
+    "tools": [
+        "UE 5.3",
+        "C++",
+        "Blueprint"
+    ],
+    "otherFeatures": [],
+    "status": "",
+    "idea": {
+        "image": "",
+        "description": [
+            "The idea behind this project is to deliver a modular, scalable game core for zombie survival gameplay. It focuses on creating lifelike enemy behaviors, realistic damage calculations, and an expandable inventory system to support diverse survival strategies."
+        ]
+    },
+    "design": {
+        "image": "images/zombie_apocalypse_design.png",
+        "description": [
+            "This system is designed with scalability and modularity in mind, enabling developers to integrate advanced gameplay mechanics with minimal rework. The health, inventory, and AI systems are built as reusable modules, allowing for flexibility in different gameplay contexts."
+        ],
+        "coreElements": [
+            {
+                "element": "Zombie AI",
+                "description": "Sophisticated AI implementation with random walk, perception through sight and hearing, and attack behavior."
+            },
+            {
+                "element": "Player Movement System",
+                "description": "Smooth, responsive movement based on Enhanced Input and integrated with the Gameplay Ability System."
+            },
+            {
+                "element": "Inventory System",
+                "description": "Manages items with stacking, movement, and consumption, providing a flexible resource management framework."
+            },
+            {
+                "element": "Backpack System",
+                "description": "Enables dynamic inventory capacity expansion through equippable backpacks."
+            },
+            {
+                "element": "Health System",
+                "description": "Tracks player health and triggers events on health changes and depletion."
+            },
+            {
+                "element": "Tooltip System",
+                "description": "Hover-based tooltips providing item details for an enhanced inventory experience."
+            }
+        ]
+    },
+    "result": {
+        "description": "The core mechanics of this game lay a strong foundation for an engaging zombie survival experience, enabling future expansions like crafting, base building, and cooperative multiplayer.",
+        "embedLink": "https://www.youtube.com/embed/YBncRKhCO0E",
+        "externalLink": "https://www.youtube.com/watch?v=YBncRKhCO0E"
+    }
 }
+
 
 }
