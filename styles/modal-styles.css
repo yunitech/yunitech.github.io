@@ -23,6 +23,7 @@
     width: 90%;
     max-width: 800px;
     color: #e0e0e0;
+    text-align: justify;
 }
 
 .close-btn {
@@ -90,9 +91,10 @@ body.project-modal {
 /* Properties Section */
 .project-properties {
     padding: 20px;
-    background-color: #1a1a1a;
+    background-color: transparent;
     border-radius: 8px;
     margin: 20px;
+    box-shadow: none;
 }
 
 /* Reduces line spacing in the project properties list */
@@ -124,6 +126,53 @@ body.project-modal {
     padding-left: 15px; /* Optional: adds indentation for nested items */
 }
 
+/* Style for the properties list */
+#propertiesList {
+    display: grid; /* Grid layout for two columns */
+    grid-template-columns: 1fr 2fr; /* First column for property names, second for values */
+    gap: 10px; /* Spacing between rows */
+    list-style: none; /* Remove bullets */
+    padding: 0;
+    margin: 0;
+}
+
+/* Ensure each list item spans two columns */
+#propertiesList li {
+    display: contents; /* Allow child elements to act as direct grid items */
+    line-height: 1;
+    margin-bottom: 0px; /* Extra space between rows (new features) */
+}
+
+/* Property Names (First Column) */
+#propertiesList li strong {
+    grid-column: 1; /* Place in the first column */
+    text-align: left; /* Right-align for clarity */
+    color: #008145; /* Highlight property names */
+    font-weight: bold;
+    padding-right: 10px; /* Space between name and value */
+}
+
+/* Property Values (Second Column) */
+#propertiesList li span {
+    grid-column: 2; /* Place in the second column */
+    text-align: left; /* Left-align values */
+    color: #cccccc; /* Use lighter color for values */
+    line-height: 1.4;
+}
+
+/* Additional adjustments for array-style features */
+#propertiesList span.array-item + span.array-item {
+    margin-top: -4px; /* Reduce spacing between items of the same array */
+}
+
+#propertiesList span.array-item:not(:last-child) {
+    margin-bottom: 5px; /* Small gap between items within the same array */
+}
+
+
+#designSection {
+    background-color: #242424;
+}
 
 /* Section Styling */
 section {
@@ -144,19 +193,105 @@ h2 {
     border-radius: 8px;
 }
 
+/* Design Section */
+.design-list {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* No padding around the list */
+    margin: 0; /* No margin for the list */
+}
+
+    .design-list li {
+        margin: 10px 0; /* Add space between each item */
+        padding: 0;
+    }
+
+        .design-list li strong {
+            color: #5982b1; /* Highlight the element name */
+            font-weight: bold;
+            display: block; /* Force element name to appear on a new line */
+            margin-left: 0; /* Align element name to the left */
+        }
+
+        .design-list li p {
+            position: relative; /* Enable relative positioning for the pseudo-element */
+            margin: 5px 0 0 20px; /* Add a left margin for the description */
+            color: #cccccc; /* Lighter color for description text */
+            text-align: justify; /* Optional: Justify the text for cleaner alignment */
+        }
+
+/* Add a dot before each description item */
+.design-list li p::before {
+    content: "•"; /* Use a bullet character */
+    color: #5982b1; /* Match the green theme or choose another color */
+    font-size: 1.2rem; /* Slightly larger for emphasis */
+    position: absolute; /* Position relative to the description */
+    left: -15px; /* Adjust position to align with the text */
+    top: 0; /* Align to the top of the text */
+}
+
 /* Specific CSS targeting the external link icon within project-result */
 .project-result .external-link img {
-    width: 10px !important; /* Force width */
-    height: 10px !important; /* Force height */
+    width: 15px !important; /* Force width */
+    height: 15px !important; /* Force height */
     vertical-align: middle;
-    margin-left: 8px; /* Optional: space between text and icon */
+    margin-left: 2px; /* Optional: space between text and icon */
 }
 
 
-/* Embedded Video */
+/* Result Section */
+.project-result {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+}
+
+/* Description Text */
+.project-result p {
+    margin-bottom: 20px;
+    color: #cccccc;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* Video Container */
+.result-video-container {
+    position: relative; /* Positioning context for the external link */
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Embed Link */
 .embed-link {
     width: 100%;
-    height: 315px;
-    margin-top: 10px;
+    max-width: 800px;
+    height: 450px; /* 16:9 aspect ratio */
+    border: 2px solid #00ff88;
     border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* External Link Icon */
+.external-link {
+    position: absolute; /* Positioned relative to the container */
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.534); /* Semi-transparent */
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.external-link img {
+    width: 60%;
+    height: auto;
+}
+
+.external-link:hover {
+    background-color: rgba(0, 255, 136, 0.7);
 }
