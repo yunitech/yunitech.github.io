@@ -30,14 +30,14 @@
         ],
         "status": "Done",
         "idea": {
-            "image": "images/JustOneTxtIdea.png",
+            "image": "",
             "description": [
                 "AllinOneTxt was created to address a personal need: simplifying the process of uploading multiple project files to ChatGPT for assistance.",
                 "The idea came from the repetitive task of merging files manually, which was time-consuming and prone to errors."
             ]
         },
         "design": {
-            "image": "images/JustOneTxtDesign.png",
+            "image": "",
             "description": [
                 "The design focused on simplicity, with a minimalistic UI that ensures all functionalities are accessible without overwhelming the user.",
                 "The program's core revolves around the responsiveness and clarity of its real-time feedback during operations."
@@ -65,7 +65,7 @@
         "result": {
             "description": "AllinOneTxt successfully simplifies the process of consolidating project files for programming and collaboration purposes, making it ideal for tasks like uploading files to AI tools or sharing with team members.",
             "embedLink": "",
-            "externalLink": "https://github.com/YuniTech/AllinOneTxt"
+            "externalLink": ""
         }
     }
 }
