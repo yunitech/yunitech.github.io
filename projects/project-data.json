@@ -1,7 +1,7 @@
 {
     "project1": {
         "headerImage": "../images/gas_core_header.png",
-        "logo": "../images/yuniel_logo.png",
+        "logo": "../images/yuni_logo.png",
         "projectName": "FPS GAS Core",
         "projectDescription": "An implementation of the Gameplay Ability System for a Shooter Game taking the best practices exposed in Lyra Starter Game.",
         "projectImage": "../images/gas_core.png",
@@ -113,7 +113,7 @@
     },
     "project2": {
         "headerImage": "../images/dynamic_heli_dust_header.png",
-        "logo": "../images/yuniel_logo.png",
+        "logo": "../images/yuni_logo.png",
         "projectName": "Heli with Dynamic Dust",
         "projectDescription": "A feature plugin where helicopter dust dynamically reacts to the environment. It adjusts color to match the surface and varies intensity based on rotor speed and height.",
         "projectImage": "../images/dynamic_heli_dust.png",
@@ -179,7 +179,7 @@
     },
 "project3": {
     "headerImage": "../images/bird_ai_system_header.png",
-    "logo": "../images/yuniel_logo.png",
+    "logo": "../images/yuni_logo.png",
     "projectName": "Bird AI System",
     "projectDescription": "An advanced simulation of bird populations within an animal ecosystem, designed for dynamic interactions and behaviors.",
     "projectImage": "../images/bird_ai_system.png",
@@ -270,7 +270,7 @@
 },
 "project4": {
     "headerImage": "../images/galleries/cave_pcg/image10.png",
-    "logo": "../images/yuniel_logo.png",
+    "logo": "../images/yuni_logo.png",
     "projectName": "PCG Cave Interior",
     "projectDescription": "A dynamic procedural cave generation system showcasing the versatility of PCG tools in Unreal Engine.",
     "projectImage": "../images/galleries/cave_pcg/image1.png",
@@ -325,7 +325,7 @@
 },
 "project5": {
     "headerImage": "../images/galleries/labyrinth/image2.png",
-    "logo": "../images/yuniel_logo.png",
+    "logo": "../images/yuni_logo.png",
     "projectName": "Labyrinth System",
     "projectDescription": "A dynamic labyrinth feature designed to adapt and evolve based on player progress, enhancing narrative-driven gameplay.",
     "projectImage": "../images/galleries/labyrinth/image2.png",
@@ -375,7 +375,7 @@
 },
 "project6": {
     "headerImage": "../images/zombie_apocalypse_header.png",
-    "logo": "../images/yuniel_logo.png",
+    "logo": "../images/yuni_logo.png",
     "projectName": "Top-down Zombie Apocalypse Survival",
     "projectDescription": "A survival-based game core featuring strategic gameplay elements, realistic AI behaviors, and a modular inventory system.",
     "projectImage": "../images/zombie_apocalypse.png",

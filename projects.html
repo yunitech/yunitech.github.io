@@ -27,8 +27,12 @@
     
     <!-- Portfolio Section Placeholder -->
     <section class="portfolio-section">
+        <h1 class="ue-projects">UE</h1>
         <!-- Dynamically loaded project cards -->
         <div class="cards-container" id="cards-container"></div>
+
+        <h1 class="non-ue-projects">non-UE</h1>
+        <div class="cards-container" id="non-ue-container"></div>       
     </section>
 
     <!-- Modal Container -->
@@ -44,6 +48,11 @@
     CardsManager.init({
         container: "#cards-container",
         dataUrl: "projects/project-data.json",
+        specifiedIds: [], // Specify projects or leave empty to load all
+    });
+    CardsManager.init({
+        container: "#non-ue-container",
+        dataUrl: "projects/non-ue-projects.json",
         specifiedIds: [], // Specify projects or leave empty to load all
     });
 </script>
