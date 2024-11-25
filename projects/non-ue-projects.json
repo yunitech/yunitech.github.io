@@ -1,0 +1,71 @@
+{
+    "project1": {
+        "headerImage": "images/just_one_txt_header.png",
+        "logo": "images/yuni_logo.png",
+        "projectName": "AllinOneTxt",
+        "projectDescription": "A lightweight tool designed to consolidate multiple files from a project folder into a single organized text file, simplifying tasks like sharing with AI tools for programming support.",
+        "projectImage": "images/just_one_txt.png",
+        "projectType": ["Utility Tool", "Programming Support"],
+        "date": "2024-11-17",
+        "coreFeatures": [
+            "Consolidates multiple files from a folder into one text file",
+            "Supports common file types like .txt, .cpp, and .html",
+            "Allows skipping media files such as images and videos",
+            "Real-time progress updates with a progress bar",
+            "Customizable output file name and location"
+        ],
+        "systems": [
+            "Windows Forms",
+            "C++/CLI",
+            ".NET Framework"
+        ],
+        "tools": [
+            "Visual Studio 2022",
+            "C++20"
+        ],
+        "otherFeatures": [
+            "File delimiters for clear content organization",
+            "Option to exclude unsupported file types automatically",
+            "Structured output folder management"
+        ],
+        "status": "Done",
+        "idea": {
+            "image": "images/JustOneTxtIdea.png",
+            "description": [
+                "AllinOneTxt was created to address a personal need: simplifying the process of uploading multiple project files to ChatGPT for assistance.",
+                "The idea came from the repetitive task of merging files manually, which was time-consuming and prone to errors."
+            ]
+        },
+        "design": {
+            "image": "images/JustOneTxtDesign.png",
+            "description": [
+                "The design focused on simplicity, with a minimalistic UI that ensures all functionalities are accessible without overwhelming the user.",
+                "The program's core revolves around the responsiveness and clarity of its real-time feedback during operations."
+            ],
+            "coreElements": [
+                {
+                    "element": "Folder Path Selector",
+                    "description": "Allows users to select the folder containing the files to consolidate."
+                },
+                {
+                    "element": "Output File Name",
+                    "description": "Enables users to customize the name of the consolidated text file."
+                },
+                {
+                    "element": "Output Path Selector",
+                    "description": "Lets users choose where the output file will be saved."
+                },
+                {
+                    "element": "Progress Tracker",
+                    "description": "Shows the current file being processed and overall progress."
+                }
+            ]
+        },
+        "gallery": "",
+        "result": {
+            "description": "AllinOneTxt successfully simplifies the process of consolidating project files for programming and collaboration purposes, making it ideal for tasks like uploading files to AI tools or sharing with team members.",
+            "embedLink": "",
+            "externalLink": "https://github.com/YuniTech/AllinOneTxt"
+        }
+    }
+}

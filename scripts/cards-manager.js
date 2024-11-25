@@ -24,6 +24,11 @@ const CardsManager = (() => {
 
     // Load modal manager dynamically
     function loadModalManager(scriptPath) {
+        // Check if the script is already loaded
+        if (document.querySelector(`script[src="${scriptPath}"]`)) {
+            console.log("Modal manager already loaded.");
+            return;
+        }
         const script = document.createElement("script");
         script.src = scriptPath;
         script.onload = () => console.log("Modal manager loaded.");
@@ -79,7 +84,7 @@ const CardsManager = (() => {
             populateCard(card, project);
 
             // Add event listener for modal
-            card.addEventListener("click", () => openModal(project.id));
+            card.addEventListener("click", () => openModal(project));
 
             // Append card to the container
             containerEl.appendChild(card);
@@ -134,7 +139,7 @@ function populateCard(card, project, id) {
     }
 
     // Load project-specific data into the modal
-    async function loadProjectData(projectId) {
+    async function loadProjectData(project) {
         const filePath = `../projects/project-data.json?nocache=${new Date().getTime()}`;
         try {
             const response = await fetch(filePath);
@@ -142,10 +147,10 @@ function populateCard(card, project, id) {
                 throw new Error(`Failed to fetch project data. HTTP status: ${response.status}`);
             }
             const data = await response.json();
-            const project = data[projectId];
+            //const project = data[projectId];
 
             if (!project) {
-                throw new Error(`Project ID "${projectId}" not found in ${filePath}.`);
+                //throw new Error(`Project ID "${projectId}" not found in ${filePath}.`);
             }
 
             // Set header and logo
