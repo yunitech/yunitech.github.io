@@ -5,8 +5,8 @@
         "projectName": "AllinOneTxt",
         "projectDescription": "A lightweight tool designed to consolidate multiple files from a project folder into a single organized text file, simplifying tasks like sharing with AI tools for programming support.",
         "projectImage": "images/just_one_txt.png",
-        "projectType": ["Utility Tool", "Programming Support"],
-        "date": "2024-11-17",
+        "projectType": ["Utility Tool"],
+        "date": "November 2024",
         "coreFeatures": [
             "Consolidates multiple files from a folder into one text file",
             "Supports common file types like .txt, .cpp, and .html",
