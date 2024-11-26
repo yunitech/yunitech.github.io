@@ -1,10 +1,22 @@
 {
     "project1": {
-        "headerImage": "../images/gas_core_header.png",
+        "headerImage": [
+            {
+                "src": "../images/gas_core_header.png",
+                "position": "center",
+                "size": "cover"
+            }
+        ],
         "logo": "../images/yuni_logo.png",
         "projectName": "FPS GAS Core",
         "projectDescription": "An implementation of the Gameplay Ability System for a Shooter Game taking the best practices exposed in Lyra Starter Game.",
-        "projectImage": "../images/gas_core.png",
+        "projectImage": [
+            {
+                "src": "../images/gas_core.png",
+                "position": "center",
+                "size": "cover"
+            }
+        ],
         "projectType": "Game Template",
         "date": "May 2024",
         "coreFeatures": [
@@ -112,11 +124,23 @@
         }
     },
     "project2": {
-        "headerImage": "../images/dynamic_heli_dust_header.png",
+        "headerImage": [
+            {
+                "src": "../images/dynamic_heli_dust_header.png",
+                "position": "center",
+                "size": "cover"
+            }
+        ],
         "logo": "../images/yuni_logo.png",
         "projectName": "Heli with Dynamic Dust",
         "projectDescription": "A feature plugin where helicopter dust dynamically reacts to the environment. It adjusts color to match the surface and varies intensity based on rotor speed and height.",
-        "projectImage": "../images/dynamic_heli_dust.png",
+        "projectImage": [
+            {
+                "src": "../images/dynamic_heli_dust.png",
+                "position": "center",
+                "size": "cover"
+            }
+        ],
         "projectType": [
             "Game Feature", 
             "Plugin"
@@ -178,11 +202,23 @@
         }
     },
 "project3": {
-    "headerImage": "../images/bird_ai_system_header.png",
+    "headerImage": [
+        {
+            "src": "../images/bird_ai_system_header.png",
+            "position": "center",
+            "size": "cover"
+        }
+    ],
     "logo": "../images/yuni_logo.png",
     "projectName": "Bird AI System",
     "projectDescription": "An advanced simulation of bird populations within an animal ecosystem, designed for dynamic interactions and behaviors.",
-    "projectImage": "../images/bird_ai_system.png",
+    "projectImage": [
+        {
+            "src": "../images/bird_ai_system.png",
+            "position": "center",
+            "size": "cover"
+        }
+    ],
     "projectType": ["Game Feature"],
     "date": "October 2023",
     "coreFeatures": [
@@ -269,11 +305,23 @@
     }
 },
 "project4": {
-    "headerImage": "../images/galleries/cave_pcg/image10.png",
+    "headerImage": [
+        {
+            "src": "../images/galleries/cave_pcg/image10.png",
+            "position": "center",
+            "size": "cover"
+        }
+    ],
     "logo": "../images/yuni_logo.png",
     "projectName": "PCG Cave Interior",
     "projectDescription": "A dynamic procedural cave generation system showcasing the versatility of PCG tools in Unreal Engine.",
-    "projectImage": "../images/galleries/cave_pcg/image1.png",
+    "projectImage": [
+        {
+            "src": "../images/galleries/cave_pcg/image1.png",
+            "position": "center",
+            "size": "cover"
+        }
+    ],
     "projectType": ["Procedural Content Generation Showcase"],
     "date": "January 2023",
     "coreFeatures": [
@@ -324,11 +372,23 @@
     }
 },
 "project5": {
-    "headerImage": "../images/galleries/labyrinth/image2.png",
+    "headerImage": [
+        {
+            "src": "../images/galleries/labyrinth/image2.png",
+            "position": "center",
+            "size": "cover"
+        }
+    ],
     "logo": "../images/yuni_logo.png",
     "projectName": "Labyrinth System",
     "projectDescription": "A dynamic labyrinth feature designed to adapt and evolve based on player progress, enhancing narrative-driven gameplay.",
-    "projectImage": "../images/galleries/labyrinth/image2.png",
+    "projectImage": [
+        {
+            "src": "../images/galleries/labyrinth/image2.png",
+            "position": "center",
+            "size": "cover"
+        }
+    ],
     "projectType": ["Game Feature"],
     "date": "April 2023",
     "coreFeatures": [
@@ -374,11 +434,23 @@
     }
 },
 "project6": {
-    "headerImage": "../images/zombie_apocalypse_header.png",
+    "headerImage": [
+        {
+            "src": "../images/zombie_apocalypse_header.png",
+            "position": "center",
+            "size": "cover"
+        }
+    ],
     "logo": "../images/yuni_logo.png",
     "projectName": "Top-down Zombie Apocalypse Survival",
     "projectDescription": "A survival-based game core featuring strategic gameplay elements, realistic AI behaviors, and a modular inventory system.",
-    "projectImage": "../images/zombie_apocalypse.png",
+    "projectImage": [
+        {
+            "src": "../images/zombie_apocalypse.png",
+            "position": "center",
+            "size": "cover"
+        }
+    ],
     "projectType": ["Game Core"],
     "date": "August 2024",
     "coreFeatures": [
@@ -414,32 +486,30 @@
     "design": {
         "image": "images/zombie_apocalypse_design.png",
         "description": [
-            "This system is designed with scalability and modularity in mind, enabling developers to integrate advanced gameplay mechanics with minimal rework. The health, inventory, and AI systems are built as reusable modules, allowing for flexibility in different gameplay contexts."
+            "This system is designed with scalability and modularity in mind, enabling developers to integrate advanced gameplay mechanics with minimal adjustments. It leverages a component-based architecture to ensure dynamic interactions between core gameplay systems, offering a seamless blend of utility and reusability across various scenarios."
         ],
         "coreElements": [
             {
-                "element": "Zombie AI",
-                "description": "Sophisticated AI implementation with random walk, perception through sight and hearing, and attack behavior."
-            },
-            {
-                "element": "Player Movement System",
-                "description": "Smooth, responsive movement based on Enhanced Input and integrated with the Gameplay Ability System."
+                "element": "Gameplay Ability System (GAS)",
+                "description": [
+                    "In this project, GAS is designed to maximize flexibility and ease of use for developers and designers. The integration emphasizes modularity and scalability, allowing for the rapid creation and customization of gameplay abilities without extensive coding.",
+                    "Streamlined Ability Creation: Abilities can be quickly defined and configured through Blueprint or C++ workflows, making it accessible to both technical and non-technical team members.",
+                    "Attribute Management: GAS integrates seamlessly with the project’s attribute systems, providing a centralized solution for managing health, stamina, and other character stats. This reduces redundancy and simplifies balancing.",
+                    "Dynamic Interactions: Abilities can adapt to context, whether triggered by inventory items, equipment, or environmental factors, providing designers with creative freedom to implement complex mechanics.",
+                    "Scalable Blueprint Framework: Designers can leverage Blueprints to modify or extend existing abilities, ensuring faster iteration cycles during prototyping and gameplay refinement."
+                ]
             },
             {
                 "element": "Inventory System",
-                "description": "Manages items with stacking, movement, and consumption, providing a flexible resource management framework."
+                "description": "A component-based inventory design allowing creation of regular or equipable items with associated stats and abilities. The modularity ensures items can dynamically impact the gameplay through integration with the ability system."
+            },
+            {
+                "element": "Equipment System",
+                "description": "Allows equipment to grant abilities or modify stats, going beyond mere cosmetics. The system enables seamless setup of items and integration with the character's abilities, providing deep gameplay customization."
             },
             {
                 "element": "Backpack System",
                 "description": "Enables dynamic inventory capacity expansion through equippable backpacks."
-            },
-            {
-                "element": "Health System",
-                "description": "Tracks player health and triggers events on health changes and depletion."
-            },
-            {
-                "element": "Tooltip System",
-                "description": "Hover-based tooltips providing item details for an enhanced inventory experience."
             }
         ]
     },

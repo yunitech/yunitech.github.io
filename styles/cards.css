@@ -20,6 +20,15 @@
     object-fit: cover;
 }
 
+.project-card img,
+.project-header {
+    object-fit: cover; /* Default */
+    object-position: center; /* Default */
+    width: 100%;
+    height: 150px;
+}
+
+
 .project-details {
     padding: 15px;
 }
