@@ -1,0 +1,71 @@
+{
+    "project1": {
+        "headerImage": "",
+        "logo": "",
+        "projectName": "",
+        "projectDescription": "",
+        "projectImage": "",
+        "projectType": [""],
+        "date": "",
+        "coreFeatures": [
+            ""
+        ],
+        "systems": [
+            ""
+        ],
+        "tools": [
+            ""
+        ],
+        "otherFeatures": [
+            ""
+        ],
+        "status": "",
+        "idea": {
+            "image": "",
+            "description": [""]
+        },
+        "design": {
+            "image": "",
+            "description": [""],
+            "coreElements": [
+                {
+                    "element": "",
+                    "description": ""
+                }
+            ]
+        },
+        "gallery": "",
+        "result": {
+            "description": "",
+            "embedLink": "",
+            "externalLink": ""
+        }
+    }
+}
+Explanation of Fields:
+headerImage: Path to the header image for the project.
+logo: Path to the project or website logo.
+projectName: Name of the project.
+projectDescription: A brief description of the project.
+projectImage: Path to the primary project image.
+projectType: Array to list the type of the project (e.g., Game Core, Game Feature).
+date: Project completion or start date.
+coreFeatures: Array listing the core features of the project.
+systems: Array of systems and frameworks used (e.g., GAS, UMG).
+tools: Array of tools and technologies used (e.g., Unreal Engine, Blueprints).
+otherFeatures: Array for additional notable features.
+status: Current status of the project (e.g., WIP, Done).
+idea: Contains:
+image: Path to the image representing the idea.
+description: Array of paragraphs describing the idea.
+design: Contains:
+image: Path to the design illustration image.
+description: Array of paragraphs describing the design concept.
+coreElements: Array of objects detailing design components, with:
+element: Name of the component.
+description: Description of the component. Can be a array.
+gallery: Name of the folder containing the project gallery.
+result: Contains:
+description: Description of the project outcome.
+embedLink: Link for embedding media.
+externalLink: Link to external media.

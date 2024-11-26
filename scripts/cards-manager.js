@@ -96,7 +96,10 @@ function populateCard(card, project, id) {
     card.setAttribute("data-project", id); // Assign the project ID to the card
 
     const img = card.querySelector(".project-image");
-    img.src = project.projectImage || "";
+    const imageData = project.projectImage[0]; // Assume first entry for simplicity
+    img.src = imageData.src || "";
+    img.style.objectPosition = imageData.position || "center";
+    img.style.objectFit = imageData.size || "cover";
     img.alt = `${project.projectName} Screenshot`;
 
     const title = card.querySelector(".project-title");
@@ -154,7 +157,11 @@ function populateCard(card, project, id) {
             }
 
             // Set header and logo
-            document.getElementById("header").style.backgroundImage = `url(${project.headerImage || ""})`;
+            const headerData = project.headerImage[0];
+            const header = document.getElementById("header");
+            header.style.backgroundImage = `url(${headerData.src || ""})`;
+            header.style.backgroundPosition = headerData.position || "center";
+            header.style.backgroundSize = headerData.size || "cover";
             document.getElementById("logo").src = project.logo || "";
             document.getElementById("projectName").textContent = project.projectName || "Untitled Project";
 
@@ -216,7 +223,19 @@ function populateCard(card, project, id) {
             
             // Handle other sections, such as Idea, Design, and Result, similarly
             if (project.idea) {
-                document.getElementById("ideaDescription").textContent = project.idea.description || "";
+                const ideaDescription = document.getElementById("ideaDescription");
+                if (project.idea.description && project.idea.description.length > 0) {
+                    if (Array.isArray(project.idea.description)) {
+                        project.idea.description.forEach(desc => {
+                            const descParagraph = document.createElement("p");
+                            descParagraph.textContent = desc;
+                            ideaDescription.appendChild(descParagraph);
+                        });
+                    }else{
+                        ideaDescription.textContent = project.idea.description;
+                    }
+                }
+                
                 const ideaImage = document.getElementById("ideaImage");
                 if (project.idea.image) {
                     ideaImage.src = project.idea.image;

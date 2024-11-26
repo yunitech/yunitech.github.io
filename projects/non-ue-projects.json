@@ -1,10 +1,88 @@
 {
     "project1": {
-        "headerImage": "images/just_one_txt_header.png",
+        "headerImage": [
+            {
+                "src": "/images/ue_template_converter_header.png",
+                "position": "center",
+                "size": "cover"
+            }
+        ],
+        "logo": "/images/yuni_logo.png",
+        "projectName": "UE Template Converter",
+        "projectDescription": "A Windows application to convert Unreal Engine projects into reusable templates with configurable options and media support.",
+        "projectImage": [
+            {
+                "src": "/images/ue_template_icon.png",
+                "position": "center",
+                "size": "cover"
+            }
+        ],
+        "projectType": ["Utility Tool"],
+        "date": "Octover 2023",
+        "coreFeatures": [
+            "Convert Unreal Engine projects to templates",
+            "Customizable template settings and configurations",
+            "Media handling for icons and preview images",
+            "Background worker for non-blocking operations"
+        ],
+        "systems": [
+            "Windows Forms",
+            ".NET Framework"
+        ],
+        "tools": [
+            "Visual Studio 2022",
+            "C#"
+        ],
+        "otherFeatures": [],
+        "status": "",
+        "idea": {
+            "image": "",
+            "description": [
+                "The idea was to streamline the creation of reusable templates for Unreal Engine projects. It aims to simplify the workflow for developers and provide a standardized template format."
+            ]
+        },
+        "design": {
+            "image": "images/ue_template_converter.png",
+            "description": [
+                "The design focuses on a minimalistic and user-friendly UI.",
+                "Features include drag-and-drop folder selection and visual progress updates."
+            ],
+            "coreElements": [
+                {
+                    "element": "Folder Selection",
+                    "description": "Allows users to select source and target folders for template generation."
+                },
+                {
+                    "element": "Template Configuration",
+                    "description": "Provides inputs for template name, description, and asset details."
+                }
+            ]
+        },
+        "gallery": "",
+        "result": {
+            "description": "Successfully developed and released the UE Template Converter tool, enhancing project reusability and developer productivity.",
+            "embedLink": "",
+            "externalLink": ""
+        }
+    },
+    "project2": {
+        "headerImage": [
+            {
+                "src": "images/just_one_txt_header.png",
+                "position": "center",
+                "size": "cover"
+            }
+        ],
         "logo": "images/yuni_logo.png",
         "projectName": "AllinOneTxt",
         "projectDescription": "A lightweight tool designed to consolidate multiple files from a project folder into a single organized text file, simplifying tasks like sharing with AI tools for programming support.",
-        "projectImage": "images/just_one_txt.png",
+        "projectImage": [ 
+            { 
+                "src": "images/just_one_txt_icon.png",
+                "position": "center",
+                "size": "cover"
+            }
+        ],
         "projectType": ["Utility Tool"],
         "date": "November 2024",
         "coreFeatures": [
@@ -28,7 +106,7 @@
             "Option to exclude unsupported file types automatically",
             "Structured output folder management"
         ],
-        "status": "Done",
+        "status": "",
         "idea": {
             "image": "",
             "description": [
@@ -37,7 +115,7 @@
             ]
         },
         "design": {
-            "image": "",
+            "image": "images/just_one_txt.png",
             "description": [
                 "The design focused on simplicity, with a minimalistic UI that ensures all functionalities are accessible without overwhelming the user.",
                 "The program's core revolves around the responsiveness and clarity of its real-time feedback during operations."
