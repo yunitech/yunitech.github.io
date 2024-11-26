@@ -414,32 +414,30 @@
     "design": {
         "image": "images/zombie_apocalypse_design.png",
         "description": [
-            "This system is designed with scalability and modularity in mind, enabling developers to integrate advanced gameplay mechanics with minimal rework. The health, inventory, and AI systems are built as reusable modules, allowing for flexibility in different gameplay contexts."
+            "This system is designed with scalability and modularity in mind, enabling developers to integrate advanced gameplay mechanics with minimal adjustments. It leverages a component-based architecture to ensure dynamic interactions between core gameplay systems, offering a seamless blend of utility and reusability across various scenarios."
         ],
         "coreElements": [
             {
-                "element": "Zombie AI",
-                "description": "Sophisticated AI implementation with random walk, perception through sight and hearing, and attack behavior."
-            },
-            {
-                "element": "Player Movement System",
-                "description": "Smooth, responsive movement based on Enhanced Input and integrated with the Gameplay Ability System."
+                "element": "Gameplay Ability System (GAS)",
+                "description": [
+                    "In this project, GAS is designed to maximize flexibility and ease of use for developers and designers. The integration emphasizes modularity and scalability, allowing for the rapid creation and customization of gameplay abilities without extensive coding.",
+                    "Streamlined Ability Creation: Abilities can be quickly defined and configured through Blueprint or C++ workflows, making it accessible to both technical and non-technical team members.",
+                    "Attribute Management: GAS integrates seamlessly with the project’s attribute systems, providing a centralized solution for managing health, stamina, and other character stats. This reduces redundancy and simplifies balancing.",
+                    "Dynamic Interactions: Abilities can adapt to context, whether triggered by inventory items, equipment, or environmental factors, providing designers with creative freedom to implement complex mechanics.",
+                    "Scalable Blueprint Framework: Designers can leverage Blueprints to modify or extend existing abilities, ensuring faster iteration cycles during prototyping and gameplay refinement."
+                ]
             },
             {
                 "element": "Inventory System",
-                "description": "Manages items with stacking, movement, and consumption, providing a flexible resource management framework."
+                "description": "A component-based inventory design allowing creation of regular or equipable items with associated stats and abilities. The modularity ensures items can dynamically impact the gameplay through integration with the ability system."
+            },
+            {
+                "element": "Equipment System",
+                "description": "Allows equipment to grant abilities or modify stats, going beyond mere cosmetics. The system enables seamless setup of items and integration with the character's abilities, providing deep gameplay customization."
             },
             {
                 "element": "Backpack System",
                 "description": "Enables dynamic inventory capacity expansion through equippable backpacks."
-            },
-            {
-                "element": "Health System",
-                "description": "Tracks player health and triggers events on health changes and depletion."
-            },
-            {
-                "element": "Tooltip System",
-                "description": "Hover-based tooltips providing item details for an enhanced inventory experience."
             }
         ]
     },

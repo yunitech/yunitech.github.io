@@ -279,8 +279,15 @@ function populateCard(card, project, id) {
                             listItem.appendChild(elementName);
                         }
                         // Description (on a new line)
-                        if (item.description.length > 0)
-                        {
+                        if (item.description && Array.isArray(item.description)) {
+                            item.description.forEach(desc => {
+                                if (desc.length > 0) {
+                                    const elementDescription = document.createElement("p");
+                                    elementDescription.textContent = desc;
+                                    listItem.appendChild(elementDescription);
+                                }
+                            });
+                        }else if (item.description && item.description.length > 0) {
                             const elementDescription = document.createElement("p");
                             elementDescription.textContent = item.description;
                             listItem.appendChild(elementDescription);
