@@ -156,5 +156,69 @@
             "embedLink": "",
             "externalLink": ""
         }
+    },
+    "project3": {
+    "headerImage": "../images/personal_site_header.png",
+    "logo": "../images/yuni_logo.png",
+    "projectName": "YuniTech - Web Site",
+    "projectDescription": "A personal website showcasing my journey, skills, and portfolio as an Unreal Engine programmer, with a focus on modular and reusable web development techniques.",
+    "projectImage": [
+        {
+            "src": "../images/yunitech_site.png",
+            "position": "center",
+            "size": "cover"
+        }
+    ],
+    "projectType": ["Web Development"],
+    "date": "November 2024",
+    "coreFeatures": [
+        "Responsive design ensuring optimal display on any device.",
+        "Dynamic content rendering powered by JavaScript modules.",
+        "Flexible JSON-based structure for project and gallery management.",
+        "Reusable components for sections like modals, galleries, and cards."
+    ],
+    "systems": ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
+    "tools": ["VS Code", "Chrome DevTools", "GitHub"],
+    "otherFeatures": [
+        "Social media integration with dynamic icon styling.",
+        "Support for galleries with smooth transitions and captions.",
+        "Efficient page navigation using history states and modal management."
+    ],
+    "status": "Live",
+    "idea": {
+        "image": "",
+        "description": [
+            "The goal was to build a personal brand through a professional online presence. The site highlights my Unreal Engine projects while demonstrating advanced web development techniques, focusing on reusability and modularity."
+        ]
+    },
+    "design": {
+        "image": "",
+        "description": [
+            "The website design prioritizes clarity and ease of navigation. Each page integrates reusable CSS and JavaScript components to ensure consistency across sections while allowing customization where needed."
+        ],
+        "coreElements": [
+            {
+                "element": "Dynamic Cards",
+                "description": "Cards dynamically render project data from a JSON file, making content updates simple and scalable."
+            },
+            {
+                "element": "Gallery Manager",
+                "description": "A modular system for displaying image galleries with captions and smooth transitions."
+            },
+            {
+                "element": "Modal System",
+                "description": "A reusable modal system supporting deep linking and browser history management for seamless navigation."
+            },
+            {
+                "element": "Footer Manager",
+                "description": "Dynamically loads footer content across all pages, ensuring consistent branding and easy updates."
+            }
+        ]
+    },
+    "result": {
+        "description": "The website successfully serves as a hub for my personal and professional journey, showcasing my skills, projects, and achievements while providing visitors with an engaging and user-friendly experience.",
+        "embedLink": ""
     }
+}
+
 }
