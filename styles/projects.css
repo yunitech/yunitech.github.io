@@ -2,7 +2,7 @@
 .projects-header {
     width: 100%;
     height: 150px; /* Set height as desired */
-    background-image: url('/images/projects-header.png'); /* Set your background image */
+    background-image: url('/images/yunitech_site_header.png'); /* Set your background image */
     background-size: cover; /* Ensures the image covers the entire header area */
     background-position: center;
     background-repeat: no-repeat;
@@ -11,6 +11,11 @@
     align-items: center; /* Centers items vertically */
     color: #ffffff;
 }
+
+.projects-page .page-header::before {
+    filter: brightness(0.5); /* Increase brightness for About page */
+}
+
 
 /* Projects Portfolio Section */
 .portfolio-section {

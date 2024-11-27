@@ -158,7 +158,13 @@
         }
     },
     "project3": {
-    "headerImage": "../images/personal_site_header.png",
+    "headerImage": [
+        {
+            "src": "../images/yunitech_site_header.png",
+            "position": "center",
+            "size": "cover"
+        }
+    ],
     "logo": "../images/yuni_logo.png",
     "projectName": "YuniTech - Web Site",
     "projectDescription": "A personal website showcasing my journey, skills, and portfolio as an Unreal Engine programmer, with a focus on modular and reusable web development techniques.",
