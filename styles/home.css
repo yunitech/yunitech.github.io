@@ -10,12 +10,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 75vh;
+    height: 450px;
     overflow: hidden;
     position: relative;
     background: #121212;
     color: #ffffff;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 400px; /* Adjust for smaller screens */
+    }
 }
 
 .hero-content {
