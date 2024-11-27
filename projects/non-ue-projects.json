@@ -42,10 +42,15 @@
             ]
         },
         "design": {
-            "image": "images/ue_template_converter.png",
+            "image": [
+                {
+                    "src": "images/ue_template_converter.png",
+                    "position": "center",
+                    "size": "contain"
+                }
+            ],
             "description": [
-                "The design focuses on a minimalistic and user-friendly UI.",
-                "Features include drag-and-drop folder selection and visual progress updates."
+                "The design focuses on a minimalistic and user-friendly UI. Features include drag-and-drop folder selection and visual progress updates."
             ],
             "coreElements": [
                 {
@@ -115,7 +120,13 @@
             ]
         },
         "design": {
-            "image": "images/just_one_txt.png",
+            "image": [
+                {
+                    "src": "images/just_one_txt.png",
+                    "position": "center top",
+                    "size": "cover"
+                }
+            ],
             "description": [
                 "The design focused on simplicity, with a minimalistic UI that ensures all functionalities are accessible without overwhelming the user.",
                 "The program's core revolves around the responsiveness and clarity of its real-time feedback during operations."
