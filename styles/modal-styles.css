@@ -167,10 +167,24 @@ body.project-modal {
     margin-bottom: 5px; /* Small gap between items within the same array */
 }
 
-
 #designSection {
     background-color: #242424;
 }
+
+.project-design img, 
+.project-idea img {
+    width: auto; /* Maintain original aspect ratio */
+    height: auto; /* Allow flexibility */
+    max-width: 100%; /* Ensure it doesn't overflow the container horizontally */
+    max-height: 100%; /* Ensure it doesn't overflow the container vertically */
+    object-fit: var(--image-size, contain); /* Default fit behavior */
+    object-position: var(--image-position, center); /* Default alignment */
+    display: block; /* Removes inline spacing issues */
+    margin: auto; /* Center the image within the section */
+    margin-bottom: 15px;
+}
+
+
 
 /* Section Styling */
 section {

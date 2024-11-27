@@ -237,8 +237,11 @@ function populateCard(card, project, id) {
                 }
                 
                 const ideaImage = document.getElementById("ideaImage");
-                if (project.idea.image) {
-                    ideaImage.src = project.idea.image;
+                if (project.idea.image && project.idea.image.length > 0) {
+                    const { src, position = "center", size = "cover" } = project.idea.image[0];
+                    ideaImage.src = src;
+                    ideaImage.style.objectFit = size;
+                    ideaImage.style.objectPosition = position;
                     ideaImage.style.display = "block";
                 }else{
                     ideaImage.style.display = "none";
@@ -258,8 +261,12 @@ function populateCard(card, project, id) {
 
                 // Handle design image
                 const designImage = document.getElementById("designImage");
-                if (project.design.image && project.design.image != "") {
-                    designImage.src = project.design.image;
+                if (project.design.image && project.design.image.length > 0) {
+                    const { src, position = "center", size = "cover" } = project.design.image[0];
+                    designImage.src = src;
+                    designImage.style.objectFit = size;
+                    designImage.style.objectPosition = position;
+
                     designImage.alt = "Design Section Image"; // Set a default alt text
                     designImage.style.display = "block"; // Ensure it is visible if the image is provided
                     designList.appendChild(designImage);

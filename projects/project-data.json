@@ -51,7 +51,13 @@
             "description": ""
         },
         "design": {
-            "image": "../images/gas_core_design.png",
+            "image": [
+                {
+                    "src": "../images/gas_core_design.png",
+                    "position": "center",
+                    "size": "contain"
+                }
+            ],
             "description": [
                 "The design of this project revolves around leveraging the Gameplay Ability System (GAS) to create a highly scalable and modular framework for gameplay mechanics. The system enables dynamic ability execution and event-driven responses, ensuring seamless integration with other game systems. Each ability is designed to be reusable and configurable, promoting flexibility and efficiency in both development and testing phases. This approach not only streamlines the implementation of complex mechanics but also allows for rapid iteration and expansion of new gameplay features. Here is the list of abilities:"
             ],
@@ -169,7 +175,13 @@
             "description": "The idea behind this project was to create an immersive feature where helicopter dust dynamically interacts with its environment, enhancing realism. The dust effect adapts its color to match the surface beneath the helicopter, seamlessly blending with different terrains. Additionally, the intensity of the dust changes in real-time, influenced by the rotor speed and the helicopter's proximity to the ground, providing a visually accurate and responsive experience. This approach ensures a deeper connection between the helicopter and its environment, showcasing attention to detail and technical precision."
         },
         "design": {
-            "image": "../images/heli_dynamic_dust_design.png",
+            "image": [
+                {
+                    "src": "../images/heli_dynamic_dust_design.png",
+                    "position": "center",
+                    "size": "cover"
+                }
+            ],
             "description": [
                 "The design prioritizes modularity and reusability, leveraging dynamic actor tags to enable seamless integration into any level with minimal adjustments. This flexibility allows the system to adapt to diverse environments, from landscapes with varied surface colors to large, complex actors, ensuring maximum versatility and efficient deployment."
             ],
@@ -237,13 +249,25 @@
     "otherFeatures": ["Playable Bird functionality, enabling direct player control and interaction within the ecosystem."],
     "status": "",
     "idea": {
-        "image": "../images/bird_ai_system_idea.png",
+        "image": [
+            {
+                "src": "../images/bird_ai_system_idea.png",
+                "position": "center",
+                "size": "contain"
+            }
+        ],
         "description": [
             "This project aims to create a dynamic model that simulates the natural behaviors and interactions of bird populations within an animal ecosystem. It focuses on creating realistic bird AI that integrates seamlessly with environments, enabling lifelike responses to threats and habitat changes."
         ]
     },
     "design": {
-        "image": "../images/bird_ai_system_design.png",
+        "image": [
+            {
+                "src": "../images/bird_ai_system_design.png",
+                "position": "center",
+                "size": "contain"
+            }
+        ],
         "description": [
             "The Bird AI System emphasizes adaptability and realism through its modular and reusable design. Leveraging Blueprints, Behavioral Trees, and Blueprint Interfaces, it simulates dynamic interactions and complex behaviors within an ecosystem. The system supports both flocking and individual behaviors, ensuring flexibility in various scenarios. Its seamless integration into levels enables dynamic population control, nest-building mechanics, and resource management, offering developers a versatile tool for creating immersive ecosystems."
         ],
@@ -340,7 +364,13 @@
         ]
     },
     "design": {
-        "image": "images/cave_pcg_design.png",
+        "image": [
+            {
+                "src": "images/cave_pcg_design.png",
+                "position": "center",
+                "size": "contain"
+            }
+        ],
         "description": [
             "The design of the PCG Cave Interior system prioritizes modularity and reusability. It integrates Unreal Engine's PCG framework with customized materials and lighting, ensuring an efficient and scalable workflow. The system supports seamless integration into various game levels, offering designers complete control over the aesthetic and functional aspects of cave environments."
         ],
@@ -484,7 +514,13 @@
         ]
     },
     "design": {
-        "image": "images/zombie_apocalypse_design.png",
+        "image": [
+            {
+                "src": "images/zombie_apocalypse_design.png",
+                "position": "center",
+                "size": "contain"
+            }
+        ],
         "description": [
             "This system is designed with scalability and modularity in mind, enabling developers to integrate advanced gameplay mechanics with minimal adjustments. It leverages a component-based architecture to ensure dynamic interactions between core gameplay systems, offering a seamless blend of utility and reusability across various scenarios."
         ],
