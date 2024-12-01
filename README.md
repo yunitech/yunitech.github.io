@@ -8,8 +8,6 @@ I'm originally from Cuba and currently based in Budva, Montenegro. Technology, p
 ## What I Do
 Most of my time is spent programming game systems, experimenting with Unreal Engine’s Gameplay Ability System (GAS), and pushing my skills in both C++ and Blueprint scripting. I love bringing complex gameplay mechanics to life, exploring AI behaviors, and ensuring immersive, interactive experiences in games.
 
-I currently work for a game developer where I am responsible for **sound implementation** and **gameplay mechanics** in our projects. Alongside, I manage a private Telegram group, **Unreal_Dev_Alliance**, for collaboration with other passionate developers.
-
 ## Key Skills
 - **Unreal Engine 5.0 and above**: Extensive experience with UE5, including advanced gameplay mechanics, performance optimization, and debugging.
 - **Proficient in C++ and Blueprints programming**: Skilled in writing efficient, maintainable C++ code and Blueprint scripting for gameplay, AI, and UI systems.
