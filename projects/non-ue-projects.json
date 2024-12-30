@@ -167,7 +167,7 @@
     ],
     "logo": "../images/yuni_logo.png",
     "projectName": "YuniTech - Web Site",
-    "projectDescription": "A personal website showcasing my journey, skills, and portfolio as an Unreal Engine programmer, with a focus on modular and reusable web development techniques.",
+    "projectDescription": "A personal website showcasing my journey, skills, and projects as an Unreal Engine programmer, with a focus on modular and reusable web development techniques.",
     "projectImage": [
         {
             "src": "../images/yunitech_site.png",
@@ -194,7 +194,7 @@
     "idea": {
         "image": "",
         "description": [
-            "The goal was to build a personal brand through a professional online presence. The site highlights my Unreal Engine projects while demonstrating advanced web development techniques, focusing on reusability and modularity."
+            "The goal was to build a personal brand through a professional online presence while challenging myself with diverse programming scenarios. The site highlights my Unreal Engine projects while demonstrating advanced web development techniques, focusing on reusability and modularity."
         ]
     },
     "design": {
