@@ -122,7 +122,7 @@
                     "element": "GA_TimeDelation",
                     "description": "Initiates a slow-motion effect with a visually stunning expanding wave and sound boom, exempting the player from the slowdown."
                 }
-            ]   
+            ]
         },
         "result": {
             "description": "Demonstrates the power and flexibility of the Gameplay Ability System (GAS), delivering a robust, modular framework for complex gameplay mechanics. Its scalable design ensures seamless integration and adaptability across diverse game scenarios, setting a strong foundation for future development.",
@@ -148,7 +148,7 @@
             }
         ],
         "projectType": [
-            "Game Feature", 
+            "Game Feature",
             "Plugin"
         ],
         "date": "March 2024",
@@ -213,348 +213,520 @@
             "embedLink": "https://www.youtube.com/embed/BOTFblhit9g"
         }
     },
-"project3": {
-    "headerImage": [
-        {
-            "src": "../images/bird_ai_system_header.png",
-            "position": "center",
-            "size": "cover"
-        }
-    ],
-    "logo": "../images/yuni_logo.png",
-    "projectName": "Bird AI System",
-    "projectDescription": "An advanced simulation of bird populations within an animal ecosystem, designed for dynamic interactions and behaviors.",
-    "projectImage": [
-        {
-            "src": "../images/bird_ai_system.png",
-            "position": "center",
-            "size": "cover"
-        }
-    ],
-    "projectType": ["Game Feature"],
-    "date": "October 2023",
-    "coreFeatures": [
-        "Automatic detection of NavMesh bounds directly within the editor.",
-        "Dynamic random walk patterns for lifelike ground movement.",
-        "Realistic flying behaviors with randomized flight paths.",
-        "Obstacle avoidance tailored for dynamic and seamless navigation during flight.",
-        "Nest building mechanics with resource gathering support.",
-        "Flocking behavior for coordinated group dynamics.",
-        "Comprehensive reproduction cycle simulation.",
-        "Context-aware reactions to perceived threats.",
-        "Flexible settings for population control and balance."
-    ],
-    "systems": [],
-    "tools": ["UE 5.2", "Blueprints", "Animation Blueprint", "Behavioral Trees", "EQS"],
-    "otherFeatures": ["Playable Bird functionality, enabling direct player control and interaction within the ecosystem."],
-    "status": "",
-    "idea": {
-        "image": [
+    "project3": {
+        "headerImage": [
             {
-                "src": "../images/bird_ai_system_idea.png",
+                "src": "../images/bird_ai_system_header.png",
                 "position": "center",
-                "size": "contain"
+                "size": "cover"
             }
         ],
-        "description": [
-            "This project aims to create a dynamic model that simulates the natural behaviors and interactions of bird populations within an animal ecosystem. It focuses on creating realistic bird AI that integrates seamlessly with environments, enabling lifelike responses to threats and habitat changes."
-        ]
-    },
-    "design": {
-        "image": [
+        "logo": "../images/yuni_logo.png",
+        "projectName": "Bird AI System",
+        "projectDescription": "An advanced simulation of bird populations within an animal ecosystem, designed for dynamic interactions and behaviors.",
+        "projectImage": [
             {
-                "src": "../images/bird_ai_system_design.png",
+                "src": "../images/bird_ai_system.png",
                 "position": "center",
-                "size": "contain"
+                "size": "cover"
             }
         ],
-        "description": [
-            "The Bird AI System emphasizes adaptability and realism through its modular and reusable design. Leveraging Blueprints, Behavioral Trees, and Blueprint Interfaces, it simulates dynamic interactions and complex behaviors within an ecosystem. The system supports both flocking and individual behaviors, ensuring flexibility in various scenarios. Its seamless integration into levels enables dynamic population control, nest-building mechanics, and resource management, offering developers a versatile tool for creating immersive ecosystems."
+        "projectType": [ "Game Feature" ],
+        "date": "October 2023",
+        "coreFeatures": [
+            "Automatic detection of NavMesh bounds directly within the editor.",
+            "Dynamic random walk patterns for lifelike ground movement.",
+            "Realistic flying behaviors with randomized flight paths.",
+            "Obstacle avoidance tailored for dynamic and seamless navigation during flight.",
+            "Nest building mechanics with resource gathering support.",
+            "Flocking behavior for coordinated group dynamics.",
+            "Comprehensive reproduction cycle simulation.",
+            "Context-aware reactions to perceived threats.",
+            "Flexible settings for population control and balance."
         ],
-        "coreElements": [
-            {
-                "element": "BP_Animal (Character)",
-                "description": "Parent class for all animals within the ecosystem, establishing shared traits and behaviors."
-            },
-            {
-                "element": "BP_Animal_Flock (BP_Animal)",
-                "description": "Parent class for all animals exhibiting flock behaviors, supporting group dynamics within the system."
-            },
-            {
-                "element": "BP_BirdBase (BP_Animal_Flock)",
-                "description": "Derived class supporting both AI- and player-controlled birds with individualized behaviors."
-            },
-            {
-                "element": "BPC_FlockSystem (Actor Component)",
-                "description": "Manages flocking behaviors, ensuring realistic interactions and group coordination among birds."
-            },
-            {
-                "element": "BPC_EnergyManager (Actor Component)",
-                "description": "Regulates animal activity based on energy levels, introducing realistic limitations on behavior."
-            },
-            {
-                "element": "Behavioral Trees",
-                "description": "Behavioral Trees define bird behaviors across various life stages, including routine actions, nest building, parenting, and reproduction, enhancing AI realism and adaptability within the ecosystem."
-            },
-            {
-                "element": "Blueprint Interfaces",
-                "description": "Handles character data, predator interactions, and threat alerts through standardized communication."
-            },
-            {
-                "element": "Bird Spot (Actor)",
-                "description": "Spawns initial bird populations, serves as a landing and walking point, and controls population balance."
-            },
-            {
-                "element": "BlueprintFunctionLibrary",
-                "description": "Provides calculation helper functions for reusable and optimized logic."
-            },
-            {
-                "element": "BP_NestPoint",
-                "description": "Marks suitable locations for nest building, manages building stages, and tracks resource usage."
-            },
-            {
-                "element": "BP_Nest",
-                "description": "Tracks the nest and owner states, initiating deterioration when abandoned and releasing resources."
-            },
-            {
-                "element": "BP_Stick",
-                "description": "Can be picked up, transported, and used as a resource for nest construction."
-            }
-        ]
-    },
-    "result": {
-        "description": "The Bird AI System successfully creates an engaging and realistic ecosystem simulation, offering players an immersive experience with dynamic bird populations and behaviors.",
-        "embedLink": "https://www.youtube.com/embed/5BkNVLZjq7g",
-        "externalLink": "https://www.youtube.com/watch?v=5BkNVLZjq7g"
-    }
-},
-"project4": {
-    "headerImage": [
-        {
-            "src": "../images/galleries/cave_pcg/image10.png",
-            "position": "center",
-            "size": "cover"
+        "systems": [],
+        "tools": [ "UE 5.2", "Blueprints", "Animation Blueprint", "Behavioral Trees", "EQS" ],
+        "otherFeatures": [ "Playable Bird functionality, enabling direct player control and interaction within the ecosystem." ],
+        "status": "",
+        "idea": {
+            "image": [
+                {
+                    "src": "../images/bird_ai_system_idea.png",
+                    "position": "center",
+                    "size": "contain"
+                }
+            ],
+            "description": [
+                "This project aims to create a dynamic model that simulates the natural behaviors and interactions of bird populations within an animal ecosystem. It focuses on creating realistic bird AI that integrates seamlessly with environments, enabling lifelike responses to threats and habitat changes."
+            ]
+        },
+        "design": {
+            "image": [
+                {
+                    "src": "../images/bird_ai_system_design.png",
+                    "position": "center",
+                    "size": "contain"
+                }
+            ],
+            "description": [
+                "The Bird AI System emphasizes adaptability and realism through its modular and reusable design. Leveraging Blueprints, Behavioral Trees, and Blueprint Interfaces, it simulates dynamic interactions and complex behaviors within an ecosystem. The system supports both flocking and individual behaviors, ensuring flexibility in various scenarios. Its seamless integration into levels enables dynamic population control, nest-building mechanics, and resource management, offering developers a versatile tool for creating immersive ecosystems."
+            ],
+            "coreElements": [
+                {
+                    "element": "BP_Animal (Character)",
+                    "description": "Parent class for all animals within the ecosystem, establishing shared traits and behaviors."
+                },
+                {
+                    "element": "BP_Animal_Flock (BP_Animal)",
+                    "description": "Parent class for all animals exhibiting flock behaviors, supporting group dynamics within the system."
+                },
+                {
+                    "element": "BP_BirdBase (BP_Animal_Flock)",
+                    "description": "Derived class supporting both AI- and player-controlled birds with individualized behaviors."
+                },
+                {
+                    "element": "BPC_FlockSystem (Actor Component)",
+                    "description": "Manages flocking behaviors, ensuring realistic interactions and group coordination among birds."
+                },
+                {
+                    "element": "BPC_EnergyManager (Actor Component)",
+                    "description": "Regulates animal activity based on energy levels, introducing realistic limitations on behavior."
+                },
+                {
+                    "element": "Behavioral Trees",
+                    "description": "Behavioral Trees define bird behaviors across various life stages, including routine actions, nest building, parenting, and reproduction, enhancing AI realism and adaptability within the ecosystem."
+                },
+                {
+                    "element": "Blueprint Interfaces",
+                    "description": "Handles character data, predator interactions, and threat alerts through standardized communication."
+                },
+                {
+                    "element": "Bird Spot (Actor)",
+                    "description": "Spawns initial bird populations, serves as a landing and walking point, and controls population balance."
+                },
+                {
+                    "element": "BlueprintFunctionLibrary",
+                    "description": "Provides calculation helper functions for reusable and optimized logic."
+                },
+                {
+                    "element": "BP_NestPoint",
+                    "description": "Marks suitable locations for nest building, manages building stages, and tracks resource usage."
+                },
+                {
+                    "element": "BP_Nest",
+                    "description": "Tracks the nest and owner states, initiating deterioration when abandoned and releasing resources."
+                },
+                {
+                    "element": "BP_Stick",
+                    "description": "Can be picked up, transported, and used as a resource for nest construction."
+                }
+            ]
+        },
+        "result": {
+            "description": "The Bird AI System successfully creates an engaging and realistic ecosystem simulation, offering players an immersive experience with dynamic bird populations and behaviors.",
+            "embedLink": "https://www.youtube.com/embed/5BkNVLZjq7g",
+            "externalLink": "https://www.youtube.com/watch?v=5BkNVLZjq7g"
         }
-    ],
-    "logo": "../images/yuni_logo.png",
-    "projectName": "PCG Cave Interior",
-    "projectDescription": "A dynamic procedural cave generation system showcasing the versatility of PCG tools in Unreal Engine.",
-    "projectImage": [
-        {
-            "src": "../images/galleries/cave_pcg/image1.png",
-            "position": "center",
-            "size": "cover"
-        }
-    ],
-    "projectType": ["Procedural Content Generation Showcase"],
-    "date": "January 2023",
-    "coreFeatures": [
-        "Procedural cave generation for diverse and realistic environments.",
-        "Node-based customization for material and lighting setups.",
-        "Adaptable to various game styles, ensuring maximum flexibility."
-    ],
-    "systems": ["PCG Framework"],
-    "tools": ["UE 5.2", "Blueprints", "Material Editor", "Unreal Modeling Tool"],
-    "otherFeatures": [],
-    "status": "Completed",
-    "idea": {
-        "image": "",
-        "description": [
-            "The project explores the use of Procedural Content Generation (PCG) to create realistic and immersive cave systems. By leveraging PCG, developers can automate the creation of intricate cave layouts with dynamic materials and lighting, enhancing realism and efficiency."
-        ]
     },
-    "design": {
-        "image": [
+    "project4": {
+        "headerImage": [
             {
-                "src": "images/cave_pcg_design.png",
+                "src": "../images/galleries/cave_pcg/image10.png",
                 "position": "center",
-                "size": "contain"
+                "size": "cover"
             }
         ],
-        "description": [
-            "The design of the PCG Cave Interior system prioritizes modularity and reusability. It integrates Unreal Engine's PCG framework with customized materials and lighting, ensuring an efficient and scalable workflow. The system supports seamless integration into various game levels, offering designers complete control over the aesthetic and functional aspects of cave environments."
+        "logo": "../images/yuni_logo.png",
+        "projectName": "PCG Cave Interior",
+        "projectDescription": "A dynamic procedural cave generation system showcasing the versatility of PCG tools in Unreal Engine.",
+        "projectImage": [
+            {
+                "src": "../images/galleries/cave_pcg/image1.png",
+                "position": "center",
+                "size": "cover"
+            }
         ],
-        "coreElements": [
-             {
-                "element": "PCG_CaveMaster (PCG Graph)",
-                "description": "The PCG  graph serves as the central generator for creating the main cave interior, including the floor, walls, ceiling, and their respective decorations. It offers dynamic procedural generation capabilities, enabling variations in cave layouts and aesthetics. Controlled by the owner actor, the graph supports extensive customization and ensures flexibility for diverse environment designs."
-            },           
-            {
-                "element": "BP_CaveGenerator (Actor)",
-                "description": "Serves as the owner actor for the cave system, enabling the user to design custom cave layouts by manipulating a closed spline. It allows dynamic cave shaping by dragging and extending spline points to achieve the desired form. The generator integrates seamlessly with PCG_CaveMaster for procedural creation and includes settings for adjusting generation parameters such as scale, density, material variations, among others."
-            },
-            {
-                "element": "BP_PathMaker (Actor)",
-                "description": "Utilizes the graph interception feature to selectively remove portions of the cave mesh, enabling the creation of paths, hallways, or openings. This actor facilitates interconnecting multiple rooms or adding design features such as light shafts or aesthetic voids, enhancing the cave's functional and visual complexity."
+        "projectType": [ "Procedural Content Generation Showcase" ],
+        "date": "January 2023",
+        "coreFeatures": [
+            "Procedural cave generation for diverse and realistic environments.",
+            "Node-based customization for material and lighting setups.",
+            "Adaptable to various game styles, ensuring maximum flexibility."
+        ],
+        "systems": [ "PCG Framework" ],
+        "tools": [ "UE 5.2", "Blueprints", "Material Editor", "Unreal Modeling Tool" ],
+        "otherFeatures": [],
+        "status": "Completed",
+        "idea": {
+            "image": "",
+            "description": [
+                "The project explores the use of Procedural Content Generation (PCG) to create realistic and immersive cave systems. By leveraging PCG, developers can automate the creation of intricate cave layouts with dynamic materials and lighting, enhancing realism and efficiency."
+            ]
+        },
+        "design": {
+            "image": [
+                {
+                    "src": "images/cave_pcg_design.png",
+                    "position": "center",
+                    "size": "contain"
+                }
+            ],
+            "description": [
+                "The design of the PCG Cave Interior system prioritizes modularity and reusability. It integrates Unreal Engine's PCG framework with customized materials and lighting, ensuring an efficient and scalable workflow. The system supports seamless integration into various game levels, offering designers complete control over the aesthetic and functional aspects of cave environments."
+            ],
+            "coreElements": [
+                {
+                    "element": "PCG_CaveMaster (PCG Graph)",
+                    "description": "The PCG  graph serves as the central generator for creating the main cave interior, including the floor, walls, ceiling, and their respective decorations. It offers dynamic procedural generation capabilities, enabling variations in cave layouts and aesthetics. Controlled by the owner actor, the graph supports extensive customization and ensures flexibility for diverse environment designs."
+                },
+                {
+                    "element": "BP_CaveGenerator (Actor)",
+                    "description": "Serves as the owner actor for the cave system, enabling the user to design custom cave layouts by manipulating a closed spline. It allows dynamic cave shaping by dragging and extending spline points to achieve the desired form. The generator integrates seamlessly with PCG_CaveMaster for procedural creation and includes settings for adjusting generation parameters such as scale, density, material variations, among others."
+                },
+                {
+                    "element": "BP_PathMaker (Actor)",
+                    "description": "Utilizes the graph interception feature to selectively remove portions of the cave mesh, enabling the creation of paths, hallways, or openings. This actor facilitates interconnecting multiple rooms or adding design features such as light shafts or aesthetic voids, enhancing the cave's functional and visual complexity."
 
-            },
-            {
-                "element": "M_MasterCave (Material)",
-                "description": "Base material designed to combine multiple textures, offering versatile customization options to create a variety of cave themes. It dynamically adjusts aspects such as surface appearance and detail, enabling the generation of unique and visually distinct cave environments. This material supports seamless integration with PCG-generated assets, ensuring consistency across different cave designs."
-            }
-        ]
-    },
-    "gallery": "cave_pcg",
-    "result": {
-        "description": "The project demonstrates the power of PCG for creating engaging and efficient cave environments. The flexible system supports diverse use cases, offering both developers and designers a streamlined approach to procedural content creation.",
-        "embedLink": "https://www.youtube.com/embed/3uLINO5Fib8",
-        "externalLink": "https://www.youtube.com/watch?v=3uLINO5Fib8"
-    }
-},
-"project5": {
-    "headerImage": [
-        {
-            "src": "../images/galleries/labyrinth/image2.png",
-            "position": "center",
-            "size": "cover"
+                },
+                {
+                    "element": "M_MasterCave (Material)",
+                    "description": "Base material designed to combine multiple textures, offering versatile customization options to create a variety of cave themes. It dynamically adjusts aspects such as surface appearance and detail, enabling the generation of unique and visually distinct cave environments. This material supports seamless integration with PCG-generated assets, ensuring consistency across different cave designs."
+                }
+            ]
+        },
+        "gallery": "cave_pcg",
+        "result": {
+            "description": "The project demonstrates the power of PCG for creating engaging and efficient cave environments. The flexible system supports diverse use cases, offering both developers and designers a streamlined approach to procedural content creation.",
+            "embedLink": "https://www.youtube.com/embed/3uLINO5Fib8",
+            "externalLink": "https://www.youtube.com/watch?v=3uLINO5Fib8"
         }
-    ],
-    "logo": "../images/yuni_logo.png",
-    "projectName": "Labyrinth System",
-    "projectDescription": "A dynamic labyrinth feature designed to adapt and evolve based on player progress, enhancing narrative-driven gameplay.",
-    "projectImage": [
-        {
-            "src": "../images/galleries/labyrinth/image2.png",
-            "position": "center",
-            "size": "cover"
-        }
-    ],
-    "projectType": ["Game Feature"],
-    "date": "April 2023",
-    "coreFeatures": [
-        "Dynamic labyrinth structure changes triggered by in-game events.",
-        "Customizable labyrinth states defined in advance by game designers.",
-        "Interactive wall actors capable of toggling their state to create new pathways.",
-        "Matrix-based system for dynamically evolving level layouts."
-    ],
-    "systems": [],
-    "tools": ["UE 5.2", "Blueprints"],
-    "otherFeatures": [],
-    "status": "",
-    "idea": {
-        "image": "",
-        "description": [
-            "Developed as part of a collaboration with a scriptwriter, the Labyrinth System brings a dynamic and engaging level design to life. Its ever-changing layout reacts to player progress, creating new pathways and keeping gameplay unpredictable and challenging."
-        ]
     },
-    "design": {
-        "image": "",
-        "description": [
-            "The Labyrinth System leverages Unreal Engine’s actor-based system to generate flexible and adaptive pathways. Walls designed as 'switchers' toggle states to alter the labyrinth, creating limitless exploration possibilities while maintaining narrative coherence."
-        ],
-        "coreElements": [
+    "project5": {
+        "headerImage": [
             {
-                "element": "Dynamic Labyrinth Actors",
-                "description": "Matrix of actors forming the labyrinth, enabling dynamic layout changes with predefined states."
-            },
-            {
-                "element": "Wall Actors",
-                "description": "Equipped with toggling capabilities to dynamically create or block pathways."
-            },
-            {
-                "element": "State Mapping",
-                "description": "Maps defining the state of each wall actor, ensuring synchronized and cohesive changes."
-            }
-        ]
-    },
-    "gallery": "labyrinth",
-    "result": {
-        "description": "The Labyrinth System successfully integrates into the narrative-driven gameplay, providing a unique and engaging player experience. The dynamic labyrinth reacts to player actions, maintaining interest and challenge throughout the game.",
-        "embedLink": ""
-    }
-},
-"project6": {
-    "headerImage": [
-        {
-            "src": "../images/zombie_apocalypse_header.png",
-            "position": "center",
-            "size": "cover"
-        }
-    ],
-    "logo": "../images/yuni_logo.png",
-    "projectName": "Top-down Zombie Apocalypse Survival",
-    "projectDescription": "A survival-based game core featuring strategic gameplay elements, realistic AI behaviors, and a modular inventory system.",
-    "projectImage": [
-        {
-            "src": "../images/zombie_apocalypse.png",
-            "position": "center",
-            "size": "cover"
-        }
-    ],
-    "projectType": ["Game Core"],
-    "date": "August 2024",
-    "coreFeatures": [
-        "Rich UMG-based UI for player interaction and feedback.",
-        "Dynamic zombie AI capable of random movement, perception through sight and hearing, and hostile behavior toward players.",
-        "Player movement with smooth and responsive controls utilizing Enhanced Input and the Gameplay Ability System.",
-        "Damage system influenced by insulation attributes, enabling advanced gameplay effects and realistic damage calculation.",
-        "Comprehensive health system with real-time updates and customizable health change events.",
-        "Inventory system supporting item stacking, consumption, and inter-container transfers.",
-        "Backpack system allowing for inventory capacity expansion through equippable gear.",
-        "Interactive hover-over tooltips for detailed item information."
-    ],
-    "systems": [
-        "Enhanced Input System",
-        "Gameplay Ability System (GAS)",
-        "Behavioral Tree",
-        "Environment Query System",
-        "UMG"
-    ],
-    "tools": [
-        "UE 5.3",
-        "C++",
-        "Blueprint"
-    ],
-    "otherFeatures": [],
-    "status": "",
-    "idea": {
-        "image": "",
-        "description": [
-            "The idea behind this project is to deliver a modular, scalable game core for zombie survival gameplay. It focuses on creating lifelike enemy behaviors, realistic damage calculations, and an expandable inventory system to support diverse survival strategies."
-        ]
-    },
-    "design": {
-        "image": [
-            {
-                "src": "images/zombie_apocalypse_design.png",
+                "src": "../images/galleries/labyrinth/image2.png",
                 "position": "center",
-                "size": "contain"
+                "size": "cover"
             }
         ],
-        "description": [
-            "This system is designed with scalability and modularity in mind, enabling developers to integrate advanced gameplay mechanics with minimal adjustments. It leverages a component-based architecture to ensure dynamic interactions between core gameplay systems, offering a seamless blend of utility and reusability across various scenarios."
-        ],
-        "coreElements": [
+        "logo": "../images/yuni_logo.png",
+        "projectName": "Labyrinth System",
+        "projectDescription": "A dynamic labyrinth feature designed to adapt and evolve based on player progress, enhancing narrative-driven gameplay.",
+        "projectImage": [
             {
-                "element": "Gameplay Ability System (GAS)",
-                "description": [
-                    "In this project, GAS is designed to maximize flexibility and ease of use for developers and designers. The integration emphasizes modularity and scalability, allowing for the rapid creation and customization of gameplay abilities without extensive coding.",
-                    "Streamlined Ability Creation: Abilities can be quickly defined and configured through Blueprint or C++ workflows, making it accessible to both technical and non-technical team members.",
-                    "Attribute Management: GAS integrates seamlessly with the project’s attribute systems, providing a centralized solution for managing health, stamina, and other character stats. This reduces redundancy and simplifies balancing.",
-                    "Dynamic Interactions: Abilities can adapt to context, whether triggered by inventory items, equipment, or environmental factors, providing designers with creative freedom to implement complex mechanics.",
-                    "Scalable Blueprint Framework: Designers can leverage Blueprints to modify or extend existing abilities, ensuring faster iteration cycles during prototyping and gameplay refinement."
-                ]
-            },
-            {
-                "element": "Inventory System",
-                "description": "A component-based inventory design allowing creation of regular or equipable items with associated stats and abilities. The modularity ensures items can dynamically impact the gameplay through integration with the ability system."
-            },
-            {
-                "element": "Equipment System",
-                "description": "Allows equipment to grant abilities or modify stats, going beyond mere cosmetics. The system enables seamless setup of items and integration with the character's abilities, providing deep gameplay customization."
-            },
-            {
-                "element": "Backpack System",
-                "description": "Enables dynamic inventory capacity expansion through equippable backpacks."
+                "src": "../images/galleries/labyrinth/image2.png",
+                "position": "center",
+                "size": "cover"
             }
-        ]
+        ],
+        "projectType": [ "Game Feature" ],
+        "date": "April 2023",
+        "coreFeatures": [
+            "Dynamic labyrinth structure changes triggered by in-game events.",
+            "Customizable labyrinth states defined in advance by game designers.",
+            "Interactive wall actors capable of toggling their state to create new pathways.",
+            "Matrix-based system for dynamically evolving level layouts."
+        ],
+        "systems": [],
+        "tools": [ "UE 5.2", "Blueprints" ],
+        "otherFeatures": [],
+        "status": "",
+        "idea": {
+            "image": "",
+            "description": [
+                "Developed as part of a collaboration with a scriptwriter, the Labyrinth System brings a dynamic and engaging level design to life. Its ever-changing layout reacts to player progress, creating new pathways and keeping gameplay unpredictable and challenging."
+            ]
+        },
+        "design": {
+            "image": "",
+            "description": [
+                "The Labyrinth System leverages Unreal Engine’s actor-based system to generate flexible and adaptive pathways. Walls designed as 'switchers' toggle states to alter the labyrinth, creating limitless exploration possibilities while maintaining narrative coherence."
+            ],
+            "coreElements": [
+                {
+                    "element": "Dynamic Labyrinth Actors",
+                    "description": "Matrix of actors forming the labyrinth, enabling dynamic layout changes with predefined states."
+                },
+                {
+                    "element": "Wall Actors",
+                    "description": "Equipped with toggling capabilities to dynamically create or block pathways."
+                },
+                {
+                    "element": "State Mapping",
+                    "description": "Maps defining the state of each wall actor, ensuring synchronized and cohesive changes."
+                }
+            ]
+        },
+        "gallery": "labyrinth",
+        "result": {
+            "description": "The Labyrinth System successfully integrates into the narrative-driven gameplay, providing a unique and engaging player experience. The dynamic labyrinth reacts to player actions, maintaining interest and challenge throughout the game.",
+            "embedLink": ""
+        }
     },
-    "result": {
-        "description": "The core mechanics of this game lay a strong foundation for an engaging zombie survival experience, enabling future expansions like crafting, base building, and cooperative multiplayer.",
-        "embedLink": "https://www.youtube.com/embed/YBncRKhCO0E",
-        "externalLink": "https://www.youtube.com/watch?v=YBncRKhCO0E"
-    }
-}
+    "project6": {
+        "headerImage": [
+            {
+                "src": "../images/zombie_apocalypse_header.png",
+                "position": "center",
+                "size": "cover"
+            }
+        ],
+        "logo": "../images/yuni_logo.png",
+        "projectName": "Top-down Zombie Apocalypse Survival",
+        "projectDescription": "A survival-based game core featuring strategic gameplay elements, realistic AI behaviors, and a modular inventory system.",
+        "projectImage": [
+            {
+                "src": "../images/zombie_apocalypse.png",
+                "position": "center",
+                "size": "cover"
+            }
+        ],
+        "projectType": [ "Game Core" ],
+        "date": "August 2024",
+        "coreFeatures": [
+            "Rich UMG-based UI for player interaction and feedback.",
+            "Dynamic zombie AI capable of random movement, perception through sight and hearing, and hostile behavior toward players.",
+            "Player movement with smooth and responsive controls utilizing Enhanced Input and the Gameplay Ability System.",
+            "Damage system influenced by insulation attributes, enabling advanced gameplay effects and realistic damage calculation.",
+            "Comprehensive health system with real-time updates and customizable health change events.",
+            "Inventory system supporting item stacking, consumption, and inter-container transfers.",
+            "Backpack system allowing for inventory capacity expansion through equippable gear.",
+            "Interactive hover-over tooltips for detailed item information."
+        ],
+        "systems": [
+            "Enhanced Input System",
+            "Gameplay Ability System (GAS)",
+            "Behavioral Tree",
+            "Environment Query System",
+            "UMG"
+        ],
+        "tools": [
+            "UE 5.3",
+            "C++",
+            "Blueprint"
+        ],
+        "otherFeatures": [],
+        "status": "",
+        "idea": {
+            "image": "",
+            "description": [
+                "The idea behind this project is to deliver a modular, scalable game core for zombie survival gameplay. It focuses on creating lifelike enemy behaviors, realistic damage calculations, and an expandable inventory system to support diverse survival strategies."
+            ]
+        },
+        "design": {
+            "image": [
+                {
+                    "src": "images/zombie_apocalypse_design.png",
+                    "position": "center",
+                    "size": "contain"
+                }
+            ],
+            "description": [
+                "This system is designed with scalability and modularity in mind, enabling developers to integrate advanced gameplay mechanics with minimal adjustments. It leverages a component-based architecture to ensure dynamic interactions between core gameplay systems, offering a seamless blend of utility and reusability across various scenarios."
+            ],
+            "coreElements": [
+                {
+                    "element": "Gameplay Ability System (GAS)",
+                    "description": [
+                        "In this project, GAS is designed to maximize flexibility and ease of use for developers and designers. The integration emphasizes modularity and scalability, allowing for the rapid creation and customization of gameplay abilities without extensive coding.",
+                        "Streamlined Ability Creation: Abilities can be quickly defined and configured through Blueprint or C++ workflows, making it accessible to both technical and non-technical team members.",
+                        "Attribute Management: GAS integrates seamlessly with the project’s attribute systems, providing a centralized solution for managing health, stamina, and other character stats. This reduces redundancy and simplifies balancing.",
+                        "Dynamic Interactions: Abilities can adapt to context, whether triggered by inventory items, equipment, or environmental factors, providing designers with creative freedom to implement complex mechanics.",
+                        "Scalable Blueprint Framework: Designers can leverage Blueprints to modify or extend existing abilities, ensuring faster iteration cycles during prototyping and gameplay refinement."
+                    ]
+                },
+                {
+                    "element": "Inventory System",
+                    "description": "A component-based inventory design allowing creation of regular or equipable items with associated stats and abilities. The modularity ensures items can dynamically impact the gameplay through integration with the ability system."
+                },
+                {
+                    "element": "Equipment System",
+                    "description": "Allows equipment to grant abilities or modify stats, going beyond mere cosmetics. The system enables seamless setup of items and integration with the character's abilities, providing deep gameplay customization."
+                },
+                {
+                    "element": "Backpack System",
+                    "description": "Enables dynamic inventory capacity expansion through equippable backpacks."
+                }
+            ]
+        },
+        "result": {
+            "description": "The core mechanics of this game lay a strong foundation for an engaging zombie survival experience, enabling future expansions like crafting, base building, and cooperative multiplayer.",
+            "embedLink": "https://www.youtube.com/embed/YBncRKhCO0E",
+            "externalLink": "https://www.youtube.com/watch?v=YBncRKhCO0E"
+        }
+    },
+    "project7": {
+        "headerImage": [
+            {
+                "src": "../images/yunieos_project_header.png",
+                "position": "top",
+                "size": "cover"
+            }
+        ],
+        "logo": "../images/yuni_logo.png",
+        "projectName": "YuniEOS",
+        "projectDescription": "A custom Unreal Engine plugin designed to integrate Epic Online Services (EOS) seamlessly, featuring session management, login handling, and full Blueprint support.",
+        "projectImage": [
+            {
+                "src": "../images/yunieos_project_card.png",
+                "position": "center",
+                "size": "cover"
+            }
+        ],
+        "projectType": [
+            "Unreal Engine Plugin",
+            "Multiplayer System"
+        ],
+        "date": "January 2025",
+        "coreFeatures": [
+            "Seamless EOS integration for login and authentication.",
+            "Session management including creation, finding, joining, and destruction.",
+            "Full async task system for optimized performance and Blueprint support."
+        ],
+        "systems": [
+            "Online Subsystem (EOS)",
+            "GameInstanceSubsystem for centralized login/session handling"
+        ],
+        "tools": [
+            "C++",
+            "Blueprints",
+            "Unreal Engine 5.5",
+            "Epic Online Services (EOS)"
+        ],
+        "otherFeatures": [
+            "Error Handling and Debug Logging"
+        ],
+        "status": "WIP",
+        "idea": {
+            "image": "",
+            "description": [
+                "The goal of YuniEOS is to simplify multiplayer game development in Unreal Engine by providing a robust EOS integration.",
+                "The plugin is designed to be modular, extensible, and fully usable in both C++ and Blueprints."
+            ]
+        },
+        "design": {
+            "image": [
+                {
+                    "src": "../images/yunieos_project_design.png",
+                    "position": "center",
+                    "size": "contain"
+                }
+            ],
+            "description": [
+                "Built with a modular architecture, ensuring flexibility in expanding session features.",
+                "Utilizes BlueprintAsyncActionBase for clean and efficient asynchronous task execution."
+            ],
+            "coreElements": [
+                {
+                    "element": "Login System",
+                    "description": "Handles authentication and auto-login for Epic Online Services."
+                },
+                {
+                    "element": "Session Management",
+                    "description": "Supports session creation, searching, joining, and destruction."
+                }
+            ]
+        },
+        "gallery": "yuni_eos",
+        "result": {
+            "description": "The plugin successfully handles EOS integration in Unreal Engine, offering an optimized workflow for multiplayer session management.",
+            "embedLink": ""
+        }
 
+    },
+    "project8": {
+        "headerImage": [
+            {
+                "src": "../images/yuni_customizable_weapon_header.png",
+                "position": "center",
+                "size": "cover"
+            }
+        ],
+        "logo": "../images/yuni_logo.png",
+        "projectName": "YuniCustomizableWeapon",
+        "projectDescription": "A fully modular and multiplayer-supported weapon customization plugin for Unreal Engine 5, enabling real-time modifications with seamless network replication and persistent loadouts.",
+        "projectImage": [
+            {
+                "src": "../images/yuni_customizable_weapon.png",
+                "position": "center",
+                "size": "cover"
+            }
+        ],
+        "projectType": [ "Unreal Engine Plugin", "Game Feature", "Multiplayer System" ],
+        "date": "February 2024",
+        "coreFeatures": [
+            "Fully modular weapon customization system.",
+            "Supports Static Mesh, Skeletal Mesh, and Actor attachments.",
+            "Optimized network replication using FastArraySerializer.",
+            "Gameplay Tag-driven attachment system for flexibility.",
+            "Persistent weapon loadout system with Save/Load functionality.",
+            "Component-based design for easy integration into projects.",
+            "Seamless UI integration for in-game customization."
+        ],
+        "systems": [
+            "FastArraySerializer for efficient multiplayer state replication.",
+            "Gameplay Tags for dynamic attachment slot mapping.",
+            "SaveGame system for storing and retrieving weapon configurations.",
+            "Blueprint-friendly API for easy extensibility."
+        ],
+        "tools": [
+            "Unreal Engine 5",
+            "C++ & Blueprints",
+            "UMG UI Framework"
+        ],
+        "otherFeatures": [
+            "Server-authoritative customization management.",
+            "Flexible attachment rules based on weapon types.",
+            "Support for custom mod functionality via Actor-based attachments.",
+            "Optimized network traffic handling to ensure performance."
+        ],
+        "status": "WIP",
+        "idea": {
+            "image": "",
+            "description": [
+                "The idea behind YuniCustomizableWeapon was to create a highly flexible and modular customization system that seamlessly integrates into existing Unreal Engine projects with minimal intrusion. The goal was to design a system that allows to easily configure weapon modifications without requiring extensive changes to core gameplay mechanics. By leveraging a component-based approach and gameplay tags, the system ensures that customization remains dynamic, efficient, and easy to implement across different weapon types."
+            ]
+        },
+        "design": {
+            "image": [
+                {
+                    "src": "../images/yuni_customizable_weapon_idea.png",
+                    "position": "center",
+                    "size": "contain"
+                }
+            ],
+            "description": [
+                "The system follows a modular approach where each weapon has a dedicated customization component that manages applied mods and socket mappings. Mods are defined through assets that specify their type, attach points, and gameplay tags for flexible integration across different weapon types."
+            ],
+            "coreElements": [
+                {
+                    "element": "Weapon Customization Component",
+                    "description": "Handles the application, removal, and replication of weapon modifications, ensuring consistent state across all clients."
+                },
+                {
+                    "element": "Attachment Definition",
+                    "description": "Defines the mod type, associated socket, and supported weapon compatibility via Gameplay Tags."
+                },
+                {
+                    "element": "Functional Socket Mapping",
+                    "description": "Uses gameplay tags to dynamically resolve attachment sockets, allowing flexible mod placements across various weapons."
+                },
+                {
+                    "element": "Networking & Replication",
+                    "description": "Leverages FastArraySerializer for efficient state replication, ensuring that all clients correctly display modifications in real time."
+                },
+                {
+                    "element": "Save & Load System",
+                    "description": "Enables persistent weapon customization, allowing players to maintain their weapon configurations between sessions."
+                }
+            ]
+        },
+        "gallery": "",
+        "result": {
+            "description": "The plugin successfully enables real-time, replicated weapon customization for Unreal Engine 5, providing a seamless experience for both single-player and multiplayer environments. The modular design and flexible architecture make it theoretically possible to extend beyond weapons, allowing for customization of other game elements such as vehicles, drones, or other configurable assets. Future testing will explore these additional applications.",
+            "embedLink": "https://www.youtube.com/embed/KzMo_oUp5X8",
+            "externalLink": "https://www.youtube.com/watch?v=KzMo_oUp5X8"
+        }
+    }
 
 }

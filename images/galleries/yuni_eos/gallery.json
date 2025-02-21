@@ -1,0 +1,24 @@
+{
+    "gallery": [
+        {
+            "image": "image1.png",
+            "caption": "Epic Overlay"
+        },
+        {
+            "image": "image2.png",
+            "caption": "AxonWorks Credential Logged In"
+        },
+        {
+            "image": "image3.png",
+            "caption": "YuniTech Credential Logged In"
+        },
+        {
+            "image": "image4.png",
+            "caption": "YuniTech Hosting"
+        },
+        {
+            "image": "image5.png",
+            "caption": "Axon Client"
+        }
+    ]
+}
