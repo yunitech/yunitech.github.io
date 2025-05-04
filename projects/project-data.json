@@ -7,7 +7,7 @@
             "size": "cover"
         }
     ],
-    "logo": "../images/yuniel_logo.png",
+    "logo": "../images/yuni_logo.png",
     "projectName": "True First Person Shooter Template",
     "projectDescription": "An experimental Unreal Engine template exploring full-body awareness, GAS integration, and scalable team-based multiplayer logic. Developed under my Epic Games dev organization, where I regularly playtest with a team of members to validate features and improve gameplay based on real feedback.",
     "projectImage": [
@@ -106,6 +106,100 @@
         "embedLink": "https://www.youtube.com/embed/sample_video_id"
     }
 },
+    "project8": {
+        "headerImage": [
+            {
+                "src": "../images/yuni_customizable_weapon_header.png",
+                "position": "center",
+                "size": "cover"
+            }
+        ],
+        "logo": "../images/yuni_logo.png",
+        "projectName": "YuniCustomizableWeapon",
+        "projectDescription": "A fully modular and multiplayer-supported weapon customization plugin for Unreal Engine 5, enabling real-time modifications with seamless network replication and persistent loadouts.",
+        "projectImage": [
+            {
+                "src": "../images/yuni_customizable_weapon.png",
+                "position": "center",
+                "size": "cover"
+            }
+        ],
+        "projectType": [ "Unreal Engine Plugin", "Game Feature", "Multiplayer System" ],
+        "date": "February 2024",
+        "coreFeatures": [
+            "Fully modular weapon customization system.",
+            "Supports Static Mesh, Skeletal Mesh, and Actor attachments.",
+            "Optimized network replication using FastArraySerializer.",
+            "Gameplay Tag-driven attachment system for flexibility.",
+            "Persistent weapon loadout system with Save/Load functionality.",
+            "Component-based design for easy integration into projects.",
+            "Seamless UI integration for in-game customization."
+        ],
+        "systems": [
+            "FastArraySerializer for efficient multiplayer state replication.",
+            "Gameplay Tags for dynamic attachment slot mapping.",
+            "SaveGame system for storing and retrieving weapon configurations.",
+            "Blueprint-friendly API for easy extensibility."
+        ],
+        "tools": [
+            "Unreal Engine 5",
+            "C++ & Blueprints",
+            "UMG UI Framework"
+        ],
+        "otherFeatures": [
+            "Server-authoritative customization management.",
+            "Flexible attachment rules based on weapon types.",
+            "Support for custom mod functionality via Actor-based attachments.",
+            "Optimized network traffic handling to ensure performance."
+        ],
+        "status": "WIP",
+        "idea": {
+            "image": "",
+            "description": [
+                "The idea behind YuniCustomizableWeapon was to create a highly flexible and modular customization system that seamlessly integrates into existing Unreal Engine projects with minimal intrusion. The goal was to design a system that allows to easily configure weapon modifications without requiring extensive changes to core gameplay mechanics. By leveraging a component-based approach and gameplay tags, the system ensures that customization remains dynamic, efficient, and easy to implement across different weapon types."
+            ]
+        },
+        "design": {
+            "image": [
+                {
+                    "src": "../images/yuni_customizable_weapon_idea.png",
+                    "position": "center",
+                    "size": "contain"
+                }
+            ],
+            "description": [
+                "The system follows a modular approach where each weapon has a dedicated customization component that manages applied mods and socket mappings. Mods are defined through assets that specify their type, attach points, and gameplay tags for flexible integration across different weapon types."
+            ],
+            "coreElements": [
+                {
+                    "element": "Weapon Customization Component",
+                    "description": "Handles the application, removal, and replication of weapon modifications, ensuring consistent state across all clients."
+                },
+                {
+                    "element": "Attachment Definition",
+                    "description": "Defines the mod type, associated socket, and supported weapon compatibility via Gameplay Tags."
+                },
+                {
+                    "element": "Functional Socket Mapping",
+                    "description": "Uses gameplay tags to dynamically resolve attachment sockets, allowing flexible mod placements across various weapons."
+                },
+                {
+                    "element": "Networking & Replication",
+                    "description": "Leverages FastArraySerializer for efficient state replication, ensuring that all clients correctly display modifications in real time."
+                },
+                {
+                    "element": "Save & Load System",
+                    "description": "Enables persistent weapon customization, allowing players to maintain their weapon configurations between sessions."
+                }
+            ]
+        },
+        "gallery": "",
+        "result": {
+            "description": "The plugin successfully enables real-time, replicated weapon customization for Unreal Engine 5, providing a seamless experience for both single-player and multiplayer environments. The modular design and flexible architecture make it theoretically possible to extend beyond weapons, allowing for customization of other game elements such as vehicles, drones, or other configurable assets. Future testing will explore these additional applications.",
+            "embedLink": "https://www.youtube.com/embed/KzMo_oUp5X8",
+            "externalLink": "https://www.youtube.com/watch?v=KzMo_oUp5X8"
+        }
+    },
     "project1": {
         "headerImage": [
             {
@@ -235,6 +329,177 @@
             "description": "Demonstrates the power and flexibility of the Gameplay Ability System (GAS), delivering a robust, modular framework for complex gameplay mechanics. Its scalable design ensures seamless integration and adaptability across diverse game scenarios, setting a strong foundation for future development.",
             "embedLink": "https://www.youtube.com/embed/u5z1X-DF2Yk?si=CsKiyza6eKJ_u1za"
         }
+    },
+    "project6": {
+        "headerImage": [
+            {
+                "src": "../images/zombie_apocalypse_header.png",
+                "position": "center",
+                "size": "cover"
+            }
+        ],
+        "logo": "../images/yuni_logo.png",
+        "projectName": "Top-down Zombie Apocalypse Survival",
+        "projectDescription": "A survival-based game core featuring strategic gameplay elements, realistic AI behaviors, and a modular inventory system.",
+        "projectImage": [
+            {
+                "src": "../images/zombie_apocalypse.png",
+                "position": "center",
+                "size": "cover"
+            }
+        ],
+        "projectType": [ "Game Core" ],
+        "date": "August 2024",
+        "coreFeatures": [
+            "Rich UMG-based UI for player interaction and feedback.",
+            "Dynamic zombie AI capable of random movement, perception through sight and hearing, and hostile behavior toward players.",
+            "Player movement with smooth and responsive controls utilizing Enhanced Input and the Gameplay Ability System.",
+            "Damage system influenced by insulation attributes, enabling advanced gameplay effects and realistic damage calculation.",
+            "Comprehensive health system with real-time updates and customizable health change events.",
+            "Inventory system supporting item stacking, consumption, and inter-container transfers.",
+            "Backpack system allowing for inventory capacity expansion through equippable gear.",
+            "Interactive hover-over tooltips for detailed item information."
+        ],
+        "systems": [
+            "Enhanced Input System",
+            "Gameplay Ability System (GAS)",
+            "Behavioral Tree",
+            "Environment Query System",
+            "UMG"
+        ],
+        "tools": [
+            "UE 5.3",
+            "C++",
+            "Blueprint"
+        ],
+        "otherFeatures": [],
+        "status": "",
+        "idea": {
+            "image": "",
+            "description": [
+                "The idea behind this project is to deliver a modular, scalable game core for zombie survival gameplay. It focuses on creating lifelike enemy behaviors, realistic damage calculations, and an expandable inventory system to support diverse survival strategies."
+            ]
+        },
+        "design": {
+            "image": [
+                {
+                    "src": "images/zombie_apocalypse_design.png",
+                    "position": "center",
+                    "size": "contain"
+                }
+            ],
+            "description": [
+                "This system is designed with scalability and modularity in mind, enabling developers to integrate advanced gameplay mechanics with minimal adjustments. It leverages a component-based architecture to ensure dynamic interactions between core gameplay systems, offering a seamless blend of utility and reusability across various scenarios."
+            ],
+            "coreElements": [
+                {
+                    "element": "Gameplay Ability System (GAS)",
+                    "description": [
+                        "In this project, GAS is designed to maximize flexibility and ease of use for developers and designers. The integration emphasizes modularity and scalability, allowing for the rapid creation and customization of gameplay abilities without extensive coding.",
+                        "Streamlined Ability Creation: Abilities can be quickly defined and configured through Blueprint or C++ workflows, making it accessible to both technical and non-technical team members.",
+                        "Attribute Management: GAS integrates seamlessly with the project’s attribute systems, providing a centralized solution for managing health, stamina, and other character stats. This reduces redundancy and simplifies balancing.",
+                        "Dynamic Interactions: Abilities can adapt to context, whether triggered by inventory items, equipment, or environmental factors, providing designers with creative freedom to implement complex mechanics.",
+                        "Scalable Blueprint Framework: Designers can leverage Blueprints to modify or extend existing abilities, ensuring faster iteration cycles during prototyping and gameplay refinement."
+                    ]
+                },
+                {
+                    "element": "Inventory System",
+                    "description": "A component-based inventory design allowing creation of regular or equipable items with associated stats and abilities. The modularity ensures items can dynamically impact the gameplay through integration with the ability system."
+                },
+                {
+                    "element": "Equipment System",
+                    "description": "Allows equipment to grant abilities or modify stats, going beyond mere cosmetics. The system enables seamless setup of items and integration with the character's abilities, providing deep gameplay customization."
+                },
+                {
+                    "element": "Backpack System",
+                    "description": "Enables dynamic inventory capacity expansion through equippable backpacks."
+                }
+            ]
+        },
+        "result": {
+            "description": "The core mechanics of this game lay a strong foundation for an engaging zombie survival experience, enabling future expansions like crafting, base building, and cooperative multiplayer.",
+            "embedLink": "https://www.youtube.com/embed/YBncRKhCO0E",
+            "externalLink": "https://www.youtube.com/watch?v=YBncRKhCO0E"
+        }
+    },
+    "project7": {
+        "headerImage": [
+            {
+                "src": "../images/yunieos_project_header.png",
+                "position": "top",
+                "size": "cover"
+            }
+        ],
+        "logo": "../images/yuni_logo.png",
+        "projectName": "YuniEOS",
+        "projectDescription": "A custom Unreal Engine plugin designed to integrate Epic Online Services (EOS) seamlessly, featuring session management, login handling, and full Blueprint support.",
+        "projectImage": [
+            {
+                "src": "../images/yunieos_project_card.png",
+                "position": "center",
+                "size": "cover"
+            }
+        ],
+        "projectType": [
+            "Unreal Engine Plugin",
+            "Multiplayer System"
+        ],
+        "date": "January 2025",
+        "coreFeatures": [
+            "Seamless EOS integration for login and authentication.",
+            "Session management including creation, finding, joining, and destruction.",
+            "Full async task system for optimized performance and Blueprint support."
+        ],
+        "systems": [
+            "Online Subsystem (EOS)",
+            "GameInstanceSubsystem for centralized login/session handling"
+        ],
+        "tools": [
+            "C++",
+            "Blueprints",
+            "Unreal Engine 5.5",
+            "Epic Online Services (EOS)"
+        ],
+        "otherFeatures": [
+            "Error Handling and Debug Logging"
+        ],
+        "status": "WIP",
+        "idea": {
+            "image": "",
+            "description": [
+                "The goal of YuniEOS is to simplify multiplayer game development in Unreal Engine by providing a robust EOS integration.",
+                "The plugin is designed to be modular, extensible, and fully usable in both C++ and Blueprints."
+            ]
+        },
+        "design": {
+            "image": [
+                {
+                    "src": "../images/yunieos_project_design.png",
+                    "position": "center",
+                    "size": "contain"
+                }
+            ],
+            "description": [
+                "Built with a modular architecture, ensuring flexibility in expanding session features.",
+                "Utilizes BlueprintAsyncActionBase for clean and efficient asynchronous task execution."
+            ],
+            "coreElements": [
+                {
+                    "element": "Login System",
+                    "description": "Handles authentication and auto-login for Epic Online Services."
+                },
+                {
+                    "element": "Session Management",
+                    "description": "Supports session creation, searching, joining, and destruction."
+                }
+            ]
+        },
+        "gallery": "yuni_eos",
+        "result": {
+            "description": "The plugin successfully handles EOS integration in Unreal Engine, offering an optimized workflow for multiplayer session management.",
+            "embedLink": ""
+        }
+
     },
     "project2": {
         "headerImage": [
@@ -568,271 +833,6 @@
         "result": {
             "description": "The Labyrinth System successfully integrates into the narrative-driven gameplay, providing a unique and engaging player experience. The dynamic labyrinth reacts to player actions, maintaining interest and challenge throughout the game.",
             "embedLink": ""
-        }
-    },
-    "project6": {
-        "headerImage": [
-            {
-                "src": "../images/zombie_apocalypse_header.png",
-                "position": "center",
-                "size": "cover"
-            }
-        ],
-        "logo": "../images/yuni_logo.png",
-        "projectName": "Top-down Zombie Apocalypse Survival",
-        "projectDescription": "A survival-based game core featuring strategic gameplay elements, realistic AI behaviors, and a modular inventory system.",
-        "projectImage": [
-            {
-                "src": "../images/zombie_apocalypse.png",
-                "position": "center",
-                "size": "cover"
-            }
-        ],
-        "projectType": [ "Game Core" ],
-        "date": "August 2024",
-        "coreFeatures": [
-            "Rich UMG-based UI for player interaction and feedback.",
-            "Dynamic zombie AI capable of random movement, perception through sight and hearing, and hostile behavior toward players.",
-            "Player movement with smooth and responsive controls utilizing Enhanced Input and the Gameplay Ability System.",
-            "Damage system influenced by insulation attributes, enabling advanced gameplay effects and realistic damage calculation.",
-            "Comprehensive health system with real-time updates and customizable health change events.",
-            "Inventory system supporting item stacking, consumption, and inter-container transfers.",
-            "Backpack system allowing for inventory capacity expansion through equippable gear.",
-            "Interactive hover-over tooltips for detailed item information."
-        ],
-        "systems": [
-            "Enhanced Input System",
-            "Gameplay Ability System (GAS)",
-            "Behavioral Tree",
-            "Environment Query System",
-            "UMG"
-        ],
-        "tools": [
-            "UE 5.3",
-            "C++",
-            "Blueprint"
-        ],
-        "otherFeatures": [],
-        "status": "",
-        "idea": {
-            "image": "",
-            "description": [
-                "The idea behind this project is to deliver a modular, scalable game core for zombie survival gameplay. It focuses on creating lifelike enemy behaviors, realistic damage calculations, and an expandable inventory system to support diverse survival strategies."
-            ]
-        },
-        "design": {
-            "image": [
-                {
-                    "src": "images/zombie_apocalypse_design.png",
-                    "position": "center",
-                    "size": "contain"
-                }
-            ],
-            "description": [
-                "This system is designed with scalability and modularity in mind, enabling developers to integrate advanced gameplay mechanics with minimal adjustments. It leverages a component-based architecture to ensure dynamic interactions between core gameplay systems, offering a seamless blend of utility and reusability across various scenarios."
-            ],
-            "coreElements": [
-                {
-                    "element": "Gameplay Ability System (GAS)",
-                    "description": [
-                        "In this project, GAS is designed to maximize flexibility and ease of use for developers and designers. The integration emphasizes modularity and scalability, allowing for the rapid creation and customization of gameplay abilities without extensive coding.",
-                        "Streamlined Ability Creation: Abilities can be quickly defined and configured through Blueprint or C++ workflows, making it accessible to both technical and non-technical team members.",
-                        "Attribute Management: GAS integrates seamlessly with the project’s attribute systems, providing a centralized solution for managing health, stamina, and other character stats. This reduces redundancy and simplifies balancing.",
-                        "Dynamic Interactions: Abilities can adapt to context, whether triggered by inventory items, equipment, or environmental factors, providing designers with creative freedom to implement complex mechanics.",
-                        "Scalable Blueprint Framework: Designers can leverage Blueprints to modify or extend existing abilities, ensuring faster iteration cycles during prototyping and gameplay refinement."
-                    ]
-                },
-                {
-                    "element": "Inventory System",
-                    "description": "A component-based inventory design allowing creation of regular or equipable items with associated stats and abilities. The modularity ensures items can dynamically impact the gameplay through integration with the ability system."
-                },
-                {
-                    "element": "Equipment System",
-                    "description": "Allows equipment to grant abilities or modify stats, going beyond mere cosmetics. The system enables seamless setup of items and integration with the character's abilities, providing deep gameplay customization."
-                },
-                {
-                    "element": "Backpack System",
-                    "description": "Enables dynamic inventory capacity expansion through equippable backpacks."
-                }
-            ]
-        },
-        "result": {
-            "description": "The core mechanics of this game lay a strong foundation for an engaging zombie survival experience, enabling future expansions like crafting, base building, and cooperative multiplayer.",
-            "embedLink": "https://www.youtube.com/embed/YBncRKhCO0E",
-            "externalLink": "https://www.youtube.com/watch?v=YBncRKhCO0E"
-        }
-    },
-    "project7": {
-        "headerImage": [
-            {
-                "src": "../images/yunieos_project_header.png",
-                "position": "top",
-                "size": "cover"
-            }
-        ],
-        "logo": "../images/yuni_logo.png",
-        "projectName": "YuniEOS",
-        "projectDescription": "A custom Unreal Engine plugin designed to integrate Epic Online Services (EOS) seamlessly, featuring session management, login handling, and full Blueprint support.",
-        "projectImage": [
-            {
-                "src": "../images/yunieos_project_card.png",
-                "position": "center",
-                "size": "cover"
-            }
-        ],
-        "projectType": [
-            "Unreal Engine Plugin",
-            "Multiplayer System"
-        ],
-        "date": "January 2025",
-        "coreFeatures": [
-            "Seamless EOS integration for login and authentication.",
-            "Session management including creation, finding, joining, and destruction.",
-            "Full async task system for optimized performance and Blueprint support."
-        ],
-        "systems": [
-            "Online Subsystem (EOS)",
-            "GameInstanceSubsystem for centralized login/session handling"
-        ],
-        "tools": [
-            "C++",
-            "Blueprints",
-            "Unreal Engine 5.5",
-            "Epic Online Services (EOS)"
-        ],
-        "otherFeatures": [
-            "Error Handling and Debug Logging"
-        ],
-        "status": "WIP",
-        "idea": {
-            "image": "",
-            "description": [
-                "The goal of YuniEOS is to simplify multiplayer game development in Unreal Engine by providing a robust EOS integration.",
-                "The plugin is designed to be modular, extensible, and fully usable in both C++ and Blueprints."
-            ]
-        },
-        "design": {
-            "image": [
-                {
-                    "src": "../images/yunieos_project_design.png",
-                    "position": "center",
-                    "size": "contain"
-                }
-            ],
-            "description": [
-                "Built with a modular architecture, ensuring flexibility in expanding session features.",
-                "Utilizes BlueprintAsyncActionBase for clean and efficient asynchronous task execution."
-            ],
-            "coreElements": [
-                {
-                    "element": "Login System",
-                    "description": "Handles authentication and auto-login for Epic Online Services."
-                },
-                {
-                    "element": "Session Management",
-                    "description": "Supports session creation, searching, joining, and destruction."
-                }
-            ]
-        },
-        "gallery": "yuni_eos",
-        "result": {
-            "description": "The plugin successfully handles EOS integration in Unreal Engine, offering an optimized workflow for multiplayer session management.",
-            "embedLink": ""
-        }
-
-    },
-    "project8": {
-        "headerImage": [
-            {
-                "src": "../images/yuni_customizable_weapon_header.png",
-                "position": "center",
-                "size": "cover"
-            }
-        ],
-        "logo": "../images/yuni_logo.png",
-        "projectName": "YuniCustomizableWeapon",
-        "projectDescription": "A fully modular and multiplayer-supported weapon customization plugin for Unreal Engine 5, enabling real-time modifications with seamless network replication and persistent loadouts.",
-        "projectImage": [
-            {
-                "src": "../images/yuni_customizable_weapon.png",
-                "position": "center",
-                "size": "cover"
-            }
-        ],
-        "projectType": [ "Unreal Engine Plugin", "Game Feature", "Multiplayer System" ],
-        "date": "February 2024",
-        "coreFeatures": [
-            "Fully modular weapon customization system.",
-            "Supports Static Mesh, Skeletal Mesh, and Actor attachments.",
-            "Optimized network replication using FastArraySerializer.",
-            "Gameplay Tag-driven attachment system for flexibility.",
-            "Persistent weapon loadout system with Save/Load functionality.",
-            "Component-based design for easy integration into projects.",
-            "Seamless UI integration for in-game customization."
-        ],
-        "systems": [
-            "FastArraySerializer for efficient multiplayer state replication.",
-            "Gameplay Tags for dynamic attachment slot mapping.",
-            "SaveGame system for storing and retrieving weapon configurations.",
-            "Blueprint-friendly API for easy extensibility."
-        ],
-        "tools": [
-            "Unreal Engine 5",
-            "C++ & Blueprints",
-            "UMG UI Framework"
-        ],
-        "otherFeatures": [
-            "Server-authoritative customization management.",
-            "Flexible attachment rules based on weapon types.",
-            "Support for custom mod functionality via Actor-based attachments.",
-            "Optimized network traffic handling to ensure performance."
-        ],
-        "status": "WIP",
-        "idea": {
-            "image": "",
-            "description": [
-                "The idea behind YuniCustomizableWeapon was to create a highly flexible and modular customization system that seamlessly integrates into existing Unreal Engine projects with minimal intrusion. The goal was to design a system that allows to easily configure weapon modifications without requiring extensive changes to core gameplay mechanics. By leveraging a component-based approach and gameplay tags, the system ensures that customization remains dynamic, efficient, and easy to implement across different weapon types."
-            ]
-        },
-        "design": {
-            "image": [
-                {
-                    "src": "../images/yuni_customizable_weapon_idea.png",
-                    "position": "center",
-                    "size": "contain"
-                }
-            ],
-            "description": [
-                "The system follows a modular approach where each weapon has a dedicated customization component that manages applied mods and socket mappings. Mods are defined through assets that specify their type, attach points, and gameplay tags for flexible integration across different weapon types."
-            ],
-            "coreElements": [
-                {
-                    "element": "Weapon Customization Component",
-                    "description": "Handles the application, removal, and replication of weapon modifications, ensuring consistent state across all clients."
-                },
-                {
-                    "element": "Attachment Definition",
-                    "description": "Defines the mod type, associated socket, and supported weapon compatibility via Gameplay Tags."
-                },
-                {
-                    "element": "Functional Socket Mapping",
-                    "description": "Uses gameplay tags to dynamically resolve attachment sockets, allowing flexible mod placements across various weapons."
-                },
-                {
-                    "element": "Networking & Replication",
-                    "description": "Leverages FastArraySerializer for efficient state replication, ensuring that all clients correctly display modifications in real time."
-                },
-                {
-                    "element": "Save & Load System",
-                    "description": "Enables persistent weapon customization, allowing players to maintain their weapon configurations between sessions."
-                }
-            ]
-        },
-        "gallery": "",
-        "result": {
-            "description": "The plugin successfully enables real-time, replicated weapon customization for Unreal Engine 5, providing a seamless experience for both single-player and multiplayer environments. The modular design and flexible architecture make it theoretically possible to extend beyond weapons, allowing for customization of other game elements such as vehicles, drones, or other configurable assets. Future testing will explore these additional applications.",
-            "embedLink": "https://www.youtube.com/embed/KzMo_oUp5X8",
-            "externalLink": "https://www.youtube.com/watch?v=KzMo_oUp5X8"
         }
     }
 
