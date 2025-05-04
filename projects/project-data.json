@@ -1,4 +1,111 @@
 {
+"project9": {
+    "headerImage": [
+        {
+            "src": "../images/true_fps_template_header.png",
+            "position": "center",
+            "size": "cover"
+        }
+    ],
+    "logo": "../images/yuniel_logo.png",
+    "projectName": "True First Person Shooter Template",
+    "projectDescription": "An experimental Unreal Engine template exploring full-body awareness, GAS integration, and scalable team-based multiplayer logic. Developed under my Epic Games dev organization, where I regularly playtest with a team of members to validate features and improve gameplay based on real feedback.",
+    "projectImage": [
+        {
+            "src": "../images/true_fps_template.png",
+            "position": "center",
+            "size": "cover"
+        }
+    ],
+    "projectType": ["Game Template"],
+    "date": "April 2025",
+    "coreFeatures": [
+        "True first-person view with visible full-body awareness.",
+        "Multiplayer support including team-based game logic.",
+        "Component-based architecture for weapons and character features.",
+        "Integration with GAS for character abilities, abilities from equipment and interactions.",
+        "Attribute-based movement speed driven by GAS.",
+        "Weapons affect player mobility with equipped and unequipped weight factors.",
+        "Dynamic minimap system with customizable indicators.",
+        "World Marker Ability system for in-game communication."
+    ],
+    "systems": [
+        "Gameplay Ability System (GAS)",
+        "Enhanced Input",
+        "Replication Framework",
+        "Animation Blueprint Layers"
+    ],
+    "tools": [
+        "Unreal Engine 5",        
+        "Blueprints",
+        "C++"
+    ],
+    "otherFeatures": [
+        "Quick-swap weapon system.",
+        "Dynamic loadout support.",
+        "Friendly-fire toggle and team logic abstraction.",
+        "Weapon pickup system with stat retention and drop logic.",
+        "Drop Grenade and Claymore Abilities with full replication.",
+        "Explosive actors using shared ability + health logic.",
+        "Sound-synced physics for immersive weapon drops."
+    ],
+    "status": "In Development",
+    "idea": {
+        "image": "../images/true_fps_template_idea.png",
+        "description": [
+            "This work-in-progress project explores the structural and gameplay elements of modern first-person shooters, focusing on immersive player perspective and scalable multiplayer mechanics."
+        ]
+    },
+    "design": {
+        "image": "../images/true_fps_template_design.png",
+        "description": [
+            "The architecture of the project emphasizes modularity through clearly separated components and ability-driven logic.",
+            "The multiplayer logic was designed to support both free-for-all and team scenarios, maintaining a clean separation of game rules, character states, and replicated actions."
+        ],
+        "coreElements": [
+            {
+                "element": "Full-Body First-Person Setup",
+                "description": "Enables consistent body awareness in first-person, ensuring alignment between camera, mesh, and animation."
+            },
+            {
+                "element": "GAS Abilities for Combat",
+                "description": "Aiming, firing, and interaction abilities are handled through the ability system to maintain reusability and flexibility."
+            },
+            {
+                "element": "Team-Based Logic",
+                "description": "Built-in support for assigning teams and handling game rules that reflect team alignment."
+            },
+            {
+                "element": "Attribute-Driven Movement Speed",
+                "description": "Movement speed scales dynamically based on attributes, allowing gameplay effects like slow, buffs, and gear to influence mobility via GAS."
+            },
+            {
+                "element": "Weapon Weight Influence",
+                "description": "Each weapon defines equipped and unequipped weight values that affect the player's speed, adding tactical depth to inventory choices."
+            },
+            {
+                "element": "Advanced Pickup System",
+                "description": "Weapons dropped or picked up preserve individual state like magazine count and have synced physics sound feedback when landing."
+            },
+            {
+                "element": "Explosive Props with Abilities",
+                "description": "Reusable actor base supporting health and abilities, used for things like Claymores or Explosive Barrels that respond to damage events."
+            },
+            {
+                "element": "Minimap System",
+                "description": "Optimized texture-based minimap with dynamic, game-driven indicators and a separate layer for team markers or objectives."
+            },
+            {
+                "element": "World Marker Ability",
+                "description": "Quickly place world markers on screen and minimap to indicate players or locations—supports two active markers per player for tactical communication."
+            }
+        ]
+    },
+    "result": {
+        "description": "This ongoing template serves as a practical space to test GAS logic, multiplayer replication, and camera-animation consistency in first-person games, helping me refine system design under networked conditions.",
+        "embedLink": "https://www.youtube.com/embed/sample_video_id"
+    }
+},
     "project1": {
         "headerImage": [
             {
