@@ -3,7 +3,7 @@
     "headerImage": [
         {
             "src": "../images/true_fps_template_header.png",
-            "position": "center",
+            "position": "top",
             "size": "cover"
         }
     ],
@@ -51,13 +51,19 @@
     ],
     "status": "In Development",
     "idea": {
-        "image": "../images/true_fps_template_idea.png",
+        "image": "",
         "description": [
             "This work-in-progress project explores the structural and gameplay elements of modern first-person shooters, focusing on immersive player perspective and scalable multiplayer mechanics."
         ]
     },
     "design": {
-        "image": "../images/true_fps_template_design.png",
+        "image": [
+            {
+                "src": "../images/true_fps_template_design.png",
+                "position": "center",
+                "size": "contain"
+            }
+        ],
         "description": [
             "The architecture of the project emphasizes modularity through clearly separated components and ability-driven logic.",
             "The multiplayer logic was designed to support both free-for-all and team scenarios, maintaining a clean separation of game rules, character states, and replicated actions."
