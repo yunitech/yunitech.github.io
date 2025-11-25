@@ -1,0 +1,110 @@
+{
+  "headerImage": "images/zombie_apocalypse_header.png",
+  "logo": "images/yuni_logo.png",
+  "projectName": "Top-down Zombie Apocalypse Survival",
+  "projectImage": "images/zombie_apocalypse.png",
+  "projectType": ["Game Core"],
+  "date": "August 2024",
+  "systems": [
+    "Enhanced Input System",
+    "Gameplay Ability System (GAS)",
+    "Behavioral Tree",
+    "Environment Query System",
+    "UMG"
+  ],
+  "otherFeatures": [],
+  "status": "",
+  "categories": ["ai"],
+  "sections": [
+    {
+      "title": "Overview",
+      "type": "complex",
+      "content": {
+        "description": [
+          "A survival-based game core featuring strategic gameplay elements, realistic AI behaviors, and a modular inventory system."
+        ],
+        "items": {
+          "title": "Key Features",
+          "items": [
+            "Rich UMG-based UI for player interaction and feedback.",
+            "Dynamic zombie AI capable of random movement, perception through sight and hearing, and hostile behavior toward players.",
+            "Player movement with smooth and responsive controls utilizing Enhanced Input and the Gameplay Ability System.",
+            "Damage system influenced by insulation attributes, enabling advanced gameplay effects and realistic damage calculation.",
+            "Comprehensive health system with real-time updates and customizable health change events.",
+            "Inventory system supporting item stacking, consumption, and inter-container transfers.",
+            "Backpack system allowing for inventory capacity expansion through equippable gear.",
+            "Interactive hover-over tooltips for detailed item information."
+          ]
+        }
+      }
+    },
+    {
+      "title": "Technologies Used",
+      "type": "complex",
+      "content": {
+        "items": [
+          "UE 5.3",
+          "C++",
+          "Blueprint"
+        ]
+      }
+    },
+    {
+      "title": "Idea",
+      "type": "complex",
+      "content": {
+        "description": [
+          "The idea behind this project is to deliver a modular, scalable game core for zombie survival gameplay. It focuses on creating lifelike enemy behaviors, realistic damage calculations, and an expandable inventory system to support diverse survival strategies."
+        ]
+      }
+    },
+    {
+      "title": "Design",
+      "type": "complex",
+      "content": {
+        "image": "images/zombie_apocalypse_design.png",
+        "description": [
+          "This system is designed with scalability and modularity in mind, enabling developers to integrate advanced gameplay mechanics with minimal adjustments. It leverages a component-based architecture to ensure dynamic interactions between core gameplay systems, offering a seamless blend of utility and reusability across various scenarios."
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Gameplay Ability System (GAS)",
+              "description": [
+                "In this project, GAS is designed to maximize flexibility and ease of use for developers and designers. The integration emphasizes modularity and scalability, allowing for the rapid creation and customization of gameplay abilities without extensive coding.",
+                "Streamlined Ability Creation: Abilities can be quickly defined and configured through Blueprint or C++ workflows, making it accessible to both technical and non-technical team members.",
+                "Attribute Management: GAS integrates seamlessly with the project's attribute systems, providing a centralized solution for managing health, stamina, and other character stats. This reduces redundancy and simplifies balancing.",
+                "Dynamic Interactions: Abilities can adapt to context, whether triggered by inventory items, equipment, or environmental factors, providing designers with creative freedom to implement complex mechanics.",
+                "Scalable Blueprint Framework: Designers can leverage Blueprints to modify or extend existing abilities, ensuring faster iteration cycles during prototyping and gameplay refinement."
+              ]
+            },
+            {
+              "element": "Inventory System",
+              "description": "A component-based inventory design allowing creation of regular or equipable items with associated stats and abilities. The modularity ensures items can dynamically impact the gameplay through integration with the ability system."
+            },
+            {
+              "element": "Equipment System",
+              "description": "Allows equipment to grant abilities or modify stats, going beyond mere cosmetics. The system enables seamless setup of items and integration with the character's abilities, providing deep gameplay customization."
+            },
+            {
+              "element": "Backpack System",
+              "description": "Enables dynamic inventory capacity expansion through equippable backpacks."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Result",
+      "type": "complex",
+      "content": {
+        "description": [
+          "The core mechanics of this game lay a strong foundation for an engaging zombie survival experience, enabling future expansions like crafting, base building, and cooperative multiplayer."
+        ],
+        "embedLink": "https://www.youtube.com/embed/YBncRKhCO0E",
+        "externalLink": "https://www.youtube.com/watch?v=YBncRKhCO0E"
+      }
+    }
+  ]
+}

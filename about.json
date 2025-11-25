@@ -1,0 +1,56 @@
+{
+  "title": "About Me",
+  "sections": [
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Game Developer & Unreal Engine Programmer",
+      "optional": false
+    },
+    {
+      "type": "paragraph",
+      "content": "I’m a developer who loves diving deep into how things work, always experimenting and learning something new. Every project I take on is a way to refine my skills, test new ideas, and push the limits of what I can create. I’m constantly studying different systems, patterns, and tools, not because I have to, but because understanding them is what keeps me inspired.",
+      "optional": false
+    },
+    {
+      "type": "paragraph",
+      "content": "I strive to write code that lasts, clear, reusable, and easy to maintain. Instead of reinventing the wheel each time, the goal is to design systems that I can reuse and adapt across different projects with minimal effort. A key part of this is designing with scalability and flexibility in mind, anticipating how things might break down the line. The Gameplay Ability System is a great example of this philosophy in action, and studying its architecture and patterns continually sparks new ideas for improving my own approach to design.",
+      "optional": false
+    },
+    {
+      "type": "paragraph",
+      "content": "I’m always eager to collaborate and exchange ideas with others who share a passion for development. Whether it’s expanding my skills or taking on new challenges, I’m always looking for ways to keep learning.",
+      "optional": false
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "content": "Technical Skills",
+      "optional": false
+    },
+    {
+      "type": "list",
+      "items": [
+        "Unreal Engine 5",
+        "C++ Programming",
+        "Blueprint Scripting",
+        "Gameplay Ability System (GAS)",
+        "AI Behavior Programming",
+        "Multiplayer Networking",
+        "Plugin & Tool Development",
+        "System Architecture Design",
+        "Procedural Content Generation (PCG)",
+        "Performance Optimization"
+      ],
+      "optional": false
+    },
+    {
+      "type": "media",
+      "mediaType": "icon",
+      "class": "fas fa-brain",
+      "containerClass": "about-image",
+      "wrapperClass": "project-img floating",
+      "optional": true
+    }
+  ]
+}

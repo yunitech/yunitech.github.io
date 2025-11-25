@@ -1,0 +1,95 @@
+{
+  "headerImage": "images/yunieos_project_header.png",
+  "logo": "images/yuni_logo.png",
+  "projectName": "YuniEOS",
+  "projectImage": "images/yunieos_project_card.png",
+  "projectType": [
+    "Unreal Engine Plugin",
+    "Multiplayer System"
+  ],
+  "date": "January 2025",
+  "systems": [
+    "Online Subsystem (EOS)",
+    "GameInstanceSubsystem for centralized login/session handling"
+  ],
+  "otherFeatures": [
+    "Error Handling and Debug Logging"
+  ],
+  "status": "WIP",
+  "categories": ["networking"],
+  "sections": [
+    {
+      "title": "Overview",
+      "type": "complex",
+      "content": {
+        "description": [
+          "A custom Unreal Engine plugin designed to integrate Epic Online Services (EOS) seamlessly, featuring session management, login handling, and full Blueprint support."
+        ],
+        "items": {
+          "title": "Key Features",
+          "items": [
+            "Seamless EOS integration for login and authentication.",
+            "Session management including creation, finding, joining, and destruction.",
+            "Full async task system for optimized performance and Blueprint support.",
+            "Error Handling and Debug Logging"
+          ]
+        }
+      }
+    },
+    {
+      "title": "Technologies Used",
+      "type": "complex",
+      "content": {
+        "items": [
+          "C++",
+          "Blueprints",
+          "Unreal Engine 5.5",
+          "Epic Online Services (EOS)"
+        ]
+      }
+    },
+    {
+      "title": "Idea",
+      "type": "complex",
+      "content": {
+        "description": [
+          "The goal of YuniEOS is to simplify multiplayer game development in Unreal Engine by providing a robust EOS integration.",
+          "The plugin is designed to be modular, extensible, and fully usable in both C++ and Blueprints."
+        ]
+      }
+    },
+    {
+      "title": "Design",
+      "type": "complex",
+      "content": {
+        "image": "images/yunieos_project_design.png",
+        "description": [
+          "Built with a modular architecture, ensuring flexibility in expanding session features.",
+          "Utilizes BlueprintAsyncActionBase for clean and efficient asynchronous task execution."
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Login System",
+              "description": "Handles authentication and auto-login for Epic Online Services."
+            },
+            {
+              "element": "Session Management",
+              "description": "Supports session creation, searching, joining, and destruction."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Result",
+      "type": "complex",
+      "content": {
+        "description": [
+          "The plugin successfully handles EOS integration in Unreal Engine, offering an optimized workflow for multiplayer session management."
+        ]
+      }
+    }
+  ]
+}

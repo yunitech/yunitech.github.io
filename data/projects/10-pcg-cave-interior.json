@@ -1,0 +1,94 @@
+{
+  "headerImage": "images/galleries/cave_pcg/image10.png",
+  "logo": "images/yuni_logo.png",
+  "projectName": "PCG Cave Interior",
+  "projectImage": "images/galleries/cave_pcg/image1.png",
+  "projectType": ["Procedural Content Generation Showcase"],
+  "date": "January 2023",
+  "systems": ["PCG Framework"],
+  "otherFeatures": [],
+  "status": "Completed",
+  "categories": [],
+  "sections": [
+    {
+      "title": "Overview",
+      "type": "complex",
+      "content": {
+        "description": [
+          "A dynamic procedural cave generation system showcasing the versatility of PCG tools in Unreal Engine."
+        ],
+        "items": {
+          "title": "Key Features",
+          "items": [
+            "Procedural cave generation for diverse and realistic environments.",
+            "Node-based customization for material and lighting setups.",
+            "Adaptable to various game styles, ensuring maximum flexibility."
+          ]
+        }
+      }
+    },
+    {
+      "title": "Technologies Used",
+      "type": "complex",
+      "content": {
+        "items": [
+          "UE 5.2",
+          "Blueprints",
+          "Material Editor",
+          "Unreal Modeling Tool"
+        ]
+      }
+    },
+    {
+      "title": "Idea",
+      "type": "complex",
+      "content": {
+        "description": [
+          "The project explores the use of Procedural Content Generation (PCG) to create realistic and immersive cave systems. By leveraging PCG, developers can automate the creation of intricate cave layouts with dynamic materials and lighting, enhancing realism and efficiency."
+        ]
+      }
+    },
+    {
+      "title": "Design",
+      "type": "complex",
+      "content": {
+        "image": "images/cave_pcg_design.png",
+        "description": [
+          "The design of the PCG Cave Interior system prioritizes modularity and reusability. It integrates Unreal Engine's PCG framework with customized materials and lighting, ensuring an efficient and scalable workflow. The system supports seamless integration into various game levels, offering designers complete control over the aesthetic and functional aspects of cave environments."
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "PCG_CaveMaster (PCG Graph)",
+              "description": "The PCG  graph serves as the central generator for creating the main cave interior, including the floor, walls, ceiling, and their respective decorations. It offers dynamic procedural generation capabilities, enabling variations in cave layouts and aesthetics. Controlled by the owner actor, the graph supports extensive customization and ensures flexibility for diverse environment designs."
+            },
+            {
+              "element": "BP_CaveGenerator (Actor)",
+              "description": "Serves as the owner actor for the cave system, enabling the user to design custom cave layouts by manipulating a closed spline. It allows dynamic cave shaping by dragging and extending spline points to achieve the desired form. The generator integrates seamlessly with PCG_CaveMaster for procedural creation and includes settings for adjusting generation parameters such as scale, density, material variations, among others."
+            },
+            {
+              "element": "BP_PathMaker (Actor)",
+              "description": "Utilizes the graph interception feature to selectively remove portions of the cave mesh, enabling the creation of paths, hallways, or openings. This actor facilitates interconnecting multiple rooms or adding design features such as light shafts or aesthetic voids, enhancing the cave's functional and visual complexity."
+            },
+            {
+              "element": "M_MasterCave (Material)",
+              "description": "Base material designed to combine multiple textures, offering versatile customization options to create a variety of cave themes. It dynamically adjusts aspects such as surface appearance and detail, enabling the generation of unique and visually distinct cave environments. This material supports seamless integration with PCG-generated assets, ensuring consistency across different cave designs."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Result",
+      "type": "complex",
+      "content": {
+        "description": [
+          "The project demonstrates the power of PCG for creating engaging and efficient cave environments. The flexible system supports diverse use cases, offering both developers and designers a streamlined approach to procedural content creation."
+        ],
+        "embedLink": "https://www.youtube.com/embed/3uLINO5Fib8",
+        "externalLink": "https://www.youtube.com/watch?v=3uLINO5Fib8"
+      }
+    }
+  ]
+}

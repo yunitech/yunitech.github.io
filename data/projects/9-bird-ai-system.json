@@ -1,0 +1,134 @@
+{
+  "headerImage": "images/bird_ai_system_header.png",
+  "logo": "images/yuni_logo.png",
+  "projectName": "Bird AI System",
+  "projectImage": "images/bird_ai_system.png",
+  "projectType": ["Game Feature"],
+  "date": "October 2023",
+  "systems": [],
+  "otherFeatures": ["Playable Bird functionality, enabling direct player control and interaction within the ecosystem."],
+  "status": "",
+  "categories": ["ai"],
+  "sections": [
+    {
+      "title": "Overview",
+      "type": "complex",
+      "content": {
+        "description": [
+          "An advanced simulation of bird populations within an animal ecosystem, designed for dynamic interactions and behaviors."
+        ],
+        "items": {
+          "title": "Key Features",
+          "items": [
+            "Automatic detection of NavMesh bounds directly within the editor.",
+            "Dynamic random walk patterns for lifelike ground movement.",
+            "Realistic flying behaviors with randomized flight paths.",
+            "Obstacle avoidance tailored for dynamic and seamless navigation during flight.",
+            "Nest building mechanics with resource gathering support.",
+            "Flocking behavior for coordinated group dynamics.",
+            "Comprehensive reproduction cycle simulation.",
+            "Context-aware reactions to perceived threats.",
+            "Flexible settings for population control and balance.",
+            "Playable Bird functionality, enabling direct player control and interaction within the ecosystem."
+          ]
+        }
+      }
+    },
+    {
+      "title": "Technologies Used",
+      "type": "complex",
+      "content": {
+        "items": [
+          "UE 5.2",
+          "Blueprints",
+          "Animation Blueprint",
+          "Behavioral Trees",
+          "EQS"
+        ]
+      }
+    },
+    {
+      "title": "Idea",
+      "type": "complex",
+      "content": {
+        "description": [
+          "This project aims to create a dynamic model that simulates the natural behaviors and interactions of bird populations within an animal ecosystem. It focuses on creating realistic bird AI that integrates seamlessly with environments, enabling lifelike responses to threats and habitat changes."
+        ]
+      }
+    },
+    {
+      "title": "Design",
+      "type": "complex",
+      "content": {
+        "image": "images/bird_ai_system_design.png",
+        "description": [
+          "The Bird AI System emphasizes adaptability and realism through its modular and reusable design. Leveraging Blueprints, Behavioral Trees, and Blueprint Interfaces, it simulates dynamic interactions and complex behaviors within an ecosystem. The system supports both flocking and individual behaviors, ensuring flexibility in various scenarios. Its seamless integration into levels enables dynamic population control, nest-building mechanics, and resource management, offering developers a versatile tool for creating immersive ecosystems."
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "BP_Animal (Character)",
+              "description": "Parent class for all animals within the ecosystem, establishing shared traits and behaviors."
+            },
+            {
+              "element": "BP_Animal_Flock (BP_Animal)",
+              "description": "Parent class for all animals exhibiting flock behaviors, supporting group dynamics within the system."
+            },
+            {
+              "element": "BP_BirdBase (BP_Animal_Flock)",
+              "description": "Derived class supporting both AI- and player-controlled birds with individualized behaviors."
+            },
+            {
+              "element": "BPC_FlockSystem (Actor Component)",
+              "description": "Manages flocking behaviors, ensuring realistic interactions and group coordination among birds."
+            },
+            {
+              "element": "BPC_EnergyManager (Actor Component)",
+              "description": "Regulates animal activity based on energy levels, introducing realistic limitations on behavior."
+            },
+            {
+              "element": "Behavioral Trees",
+              "description": "Behavioral Trees define bird behaviors across various life stages, including routine actions, nest building, parenting, and reproduction, enhancing AI realism and adaptability within the ecosystem."
+            },
+            {
+              "element": "Blueprint Interfaces",
+              "description": "Handles character data, predator interactions, and threat alerts through standardized communication."
+            },
+            {
+              "element": "Bird Spot (Actor)",
+              "description": "Spawns initial bird populations, serves as a landing and walking point, and controls population balance."
+            },
+            {
+              "element": "BlueprintFunctionLibrary",
+              "description": "Provides calculation helper functions for reusable and optimized logic."
+            },
+            {
+              "element": "BP_NestPoint",
+              "description": "Marks suitable locations for nest building, manages building stages, and tracks resource usage."
+            },
+            {
+              "element": "BP_Nest",
+              "description": "Tracks the nest and owner states, initiates deterioration when abandoned and releases resources."
+            },
+            {
+              "element": "BP_Stick",
+              "description": "Can be picked up, transported, and used as a resource for nest construction."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Result",
+      "type": "complex",
+      "content": {
+        "description": [
+          "The Bird AI System successfully creates an engaging and realistic ecosystem simulation, offering players an immersive experience with dynamic bird populations and behaviors."
+        ],
+        "embedLink": "https://www.youtube.com/embed/5BkNVLZjq7g",
+        "externalLink": "https://www.youtube.com/watch?v=5BkNVLZjq7g"
+      }
+    }
+  ]
+}

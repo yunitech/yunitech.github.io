@@ -3,70 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yuniel Montalván Figueredo | Projects</title>
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/projects.css">
+    <title>All Projects | Game Developer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-
-<body class="projects-page">
-    <!-- Header Section -->
-    <header class="page-header projects-header">
-        <div class="header-content">
-            <!-- Main Navigation for pages -->
-            <div id="main-nav-placeholder"></div>
-            <script src="scripts/main-nav-loader.js"></script>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-gamepad"></i>GameDev Portfolio
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <nav class="section-nav" id="section-nav-original">
-        <a href="../index.html#contact">Contact Me</a>
-    </nav>
-
-
-    
-    <!-- Portfolio Section Placeholder -->
-    <section class="portfolio-section">
-        <!-- Instruction Text -->
-        <p class="projects-instruction">Click into each project to learn more about its creation.</p>
-        <h1 class="projects-delimeter">UE</h1>
-        <!-- Dynamically loaded project cards -->
-        <div class="cards-container" id="cards-container"></div>
-
-        <h1 class="projects-delimeter">non-UE</h1>
-        <div class="cards-container" id="non-ue-container"></div>       
+    <!-- Projects Header -->
+    <section class="hero" id="projects-header">
+        <div class="container">
+            <div class="hero-content">
+                <h1><span>My</span> Unreal Engine <span>Projects</span></h1>
+                <p>Explore my portfolio of games, plugins, and tools created with Unreal Engine</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Modal Container -->
-    <div id="project-modal" class="modal">
-        <span class="close-btn">&times;</span>
-        <div class="modal-content">
-            <!-- Loaded project content will appear here -->
+    <!-- Filter Section -->
+    <section id="filter-section">
+        <div class="container">
+            <div class="filter-controls">
+                <h3>Filter Projects</h3>
+                <div class="filter-group">
+                    <select id="type-filter">
+                        <option value="all">All Types</option>
+                        <option value="game">Game</option>
+                        <option value="plugin">Plugin</option>
+                        <option value="tool">Tool</option>
+                        <option value="feature">Feature</option>
+                        <option value="template">Template</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="vr">VR</option>
+                        <option value="ai">AI</option>
+                        <option value="networking">Networking</option>
+                        <option value="physics">Physics</option>
+                        <option value="vfx">VFX</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <input type="text" id="search-filter" placeholder="Search projects...">
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <script src="scripts/cards-manager.js"></script>
-<script>
-    CardsManager.init({
-        container: "#cards-container",
-        dataUrl: "projects/project-data.json",
-        specifiedIds: [], // Specify projects or leave empty to load all
-    });
-    CardsManager.init({
-        container: "#non-ue-container",
-        dataUrl: "projects/non-ue-projects.json",
-        specifiedIds: [], // Specify projects or leave empty to load all
-    });
-</script>
-
-    <!-- Placeholder for the cloned navigation at the bottom -->
-    <div class="section-nav-clone-placeholder"></div>
-    <script src="../scripts/clone-section-nav.js"></script>
-
-
+    <!-- Projects Section -->
+    <section id="all-projects">
+        <div class="container">
+            <div class="projects-grid" id="projects-container">
+                <!-- Projects will be loaded here -->
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <div id="footer-placeholder"></div>
-    <script src="scripts/footer-loader.js"></script>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">GameDev Portfolio</div>
+                <p class="copyright">© 2023 Game Developer Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
+    <script src="js/projects.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

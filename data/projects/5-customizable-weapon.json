@@ -1,0 +1,400 @@
+{
+  "headerImage": "images/yuni_customizable_weapon_header.png",
+  "logo": "images/yuni_logo.png",
+  "projectName": "Customizable Weapon",
+  "projectImage": "images/yuni_customizable_weapon.png",
+  "projectType": ["Unreal Engine Plugin", "Game Feature", "Multiplayer System"],
+  "date": "February 2024",
+  "systems": [
+    "FastArraySerializer for efficient multiplayer state replication.",
+    "Gameplay Tags for dynamic attachment slot mapping.",
+    "SaveGame system for storing and retrieving weapon configurations."
+  ],
+  "otherFeatures": [
+    "Server-authoritative customization management.",
+    "Flexible attachment rules based on weapon types.",
+    "Support for custom mod functionality via Actor-based attachments.",
+    "Optimized network traffic handling to ensure performance."
+  ],
+  "status": "WIP",
+  "categories": ["networking"],
+  "sections": [
+    {
+      "title": "Overview",
+      "type": "complex",
+      "content": {
+        "description": [
+          "The Yuni Customizable Weapon System is a comprehensive Unreal Engine plugin designed to enable modular weapon customization in games. It provides a flexible framework for attaching, managing, and persisting weapon modifications (mods) such as scopes, grips, barrels, and other attachments. The system supports multiplayer environments, save/load functionality, and is built using gameplay tags for compatibility and categorization."
+        ],
+        "items": {
+          "title": "Key Features",
+          "items": [
+            "Modular Design: Weapons can be customized with various mods that attach to specific sockets.",
+            "Tag-Based Compatibility: Uses Gameplay Tags to define mod compatibility, required tags, and exclusions.",
+            "Multiplayer Support: Fully replicated for seamless multiplayer experiences.",
+            "Persistence: Save and load weapon configurations across sessions.",
+            "Blueprint-Friendly: Extensive Blueprint support for easy integration and customization.",
+            "Performance Optimized: Efficient replication and attachment management."
+          ]
+        }
+      }
+    },
+    {
+      "title": "Technologies Used",
+      "type": "complex",
+      "content": {
+        "items": [
+          "Unreal Engine 5",
+          "C++ & Blueprints",
+          "Gameplay Tags",
+          "FastArraySerializer",
+          "SaveGame System"
+        ]
+      }
+    },
+    {
+      "title": "Idea",
+      "type": "complex",
+      "content": {
+        "description": [
+          "The idea behind the Yuni Customizable Weapon System was to create a comprehensive plugin that enables modular weapon customization in Unreal Engine games. The goal was to provide a flexible framework for attaching and managing weapon modifications, supporting multiplayer environments, and ensuring persistence across sessions through a tag-based compatibility system."
+        ]
+      }
+    },
+    {
+      "title": "Design",
+      "type": "complex",
+      "content": {
+        "image": "images/yuni_customizable_weapon_idea.png",
+        "description": [
+          "The system follows a modular architecture centered around core components that work together to provide a cohesive customization experience. It leverages gameplay tags for compatibility, supports various attachment types, and ensures efficient replication in multiplayer scenarios."
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "UYuniModManagerComponent",
+              "description": "The central component attached to weapon actors, responsible for managing applied mods, validating compatibility, and handling replication."
+            },
+            {
+              "element": "Mod Definitions",
+              "description": "Data-driven definitions for mods, including compatibility rules and attachment details using fragments for modular behavior."
+            },
+            {
+              "element": "Attachment System",
+              "description": "Handles spawning and managing visual/audio attachments on weapons, supporting Static Mesh, Skeletal Mesh, and Actor types."
+            },
+            {
+              "element": "Save/Load System",
+              "description": "Persists weapon configurations using Unreal's SaveGame system, allowing users to maintain customizations across sessions."
+            },
+            {
+              "element": "Configuration Assets",
+              "description": "Data assets for socket mapping and plugin settings, enabling flexible socket naming and developer configuration."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Architecture Overview",
+      "type": "complex",
+      "content": {
+        "description": [
+          "The system is structured around several core components that work together to provide a cohesive customization experience:"
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "UYuniModManagerComponent",
+              "description": "The central component attached to weapon actors, responsible for managing applied mods."
+            },
+            {
+              "element": "Mod Definitions",
+              "description": "Data-driven definitions for mods, including compatibility rules and attachment details."
+            },
+            {
+              "element": "Attachment System",
+              "description": "Handles spawning and managing visual/audio attachments on weapons."
+            },
+            {
+              "element": "Save/Load System",
+              "description": "Persists weapon configurations using Unreal's SaveGame system."
+            },
+            {
+              "element": "Configuration Assets",
+              "description": "Data assets for socket mapping and plugin settings."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Key Components",
+      "type": "complex",
+      "content": {
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "UYuniModManagerComponent",
+              "description": [
+                "The heart of the system, this ActorComponent manages all mod-related operations:",
+                "",
+                "- Mod Application: ApplyMod() and PreviewMod() functions for attaching mods.",
+                "- Mod Removal: RemoveMod() and ClearModSocket() for detaching mods.",
+                "- Compatibility Checking: Validates mod compatibility against weapon tags.",
+                "- Replication: Uses FastArraySerializer for efficient network synchronization.",
+                "- Save/Load: Integrates with the save game system for persistence.",
+                "",
+                "Key Properties:",
+                "- WeaponTags: Gameplay tags defining the weapon's characteristics.",
+                "- SupportedModTypes: Tags indicating which mod types this weapon accepts.",
+                "- SocketMappingData: Data asset mapping gameplay tags to socket names."
+              ]
+            },
+            {
+              "element": "Mod Definition System",
+              "description": [
+                "UYuniModDefinition: Abstract base class for mod definitions, containing display name, description, and array of UYuniModFragment instances.",
+                "",
+                "Mod Fragments:",
+                "- UYuniModFragment_Attachment: Defines what to spawn and where.",
+                "- UYuniModFragment_Compatibility: Specifies which weapons can use this mod.",
+                "- UYuniModFragment_RequiredTags: Tags the weapon must have for mod application.",
+                "- UYuniModFragment_GrantTags: Tags granted when the mod is applied."
+              ]
+            },
+            {
+              "element": "Attachment System",
+              "description": [
+                "UModAttachmentDefinition: Defines attachment behavior with types (Static Mesh, Skeletal Mesh, or Actor spawning), replication modes, socket attachment, and tags to grant.",
+                "",
+                "UModAttachmentInstance: Runtime instance managing spawned attachments, spawning components/actors, hiding default weapon components, handling cleanup, and supporting Blueprint events."
+              ]
+            },
+            {
+              "element": "Save/Load System",
+              "description": [
+                "UYuniModManagerSaveGame: Extends USaveGame to store applied mod definitions, saving array of applied UModAttachmentDefinition classes, supporting multiple save slots and user indices.",
+                "",
+                "Key Functions:",
+                "- SaveWeaponSetup(): Persists current configuration.",
+                "- LoadWeaponSetup(): Restores saved configuration.",
+                "- Auto-save option in settings."
+              ]
+            },
+            {
+              "element": "Configuration Assets",
+              "description": [
+                "UWeaponSocketMapping: Data asset mapping gameplay tags to socket names for flexible socket naming.",
+                "",
+                "UYuniCustomizableWeapon_Settings: Developer settings for plugin configuration, including auto-save behavior, debug logging, and mod type display names."
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Mod System Details",
+      "type": "complex",
+      "content": {
+        "description": [
+          "Mods use three types of tag-based rules for compatibility: Compatibility Tags (weapon must have at least one), Excluded Tags (weapon must NOT have any), Required Tags (weapon must have ALL). Socket-based replacement allows only one mod per socket, with automatic removal of existing mods."
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Mod Compatibility",
+              "description": "Mods use three types of tag-based rules: Compatibility Tags, Excluded Tags, Required Tags."
+            },
+            {
+              "element": "Socket-Based Replacement",
+              "description": "Only one mod per socket allowed. Existing mods are automatically removed when new ones are applied to the same socket. Default weapon components are hidden when mods are attached."
+            },
+            {
+              "element": "Tag Management",
+              "description": "Mods grant tags to weapons when applied. Tags are removed when mods are detached. Enables gameplay systems to react to weapon modifications."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Multiplayer Support",
+      "type": "complex",
+      "content": {
+        "description": [
+          "The system provides full multiplayer support with efficient replication strategies."
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Replication Strategy",
+              "description": "UYuniModManagerComponent replicates the mod list using FastArraySerializer. UModAttachmentInstance replicates spawned actors and components. Server Authority validates mod applications and broadcasts changes."
+            },
+            {
+              "element": "Network Optimization",
+              "description": "Client-spawned attachments for visual-only mods. Server-owned replication for gameplay-critical attachments. Delta serialization for efficient updates."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Usage Examples",
+      "type": "complex",
+      "content": {
+        "description": [
+          "Basic mod application and custom mod creation examples."
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Basic Mod Application",
+              "description": [
+                "```cpp",
+                "UYuniModManagerComponent* ModManager = WeaponActor->FindComponentByClass<UYuniModManagerComponent>();",
+                "if (ModManager && ModManager->CanApplyMod(ModDefinition))",
+                "{",
+                "    UModAttachmentInstance* Instance = ModManager->ApplyMod(ModDefinition, UserIndex);",
+                "}",
+                "```"
+              ]
+            },
+            {
+              "element": "Creating a Custom Mod",
+              "description": [
+                "1. Create a new UYuniModDefinition Blueprint asset.",
+                "2. Add UYuniModFragment_Attachment with desired meshes/actors.",
+                "3. Configure UYuniModFragment_Compatibility with appropriate tags.",
+                "4. Set up socket mapping in the weapon's UWeaponSocketMapping asset."
+              ]
+            },
+            {
+              "element": "Save/Load Integration",
+              "description": [
+                "```cpp",
+                "// Save current setup",
+                "ModManager->SaveWeaponSetupDefault(UserIndex);",
+                "",
+                "// Load saved setup",
+                "ModManager->LoadWeaponSetupDefault(UserIndex);",
+                "```"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Configuration",
+      "type": "complex",
+      "content": {
+        "description": [
+          "Plugin setup and weapon configuration details."
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Plugin Setup",
+              "description": "Add the plugin to your project's .uplugin dependencies. The plugin automatically registers gameplay tags from Config/Tags/YuniCustomizableWeaponTags.ini."
+            },
+            {
+              "element": "Weapon Setup",
+              "description": "Attach UYuniModManagerComponent to weapon actors. Configure WeaponTags and SupportedModTypes. Assign a UWeaponSocketMapping data asset. Ensure weapon mesh has appropriately named sockets."
+            },
+            {
+              "element": "Mod Creation",
+              "description": "Create mod definitions as Blueprint assets. Use the provided fragments to define behavior. Test compatibility with different weapon configurations."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Performance Considerations",
+      "type": "complex",
+      "content": {
+        "description": [
+          "Performance optimization strategies for the system."
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Attachment Spawning",
+              "description": "Deferred spawning for actors to avoid hitches."
+            },
+            {
+              "element": "Replication",
+              "description": "FastArraySerializer minimizes network traffic."
+            },
+            {
+              "element": "Tag Operations",
+              "description": "Efficient tag container operations."
+            },
+            {
+              "element": "Memory Management",
+              "description": "Proper cleanup of spawned components and actors."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Extensibility",
+      "type": "complex",
+      "content": {
+        "description": [
+          "The system is designed for easy extension."
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Custom Fragments",
+              "description": "Create new UYuniModFragment subclasses for additional mod behaviors."
+            },
+            {
+              "element": "Custom Attachments",
+              "description": "Extend UModAttachmentInstance for specialized attachment logic."
+            },
+            {
+              "element": "Integration Points",
+              "description": "Blueprint events and virtual functions allow deep customization."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Lessons Learned",
+      "type": "complex",
+      "content": {
+        "description": [
+          "This project reinforced the importance of modular architecture in game development tools. The fragment-based system proved highly extensible, allowing for easy addition of new mod behaviors without modifying core code. The GameplayTag-based socket mapping system demonstrated significant value in creating flexible attachment points that can be easily configured per weapon type.",
+          "Additionally, I discovered that due to the modular design and agnostic system architecture, this framework could be relatively easily adapted for customization of other devices beyond weapons, such as vehicles or any other machines.",
+          "I would redesign the save game system to separate persistence concerns from the component - ideally, saving should be handled by a dedicated service rather than embedded in the mod manager. This would allow for more flexible data structures that can accommodate various use cases like handling multiple configurations for the same weapon as well as loadout preset organization."
+        ]
+      }
+    },
+    {
+      "title": "Result",
+      "type": "complex",
+      "content": {
+        "description": [
+          "The Yuni Customizable Weapon System provides a robust, flexible foundation for weapon customization in Unreal Engine projects. Its tag-based architecture, multiplayer support, and data-driven design make it suitable for a wide range of game types, from FPS shooters to RPGs. The system's modularity and extensibility ensure it can grow with project needs while maintaining performance and ease of use."
+        ],
+        "embedLink": "https://www.youtube.com/embed/KzMo_oUp5X8",
+        "externalLink": "https://www.youtube.com/watch?v=KzMo_oUp5X8"
+      }
+    }
+  ]
+}

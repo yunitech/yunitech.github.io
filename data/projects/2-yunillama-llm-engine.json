@@ -1,0 +1,276 @@
+{
+  "headerImage": "images/yuni_logo.png",
+  "logo": "images/yuni_logo.png",
+  "projectName": "YuniLlama: LLM Engine Solution for Unreal Engine",
+  "projectImage": "images/yuni_logo.png",
+  "projectType": ["Unreal Engine Plugin"],
+  "date": "2024",
+  "systems": [
+    "llama.cpp Integration",
+    "Tool Calling System",
+    "System Prompt Management",
+    "Multi-Player Support",
+    "Threading Model",
+    "Memory Management"
+  ],
+  "otherFeatures": [
+    "Production-ready plugin with comprehensive API documentation",
+    "Extensive customization options for model parameters and inference settings",
+    "Error handling and debugging support",
+    "Active development and maintenance"
+  ],
+  "status": "Complete",
+  "categories": ["ai"],
+  "sections": [
+    {
+      "title": "Overview",
+      "type": "complex",
+      "content": {
+        "description": [
+          "YuniLlama is a comprehensive Large Language Model (LLM) integration plugin for Unreal Engine, developed by YuniTech. It provides a robust, production-ready solution for incorporating AI-powered conversational capabilities into Unreal Engine projects, with support for tool calling, multi-player contexts, and extensive customization options."
+        ],
+        "items": {
+          "title": "Key Features",
+          "items": [
+            "GGUF model support with GPU layer offloading",
+            "Streaming token generation and configurable sampling parameters",
+            "Multi-player conversation histories with context isolation",
+            "Tool calling system with JSON schema validation and asynchronous execution",
+            "System prompt management with modular prompt composition",
+            "Blueprint integration with full UPROPERTY/UFUNCTION exposure",
+            "Editor integration including built-in chat interface for testing",
+            "Thread-safe model loading and inference with background worker threads",
+            "Memory management with RAII patterns and automatic resource cleanup",
+            "Cross-platform support (Windows, Mac, Linux) with CUDA/Metal/Vulkan acceleration",
+            "Production-ready plugin with comprehensive API documentation",
+            "Extensive customization options for model parameters and inference settings",
+            "Error handling and debugging support",
+            "Active development and maintenance"
+          ]
+        }
+      }
+    },
+    {
+      "title": "Technologies Used",
+      "type": "complex",
+      "content": {
+        "items": [
+          "Unreal Engine 5.x",
+          "C++",
+          "Blueprint",
+          "llama.cpp",
+          "GGML"
+        ]
+      }
+    },
+    {
+      "title": "Architecture",
+      "type": "complex",
+      "content": {
+        "description": [
+          "YuniLlama's architecture is built around several core modules that provide comprehensive LLM functionality to Unreal Engine projects."
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+          {
+            "element": "Core Components",
+            "description": [
+              "- YuniLlama Module: Main runtime module providing LLM functionality",
+              "- Editor Module: Provides editor integration and chat interface",
+              "- Third-Party Integration: Contains llama.cpp library and GGML backend",
+              "- Data Structures: Core data types for model configurations, messages, and parameters",
+              "- Tool Calling System: Sophisticated tool calling with IToolProvider interface",
+              "- System Prompt Management: Flexible prompt composition system",
+              "- JSON Utilities: Blueprintable JSON object wrappers"
+            ]
+          },
+          {
+            "element": "Key Classes",
+            "description": [
+              "- FYuniLlamaModule: Main module interface",
+              "- UYuniLlamaGameSubsystem: Game instance subsystem for model management",
+              "- UYuniLlamaLinkComponent: Actor component for linking AI roles to players",
+              "- FYuniLlamaSubsystemBase: Base implementation for shared functionality",
+              "- FYuniLlamaNative: Native wrapper for llama.cpp operations",
+              "- FYuniLlamaInternal: Core llama.cpp integration layer"
+            ]
+          }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Key Features",
+      "type": "complex",
+      "content": {
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Model Management",
+              "description": "Support for GGUF format models, Configurable GPU layer offloading, Progress callbacks during model loading, Automatic model unloading and resource management"
+            },
+            {
+              "element": "Inference Capabilities",
+              "description": "Streaming token generation, Configurable sampling parameters (temperature, top-k, top-p, etc.), Chat template support, Context size management, Multi-threading support"
+            },
+            {
+              "element": "Multi-Player Support",
+              "description": "Per-player conversation histories, Unique Net ID based player identification, Context isolation between players, Tool execution context awareness"
+            },
+            {
+              "element": "Tool Calling",
+              "description": "Dynamic tool discovery and registration, JSON schema-based parameter validation, Asynchronous tool execution, Deferred completion support, Blueprint and C++ tool implementation"
+            },
+            {
+              "element": "System Prompts",
+              "description": "Modular prompt composition, Priority-based prompt ordering, Context-aware prompt generation, Dynamic prompt updates"
+            },
+            {
+              "element": "Editor Integration",
+              "description": "Built-in chat interface for testing, Real-time conversation simulation, Model loading progress visualization, Blueprint debugging support"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Technical Implementation",
+      "type": "complex",
+      "content": {
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "llama.cpp Integration",
+              "description": "YuniLlama wraps llama.cpp providing thread-safe model loading and inference, two sampling APIs (common sampler and llama sampler chain), chat template application, context management and KV cache handling, progress callbacks and error handling"
+            },
+            {
+              "element": "Unreal Engine Integration",
+              "description": "Full Blueprint support with custom nodes, UPROPERTY/UFUNCTION exposure for editor use, subsystem-based architecture for global access, component-based attachment to actors, data asset system for configuration"
+            },
+            {
+              "element": "Threading Model",
+              "description": "Background worker thread for model operations, game thread callbacks for UI updates, thread-safe queue for cross-thread communication, atomic flags for generation control"
+            },
+            {
+              "element": "Memory Management",
+              "description": "RAII pattern for llama.cpp resources, automatic cleanup on subsystem shutdown, context size limits and bounds checking, efficient batch processing"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Usage Examples",
+      "type": "complex",
+      "content": {
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Basic Setup",
+              "description": [
+                "```cpp",
+                "// Load model via subsystem",
+                "UYuniLlamaGameSubsystem* Subsystem = GetGameInstance()->GetSubsystem<UYuniLlamaGameSubsystem>();",
+                "FModelLoadParams Params;",
+                "Params.ModelPath = \"Models/my-model.gguf\";",
+                "Subsystem->LoadModelFromParams(Params);",
+                "```"
+              ]
+            },
+            {
+              "element": "Component-Based AI",
+              "description": [
+                "```cpp",
+                "// Attach to player controller",
+                "UYuniLlamaLinkComponent* LinkComp = PlayerController->FindComponentByClass<UYuniLlamaLinkComponent>();",
+                "LinkComp->LoadModelFromParams(Params);",
+                "LinkComp->InsertMessage(PlayerController, ETemplateRole::User, \"Hello AI!\");",
+                "```"
+              ]
+            },
+            {
+              "element": "Tool Implementation",
+              "description": [
+                "```cpp",
+                "class UMyTool : public UToolProviderObject",
+                "{",
+                "    void ExecuteTool_Implementation(const FString& ToolName, ...)",
+                "    {",
+                "        // Implement tool logic",
+                "    }",
+                "};",
+                "```"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Configuration",
+      "type": "complex",
+      "content": {
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Project Settings",
+              "description": "Global system prompt configuration, Default model parameters, Sampling defaults, Tool execution timeouts"
+            },
+            {
+              "element": "Data Assets",
+              "description": "Model definitions, Tool definition sets, System prompt provider sets, AI role configurations"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Performance Considerations",
+      "type": "complex",
+      "content": {
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Memory Usage",
+              "description": "Models loaded into GPU/CPU memory, Context size affects VRAM requirements, Per-player history storage, Tool execution result caching"
+            },
+            {
+              "element": "Threading",
+              "description": "Background inference doesn't block game thread, UI updates via game thread delegates, Multi-threading for batch processing"
+            },
+            {
+              "element": "Optimization",
+              "description": "GPU acceleration for supported hardware, Batch processing for efficiency, Context reuse and KV cache management, Sampling parameter tuning"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Platform Support",
+      "type": "text",
+      "content": "Windows: Full support with CUDA acceleration, Mac: Metal acceleration support, Linux: CPU and Vulkan acceleration, Cross-platform: Consistent API across platforms"
+    },
+    {
+      "title": "Dependencies",
+      "type": "text",
+      "content": "llama.cpp: Core inference engine, GGML: Tensor operations backend, Unreal Engine 5.x: Runtime environment"
+    },
+    {
+      "title": "Development Status",
+      "type": "text",
+      "content": "YuniLlama is a production-ready plugin with comprehensive API documentation, Blueprint integration, editor tooling, multi-platform support, active development and maintenance"
+    },
+    {
+      "title": "Future Enhancements",
+      "type": "text",
+      "content": "Additional model format support, Advanced prompt engineering tools, Performance profiling tools, Cloud integration options, Voice input/output integration"
+    }
+  ]
+}

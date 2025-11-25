@@ -1,81 +1,123 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="images/favicon/site.webmanifest">
-    <title>Yuniel Montalván Figueredo | Unreal Engine Developer</title>
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/home.css">
+    <title>Game Developer Portfolio | Unreal Engine Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="home-page">
-    <!-- Header Section -->
-    <header class="page-header">
-        <h1 class="page-title">Welcome to YuniTech!</h1>
-        <p class="page-slogan">My journey with Unreal Engine, game development, and programming.</p>
-    
-        <div class="main-nav-container">
-            <!-- Main Navigation for pages -->
-            <div id="main-nav-placeholder"></div>
-            <script src="scripts/main-nav-loader.js"></script>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-gamepad"></i>YuniTech Dev
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-<section class="hero">
-    <div class="hero-content">
-        <img src="images/yunitech_logo.png" alt="yunitech logo" class="yunitech-logo">
-        <h1>Crafting Immersive Worlds with Unreal Engine</h1>
-        <p>Experienced Programmer Specialized in High-Impact Gameplay Development</p>
-        <a href="projects.html#portfolio-section" class="cta-btn">Explore My Work</a>
-    </div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Creating Immersive Worlds with <span>Unreal Engine</span></h1>
+                <p>Game Developer & Unreal Engine Programmer specializing in C++ and Blueprint development. Transforming ideas into interactive experiences.</p>
+                <div class="hero-btns">
+                    <a href="projects.html" class="btn">View Projects</a>
+                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="professional-summary" id="summary">
-    <h2>About Me</h2>
-    <p>I’m Yuniel, a dedicated Unreal Engine programmer with a passion for creating immersive, feature-rich games. With extensive experience in C++ and Blueprints, I specialize in Gameplay Ability Systems, AI-driven NPCs, and high-performance gameplay mechanics.</p>
-</section>
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div id="about-content" class="about-content">
+                <!-- About content will be loaded here -->
+            </div>
+        </div>
+    </section>
 
-<section class="featured-projects">
-    <h2>Featured Projects</h2>
-    <div class="cards-container" id="cards-container"></div>
-</section>
+    <!-- Featured Projects Section -->
+    <section id="featured" style="background: rgba(10, 10, 26, 0.5);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Projects</h2>
+            </div>
+            <div class="projects-grid" id="featured-projects">
+                <!-- Projects will be loaded here -->
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="projects.html" class="btn">View All Projects</a>
+            </div>
+        </div>
+    </section>
 
-<div id="project-modal" class="modal">
-    <span class="close-btn">&times;</span>
-    <div class="modal-content"></div>
-</div>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Work Together</h3>
+                    <p>Have a project in mind or want to discuss potential opportunities? Feel free to reach out!</p>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:yunitech.dev@gmail.com">yunitech.dev@gmail.com</a></p>
+                        </div>
+                    </div>
 
-<script src="scripts/cards-manager.js"></script>
-<script>
-    CardsManager.init({
-        container: "#cards-container",
-        dataUrl: "projects/project-data.json",
-        specifiedIds: ["project1", "project6"], // Specify projects or leave empty to load all
-    });
-</script>
-
-<!-- Highlighted Skills Section -->
-<section class="highlighted-skills">
-    <h2>Highlighted Skills</h2>
-    <ul class="highlighted-skills-list">
-        <li>Unreal Engine 5 Gameplay Systems Development</li>
-        <li>C++ and Blueprint Programming</li>
-        <li>Gameplay Ability System Integration (GAS)</li>
-    </ul>
-</section>
-
-<section class="call-to-action">
-    <h2>Let’s Build Something Amazing!</h2>
-    <a href="about.html#contact" class="cta-btn">Contact Me</a>
-</section>
-
+                    <div class="contact-detail">
+                        <i class="fab fa-discord"></i>
+                        <div>
+                            <h4>Discord</h4>
+                            <p><a href="https://discordapp.com/users/1036043326064971796" target="_blank">YuniTech</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-artstation"></i></a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <div id="footer-placeholder"></div>
-    <script src="scripts/footer-loader.js"></script>
-        
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">YuniTech Dev</div>
+                <p class="copyright">© 2023 YuniTech Dev. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/projects.js"></script>
+    <script src="js/about.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

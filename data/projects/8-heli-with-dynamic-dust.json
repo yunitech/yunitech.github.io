@@ -1,0 +1,104 @@
+{
+  "headerImage": "images/dynamic_heli_dust_header.png",
+  "logo": "images/yuni_logo.png",
+  "projectName": "Heli with Dynamic Dust",
+  "projectImage": "images/dynamic_heli_dust.png",
+  "projectType": [
+    "Game Feature",
+    "Plugin"
+  ],
+  "date": "March 2024",
+  "systems": [
+    "Chaos Vehicles Plugin",
+    "Niagara System"
+  ],
+  "otherFeatures": [
+    "AI Takeoff Controller"
+  ],
+  "status": "",
+  "categories": ["vfx", "physics"],
+  "sections": [
+    {
+      "title": "Overview",
+      "type": "complex",
+      "content": {
+        "description": [
+          "A feature plugin where helicopter dust dynamically reacts to the environment. It adjusts color to match the surface and varies intensity based on rotor speed and height."
+        ],
+        "items": {
+          "title": "Key Features",
+          "items": [
+            "Dynamic Dust Effect System",
+            "Playable Helicopter",
+            "AI Takeoff Controller"
+          ]
+        }
+      }
+    },
+    {
+      "title": "Technologies Used",
+      "type": "complex",
+      "content": {
+        "items": [
+          "UE 5.3",
+          "Blueprint",
+          "Meta Sound",
+          "Unreal Material Editor"
+        ]
+      }
+    },
+    {
+      "title": "Idea",
+      "type": "complex",
+      "content": {
+        "description": [
+          "The idea behind this project was to create an immersive feature where helicopter dust dynamically interacts with its environment, enhancing realism. The dust effect adapts its color to match the surface beneath the helicopter, seamlessly blending with different terrains. Additionally, the intensity of the dust changes in real-time, influenced by the rotor speed and the helicopter's proximity to the ground, providing a visually accurate and responsive experience. This approach ensures a deeper connection between the helicopter and its environment, showcasing attention to detail and technical precision."
+        ]
+      }
+    },
+    {
+      "title": "Design",
+      "type": "complex",
+      "content": {
+        "description": [
+          "The design prioritizes modularity and reusability, leveraging dynamic actor tags to enable seamless integration into any level with minimal adjustments. This flexibility allows the system to adapt to diverse environments, from landscapes with varied surface colors to large, complex actors, ensuring maximum versatility and efficient deployment."
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "HeliBase (Wheeled Vehicle Pawn)",
+              "description": "Provides helicopter base functionality, including state-related variables and event dispatchers."
+            },
+            {
+              "element": "HeliDustHandler (Actor Component)",
+              "description": "Handles system logic based on the owner's state."
+            },
+            {
+              "element": "DustEffect (Actor)",
+              "description": "Manages the dynamic dust effect using the Niagara System."
+            },
+            {
+              "element": "DustBank (Data Table)",
+              "description": "Maps dust colors to surface types using tags for diverse landscapes."
+            },
+            {
+              "element": "HeliFunctionLibrary (Blueprint Function Library)",
+              "description": "Provides helper calculation functions for the system."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Result",
+      "type": "complex",
+      "content": {
+        "description": [
+          "A fully implemented feature showcasing dynamic environmental interaction. Dust effects react realistically to surface and speed variations."
+        ],
+        "embedLink": "https://www.youtube.com/embed/BOTFblhit9g"
+      }
+    }
+  ]
+}

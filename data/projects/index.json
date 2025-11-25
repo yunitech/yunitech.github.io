@@ -1,0 +1,23 @@
+{
+  "projects": [
+    "1-true-fps-template.json",
+    "2-yunillama-llm-engine.json",
+    "3-yunilingo-tts-plugin.json",
+    "4-fps-gas-core.json",
+    "5-customizable-weapon.json",
+    "6-top-down-zombie-apocalypse-survival.json",
+    "7-yunieos.json",
+    "8-heli-with-dynamic-dust.json",
+    "9-bird-ai-system.json",
+    "10-pcg-cave-interior.json",
+    "11-labyrinth-system.json"
+  ],
+  "featured": [
+    "1",
+    "2",
+    "3",
+    "5",
+    "6",
+    "7"
+  ]
+}

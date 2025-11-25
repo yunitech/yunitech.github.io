@@ -1,0 +1,142 @@
+{
+  "headerImage": "images/gas_core_header.png",
+  "logo": "images/yuni_logo.png",
+  "projectName": "FPS GAS Core",
+  "projectImage": "images/gas_core.png",
+  "projectType": ["Game Template"],
+  "date": "May 2024",
+  "systems": [
+    "Gameplay Ability System (GAS)",
+    "Gameplay Message Router",
+    "Procedural Content Generation (PCG)"
+  ],
+  "otherFeatures": [],
+  "status": "",
+  "categories": ["ai"],
+  "sections": [
+    {
+      "title": "Overview",
+      "type": "complex",
+      "content": {
+        "description": [
+          "An implementation of the Gameplay Ability System for a Shooter Game taking the best practices exposed in Lyra Starter Game."
+        ],
+        "items": {
+          "title": "Key Features",
+          "items": [
+            "Sci-Fi Interior with portals for enemy spawning.",
+            "Character layered animations with Lyra animation set.",
+            "On character bullet impacts.",
+            "Hit reacttion.",
+            "Modular Character Parts System.",
+            "Inventory System.",
+            "Equipment System.",
+            "Interaction System.",
+            "Audio integration with Meta Sound and custom audio effects for doors, weapons, and explosions.",
+            "Enhanced Input integration with GAS for dynamic gameplay controls.",
+            "Comprehensive gameplay mechanics for shooter-based interactions."
+          ]
+        }
+      }
+    },
+    {
+      "title": "Technologies Used",
+      "type": "complex",
+      "content": {
+        "items": [
+          "UE 5.3",
+          "C++",
+          "Blueprint",
+          "Unreal Material Editor",
+          "Meta Sound",
+          "PCG"
+        ]
+      }
+    },
+    {
+      "title": "Design",
+      "type": "complex",
+      "content": {
+        "image": "images/gas_core_design.png",
+        "description": [
+          "The design of this project revolves around leveraging the Gameplay Ability System (GAS) to create a highly scalable and modular framework for gameplay mechanics. The system enables dynamic ability execution and event-driven responses, ensuring seamless integration with other game systems. Each ability is designed to be reusable and configurable, promoting flexibility and efficiency in both development and testing phases. This approach not only streamlines the implementation of complex mechanics but also allows for rapid iteration and expansion of new gameplay features. Here is the list of abilities:"
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "GA_ADS",
+              "description": "Enables precise aiming functionality for the player, improving shooting accuracy while active."
+            },
+            {
+              "element": "GA_AutoReload",
+              "description": "Automatically triggers the appropriate reload ability for the weapon in use when ammo runs out during firing."
+            },
+            {
+              "element": "GA_Crouch",
+              "description": "Provides the player with the ability to crouch, altering movement dynamics for stealth or cover."
+            },
+            {
+              "element": "GA_Death",
+              "description": "Manages player death, including animations, game state updates, and player camera mode transition."
+            },
+            {
+              "element": "GA_DropWeapon",
+              "description": "Handles weapon removal from the inventory, spawns a pickup object, and transfers the remaining ammo into it."
+            },
+            {
+              "element": "GA_Grenade",
+              "description": "Grants the ability to throw grenades with specific mechanics, such as trajectory, explosion timing, and damage application."
+            },
+            {
+              "element": "GA_Interaction",
+              "description": "Facilitates interaction with objects, leveraging GAS to dynamically grant the player context-specific abilities (e.g., collect, pick up weapon)."
+            },
+            {
+              "element": "GA_Jog",
+              "description": "Allows the player to jog while the input is held, providing faster traversal without sprint mechanics."
+            },
+            {
+              "element": "GA_Jump",
+              "description": "Implements the ability to jump, including physics and animation synchronization."
+            },
+            {
+              "element": "GA_Melee",
+              "description": "Enables melee attacks with specific animations and hit detection for close-range combat."
+            },
+            {
+              "element": "GA_WeaponFire",
+              "description": "Serves as the parent ability for all weapon fire types, supporting extensibility for various weapon behaviors."
+            },
+            {
+              "element": "GA_WeaponReload",
+              "description": "Functions as the parent ability for all reload mechanics, ensuring consistency and modularity across different weapon types."
+            },
+            {
+              "element": "GA_QuickbarSlots",
+              "description": "Manages weapon switching via quickbar slots, enabling efficient transitions between equipped items."
+            },
+            {
+              "element": "GA_SpawnEffect",
+              "description": "Creates a visually engaging spawning effect for enemies, often involving a portal."
+            },
+            {
+              "element": "GA_TimeDelation",
+              "description": "Initiates a slow-motion effect with a visually stunning expanding wave and sound boom, exempting the player from the slowdown."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Result",
+      "type": "complex",
+      "content": {
+        "description": [
+          "Demonstrates the power and flexibility of the Gameplay Ability System (GAS), delivering a robust, modular framework for complex gameplay mechanics. Its scalable design ensures seamless integration and adaptability across diverse game scenarios, setting a strong foundation for future development."
+        ],
+        "embedLink": "https://www.youtube.com/embed/u5z1X-DF2Yk?si=CsKiyza6eKJ_u1za"
+      }
+    }
+  ]
+}

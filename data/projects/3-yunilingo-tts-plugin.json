@@ -1,0 +1,757 @@
+{
+  "headerImage": "images/yuni_logo.png",
+  "logo": "images/yuni_logo.png",
+  "projectName": "YuniLingo TTS Plugin",
+  "projectImage": "images/yuni_logo.png",
+  "projectType": ["Unreal Engine Plugin"],
+  "date": "2024",
+  "systems": [
+    "Piper Neural TTS Engine",
+    "Bridge Architecture",
+    "Async Processing System"
+  ],
+  "otherFeatures": [
+    "Threading Model with proper synchronization",
+    "Memory Management with LRU caching",
+    "Error Handling and debugging support"
+  ],
+  "status": "Complete",
+  "categories": [],
+  "sections": [
+    {
+      "title": "Overview",
+      "type": "complex",
+      "content": {
+        "description": [
+          "YuniLingo is a comprehensive text-to-speech (TTS) plugin for Unreal Engine that provides high-quality, real-time voice synthesis capabilities. The plugin integrates the Piper neural TTS engine through a carefully designed bridge architecture that solves C++ runtime compatibility issues between Unreal Engine and third-party libraries."
+        ],
+        "items": {
+          "title": "Key Features",
+          "items": [
+            "Real-time synthesis: Batch and streaming audio generation",
+            "Multi-language support: Language-based voice selection with fallback chains",
+            "Voice management: Dynamic loading/unloading with memory management",
+            "Audio caching: LRU cache for repeated text synthesis",
+            "Spatial audio: 3D positional audio support",
+            "Blueprint integration: Full visual scripting support",
+            "Performance optimization: Async processing and memory-efficient caching",
+            "Threading Model with proper synchronization",
+            "Memory Management with LRU caching",
+            "Error Handling and debugging support"
+          ]
+        }
+      }
+    },
+    {
+      "title": "Technologies Used",
+      "type": "complex",
+      "content": {
+        "items": {
+          "title": "",
+          "items": [
+            "Unreal Engine 5.x",
+            "C++",
+            "Piper TTS",
+            "ONNX Runtime",
+            "eSpeak-ng"
+          ]
+        }
+      }
+    },
+    {
+      "title": "Architecture",
+      "type": "complex",
+      "content": {
+        "description": [
+          "YuniLingo follows a layered architecture with clear separation of concerns:"
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Architecture Diagram",
+              "description": [
+                "```",
+                "┌─────────────────────────────────────────────────────────────┐",
+                "│                    Unreal Engine                            │",
+                "│  ┌─────────────────────────────────────────────────────┐    │",
+                "│  │                YuniLingo Plugin                     │    │",
+                "│  │  ┌─────────────────────────────────────────────────┐ │    │",
+                "│  │  │           Application Layer                     │ │    │",
+                "│  │  │  - UYuniLingoComponent (Actor Component)       │ │    │",
+                "│  │  │  - UYuniLingoSubsystem (World Subsystem)       │ │    │",
+                "│  │  │  - Blueprint Function Library                   │ │    │",
+                "│  └─────────────────────────────────────────────────┘ │    │",
+                "│  │  ┌─────────────────────────────────────────────────┐ │    │",
+                "│  │  │           Service Layer                         │ │    │",
+                "│  │  │  - FYuniLingoVoiceManager (Voice Registry)     │ │    │",
+                "│  │  │  - FPiperAsyncManager (Async Processing)       │ │    │",
+                "│  │  │  - UYuniLingoAudioCache (Audio Caching)        │ │    │",
+                "│  └─────────────────────────────────────────────────┘ │    │",
+                "│  │  ┌─────────────────────────────────────────────────┐ │    │",
+                "│  │  │           Bridge Layer                          │ │    │",
+                "│  │  │  - PiperBridge.dll (C++ Runtime Isolation)     │ │    │",
+                "│  └─────────────────────────────────────────────────┘ │    │",
+                "│  └─────────────────────────────────────────────────────┘    │",
+                "└─────────────────────────────────────────────────────────────┘",
+                "                   │",
+                "                   ▼",
+                "┌─────────────────────────────────────────────────────────────┐",
+                "│                 Piper TTS Engine                           │",
+                "│  - Neural voice synthesis                                  │",
+                "│  - Phoneme processing                                      │",
+                "│  - Audio generation                                        │",
+                "└─────────────────────────────────────────────────────────────┘",
+                "```"
+              ]
+            },
+            {
+              "element": "Design Principles",
+              "description": [
+                "- Separation of Concerns: Each layer has a specific responsibility",
+                "- Thread Safety: Async operations with proper synchronization",
+                "- Memory Efficiency: LRU caching and voice management",
+                "- Runtime Isolation: Bridge DLL prevents C++ runtime conflicts",
+                "- Extensibility: Plugin architecture allows for future enhancements"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Core Components",
+      "type": "complex",
+      "content": {
+        "coreElements": {
+          "title": "Core Components",
+          "elements": [
+            {
+              "element": "UYuniLingoComponent",
+              "description": [
+                "Purpose: Actor component providing TTS capabilities to any Unreal actor",
+                "",
+                "Key Features:",
+                "- Voice configuration per component",
+                "- Automatic audio playback with spatialization",
+                "- Streaming and batch synthesis modes",
+                "- Event-driven architecture (Blueprint events)",
+                "- Voice caching for performance",
+                "",
+                "Usage:",
+                "```cpp",
+                "// Attach to any actor",
+                "UYuniLingoComponent* TTSComponent = NewObject<UYuniLingoComponent>(Actor);",
+                "TTSComponent->SetVoice(VoiceConfig);",
+                "FGuid RequestID = TTSComponent->Speak(TEXT(\"Hello world\"));",
+                "```"
+              ]
+            },
+            {
+              "element": "UYuniLingoSubsystem",
+              "description": [
+                "Purpose: World subsystem managing global TTS operations",
+                "",
+                "Responsibilities:",
+                "- Voice loading and lifecycle management",
+                "- Synthesis queue processing",
+                "- Audio cache management",
+                "- Global event broadcasting",
+                "- Memory management across the world",
+                "",
+                "Key Methods:",
+                "- LoadVoice() / LoadVoiceAsync() - Voice management",
+                "- QueueSynthesis()               - Async synthesis requests",
+                "- ClearCache()                   - Cache management"
+              ]
+            },
+            {
+              "element": "FYuniLingoVoiceManager",
+              "description": [
+                "Purpose: Low-level voice model management and Piper integration",
+                "",
+                "Features:",
+                "- Voice instance registry with thread-safe access",
+                "- PiperBridge integration",
+                "- Memory-efficient voice loading/unloading",
+                "- Thread-safe synthesis operations"
+              ]
+            },
+            {
+              "element": "FPiperAsyncManager",
+              "description": [
+                "Purpose: Asynchronous task execution engine",
+                "",
+                "Capabilities:",
+                "- Background synthesis processing",
+                "- Voice loading tasks",
+                "- Thread-safe callback marshaling",
+                "- Task cancellation and monitoring"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Data Structures",
+      "type": "complex",
+      "content": {
+        "description": [
+          "Core data structures for TTS operations:"
+        ],
+        "coreElements": {
+          "title": "Data Structures",
+          "elements": [
+            {
+              "element": "FYuniLingoSynthesisSettings",
+              "description": [
+                "```cpp",
+                "struct FYuniLingoSynthesisSettings",
+                "{",
+                "    float SpeedMultiplier = 1.0f;        // Speech speed (0.25-4.0)",
+                "    float NoiseScale = 0.667f;           // Voice variation (0.0-1.0)",
+                "    float NoiseW = 0.8f;                 // Phoneme timing variation (0.0-1.0)",
+                "    int32 SpeakerID = 0;                 // Multi-speaker voice selection",
+                "    float Volume = 1.0f;                 // Audio volume (0.0-2.0)",
+                "    float PitchShift = 0.0f;             // Pitch adjustment in semitones",
+                "    EYuniLingoSynthesisMode SynthesisMode = EYuniLingoSynthesisMode::Streaming;",
+                "    bool bEnableCaching = true;          // Use audio cache",
+                "    FString LanguageCode;                // Target language for voice selection",
+                "};",
+                "```"
+              ]
+            },
+            {
+              "element": "FYuniLingoSynthesisResult",
+              "description": [
+                "```cpp",
+                "struct FYuniLingoSynthesisResult",
+                "{",
+                "    FGuid RequestID;                     // Unique request identifier",
+                "    TObjectPtr<USoundWave> Audio;        // Generated audio (batch mode)",
+                "    EYuniLingoSynthesisStatus Status;    // Completion status",
+                "    FText ErrorMessage;                  // Error details if failed",
+                "    float Duration;                      // Audio duration in seconds",
+                "    float ProcessingTime;                // Synthesis time",
+                "    bool bFromCache;                     // Whether result came from cache",
+                "};",
+                "```"
+              ]
+            },
+            {
+              "element": "UYuniLingoVoiceConfig",
+              "description": "Data asset representing a single Piper voice model: Model and config file paths, Language and quality metadata, Speaker configuration, Default synthesis settings"
+            },
+            {
+              "element": "UYuniLingoVoiceSet",
+              "description": "Collection of voices for different languages/entities: Language-to-voice mapping, Priority-based fallback selection, Entity-specific voice collections"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "API Design",
+      "type": "complex",
+      "content": {
+        "description": [
+          "Comprehensive API support for both Blueprint and C++ development:"
+        ],
+        "coreElements": {
+          "title": "API Interfaces",
+          "elements": [
+            {
+              "element": "Blueprint Component Interface",
+              "description": [
+                "```blueprint",
+                "// Basic synthesis",
+                "FGuid Speak(FText Text, bool bOverrideSettings, FYuniLingoSynthesisSettings CustomSettings)",
+                "",
+                "// Localized synthesis",
+                "FGuid SpeakLocalized(FText Text, FString LanguageCode, bool bOverrideSettings, FYuniLingoSynthesisSettings CustomSettings)",
+                "",
+                "// Streaming synthesis",
+                "FGuid SpeakStreaming(FText Text, bool bOverrideSettings, FYuniLingoSynthesisSettings CustomSettings)",
+                "",
+                "// Playback control",
+                "void PlayAudio(UYuniLingoSoundWaveProcedural* Audio)",
+                "void StopAudio()",
+                "bool IsPlayingAudio()",
+                "",
+                "// Voice management",
+                "void SetVoice(UYuniLingoVoiceConfig* Voice)",
+                "UYuniLingoVoiceConfig* GetVoice()",
+                "```"
+              ]
+            },
+            {
+              "element": "Blueprint Function Library",
+              "description": [
+                "```blueprint",
+                "// Voice discovery",
+                "TArray<UYuniLingoVoiceConfig*> GetAvailableVoices()",
+                "UYuniLingoVoiceConfig* FindVoiceByID(FName VoiceID)",
+                "TArray<UYuniLingoVoiceConfig*> FindVoicesByLanguage(FString LanguageCode)",
+                "",
+                "// Quick synthesis",
+                "void QuickSpeak(FText Text, UYuniLingoVoiceConfig* Voice)",
+                "FGuid QuickSynthesize(FText Text, UYuniLingoVoiceConfig* Voice)",
+                "",
+                "// Cache management",
+                "void ClearAudioCache()",
+                "void GetCacheStatistics(int32& EntryCount, float& SizeMB)",
+                "```"
+              ]
+            },
+            {
+              "element": "C++ API",
+              "description": [
+                "```cpp",
+                "// Async action for Blueprint latent nodes",
+                "UYuniLingoAsyncAction_Synthesize* UYuniLingoAsyncAction_Synthesize::SynthesizeTextAsync(",
+                "    UObject* WorldContextObject,",
+                "    const FText& Text,",
+                "    UYuniLingoVoiceConfig* Voice,",
+                "    const FYuniLingoSynthesisSettings& Settings",
+                ");",
+                "",
+                "// Direct subsystem access",
+                "UYuniLingoSubsystem* TTSSubsystem = World->GetSubsystem<UYuniLingoSubsystem>();",
+                "",
+                "// Load voice",
+                "bool bSuccess = TTSSubsystem->LoadVoice(VoiceConfig);",
+                "",
+                "// Queue synthesis",
+                "FGuid RequestID = TTSSubsystem->QueueSynthesis(Text, VoiceConfig, Settings);",
+                "",
+                "// Get results",
+                "FYuniLingoSynthesisResult Result;",
+                "if (TTSSubsystem->GetSynthesisResult(RequestID, Result)) {",
+                "    // Handle result",
+                "}",
+                "```"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Audio Pipeline",
+      "type": "complex",
+      "content": {
+        "description": [
+          "Complete audio processing chain from text to spatial audio:"
+        ],
+        "coreElements": {
+          "title": "Audio Processing Pipeline",
+          "elements": [
+            {
+              "element": "Audio Processing Chain",
+              "description": [
+                "```",
+                "Text Input",
+                "    ↓",
+                "Phonemization (eSpeak-ng)",
+                "    ↓",
+                "Neural Synthesis (ONNX Runtime)",
+                "    ↓",
+                "Audio Post-Processing",
+                "    ↓",
+                "PCM Audio Buffer",
+                "    ↓",
+                "UYuniLingoSoundWaveProcedural",
+                "    ↓",
+                "Unreal Audio Engine",
+                "```"
+              ]
+            },
+            {
+              "element": "Batch Mode",
+              "description": "Complete audio buffer generation for pre-generated dialogue. Single USoundWaveProcedural with full audio data. Best for non-real-time applications."
+            },
+            {
+              "element": "Streaming Mode",
+              "description": "Progressive audio chunk generation for real-time conversation. UYuniLingoStreamingAudioPlayer with real-time audio feeding. Ideal for dynamic content."
+            },
+            {
+              "element": "Audio Cache System",
+              "description": [
+                "LRU cache with hash-based keys for repeated text synthesis. Priority calculation: (RecencyScore * FrequencyScore) with configurable size limits.",
+                "",
+                "```cpp",
+                "uint32 CreateCacheKey(const FText& Text, const FYuniLingoSynthesisSettings& Settings) {",
+                "    FString KeyString = Text.ToString();",
+                "    KeyString += FString::Printf(TEXT(\"_%.2f_%.2f_%.2f_%d_%.2f_%.2f_%d_%d_%d\"),",
+                "        Settings.SpeedMultiplier, Settings.NoiseScale, Settings.NoiseW,",
+                "        Settings.SpeakerID, Settings.Volume, Settings.PitchShift,",
+                "        (int32)Settings.SynthesisMode, Settings.bEnableCaching ? 1 : 0,",
+                "        Settings.bProcessSSML ? 1 : 0);",
+                "    return GetTypeHash(KeyString);",
+                "}",
+                "```"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Threading Model",
+      "type": "complex",
+      "content": {
+        "description": [
+          "Robust multi-threading architecture for optimal performance:"
+        ],
+        "coreElements": {
+          "title": "Threading Architecture",
+          "elements": [
+            {
+              "element": "Game Thread",
+              "description": "Component lifecycle, Blueprint calls, UI updates, event broadcasting, voice configuration changes"
+            },
+            {
+              "element": "Background Threads (AsyncTask)",
+              "description": "Neural synthesis operations, Voice model loading/unloading, Audio data processing, File I/O operations"
+            },
+            {
+              "element": "Synchronization",
+              "description": [
+                "```cpp",
+                "// Voice registry access",
+                "FCriticalSection VoiceCriticalSection;",
+                "",
+                "// Task management",
+                "FCriticalSection TaskCriticalSection;",
+                "",
+                "// Cache operations",
+                "FCriticalSection CacheCriticalSection;",
+                "```",
+                "",
+                "Thread-safe operations: Voice instance access (shared pointers), Cache get/set operations, Task queue management, Result retrieval"
+              ]
+            },
+            {
+              "element": "Callback Marshaling",
+              "description": [
+                "All background thread callbacks are marshaled to game thread:",
+                "",
+                "```cpp",
+                "AsyncTask(ENamedThreads::GameThread, [TaskData, bSuccess, AudioData, SampleRate]() {",
+                "    if (TaskData->CompletionCallback) {",
+                "        TaskData->CompletionCallback(bSuccess, AudioData, SampleRate);",
+                "    }",
+                "});",
+                "```"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Memory Management",
+      "type": "complex",
+      "content": {
+        "description": [
+          "Comprehensive memory management strategies:"
+        ],
+        "coreElements": {
+          "title": "Memory Management Strategies",
+          "elements": [
+            {
+              "element": "Voice Memory Management",
+              "description": "LRU voice cache (configurable max voices, default: 3). Loading strategy: Check cache → Async loading → Dependency resolution → Memory limits enforcement"
+            },
+            {
+              "element": "Audio Memory Management",
+              "description": "Streaming mode: Minimal footprint with progressive feeding. Batch mode: Full buffer in memory. Procedural sound waves with automatic cleanup on playback finish. Cache size management with LRU and configurable limits."
+            },
+            {
+              "element": "Runtime Isolation",
+              "description": [
+                "PiperBridge.dll architecture preventing heap corruption between mixed runtimes:",
+                "",
+                "```",
+                "Unreal Engine (/MDd) ←→ PiperBridge.dll (/MD) ←→ Piper Libraries (/MD)",
+                "                      malloc/free              new/delete",
+                "```",
+                "",
+                "Benefits: No heap corruption from mixed runtimes, Clean memory ownership boundaries, Stable across Debug/Release builds"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Error Handling",
+      "type": "complex",
+      "content": {
+        "description": [
+          "Comprehensive error handling system:"
+        ],
+        "coreElements": {
+          "title": "Error Handling System",
+          "elements": [
+            {
+              "element": "Error Categories",
+              "description": [
+                "```cpp",
+                "enum class EYuniLingoErrorCategory : uint8",
+                "{",
+                "    None,",
+                "    VoiceLoading,      // Voice model load failures",
+                "    Synthesis,         // Neural synthesis errors",
+                "    AudioConversion,   // PCM to Unreal audio conversion",
+                "    FileSystem,        // File access issues",
+                "    Memory,           // Memory allocation failures",
+                "    Threading,        // Thread synchronization issues",
+                "    Configuration     // Invalid settings/configuration",
+                "};",
+                "```"
+              ]
+            },
+            {
+              "element": "Global Error Handler",
+              "description": [
+                "```cpp",
+                "class FYuniLingoErrorHandler",
+                "{",
+                "public:",
+                "    static void ReportError(const FYuniLingoError& Error);",
+                "    static FYuniLingoError GetLastError();",
+                "    static void ClearLastError();",
+                "};",
+                "```"
+              ]
+            },
+            {
+              "element": "Error Macros",
+              "description": [
+                "```cpp",
+                "#define YUNILINGO_ERROR(Category, Message, ...) \\",
+                "    FYuniLingoErrorHandler::ReportError(FYuniLingoError::Make( \\",
+                "        EYuniLingoErrorCategory::Category, \\",
+                "        EYuniLingoErrorSeverity::Error, \\",
+                "        __LINE__, \\",
+                "        FText::FromString(FString::Printf(TEXT(Message), ##__VA_ARGS__)), \\",
+                "        FString::Printf(TEXT(\"%s:%d\"), TEXT(__FILE__), __LINE__) \\",
+                "    ))",
+                "```"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Performance Considerations",
+      "type": "complex",
+      "content": {
+        "description": [
+          "Performance optimization strategies:"
+        ],
+        "coreElements": {
+          "title": "Performance Optimizations",
+          "elements": [
+            {
+              "element": "Voice Preloading",
+              "description": "Startup loading for marked voices, background loading for non-blocking preparation, configurable voice limits"
+            },
+            {
+              "element": "Audio Caching",
+              "description": "Hash-based keys for fast lookups, LRU eviction, configurable size limits to prevent memory exhaustion"
+            },
+            {
+              "element": "Async Processing",
+              "description": "Background synthesis for non-blocking generation, task prioritization for critical operations, resource pooling for voice instance reuse"
+            },
+            {
+              "element": "Performance Metrics",
+              "description": "Real-time factor monitoring (processing_time/audio_duration, target <1.0), memory usage tracking (~50MB per voice model), streaming memory footprint optimization"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Dependencies",
+      "type": "complex",
+      "content": {
+        "description": [
+          "Core dependencies for full functionality:"
+        ],
+        "coreElements": {
+          "title": "System Dependencies",
+          "elements": [
+            {
+              "element": "Unreal Engine Modules",
+              "description": "Core/CoreUObject, Engine, AudioMixer, DeveloperSettings, GameplayTags"
+            },
+            {
+              "element": "Piper TTS Engine",
+              "description": "piper.lib (core functionality), onnxruntime.dll (neural inference), espeak-ng.dll (phonemization), piper_phonemize.dll (phoneme processing)"
+            },
+            {
+              "element": "PiperBridge",
+              "description": "C++ runtime isolation DLL with /MD compilation, pure C interface for safe cross-runtime calls"
+            },
+            {
+              "element": "Build Dependencies (Windows)",
+              "description": [
+                "```cpp",
+                "if (Target.Platform == UnrealTargetPlatform.Win64)",
+                "{",
+                "    // PiperBridge DLL",
+                "    PublicAdditionalLibraries.Add(\"PiperBridge.lib\");",
+                "    RuntimeDependencies.Add(\"PiperBridge.dll\");",
+                "",
+                "    // Piper runtime dependencies",
+                "    RuntimeDependencies.Add(\"espeak-ng.dll\");",
+                "    RuntimeDependencies.Add(\"onnxruntime.dll\");",
+                "    // ... additional Piper DLLs",
+                "}",
+                "```"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Build System",
+      "type": "complex",
+      "content": {
+        "description": [
+          "Modular build system with automated dependency management:"
+        ],
+        "coreElements": {
+          "title": "Build Configuration",
+          "elements": [
+            {
+              "element": "Module Structure",
+              "description": [
+                "```",
+                "YuniLingo/",
+                "├── YuniLingo.Build.cs          # Module build configuration",
+                "├── YuniLingo.uplugin           # Plugin descriptor",
+                "├── Source/YuniLingo/",
+                "│   ├── Public/                  # Public API headers",
+                "│   ├── Private/                 # Implementation files",
+                "│   └── YuniLingo.h/cpp          # Module initialization",
+                "└── ThirdParty/",
+                "    └── PiperBridge/             # Bridge DLL project",
+                "        ├── PiperBridge.vcxproj",
+                "        ├── Public/PiperBridge.h",
+                "        └── Private/PiperBridge.cpp",
+                "```"
+              ]
+            },
+            {
+              "element": "Build Configuration",
+              "description": [
+                "```csharp",
+                "public class YuniLingo : ModuleRules",
+                "{",
+                "    public YuniLingo(ReadOnlyTargetRules Target) : base(Target)",
+                "    {",
+                "        // Enable exceptions for Piper integration",
+                "        bEnableExceptions = true;",
+                "",
+                "        // PiperBridge integration",
+                "        PublicIncludePaths.Add(Path.Combine(PiperBridgePath, \"Public\"));",
+                "        PublicAdditionalLibraries.Add(\"PiperBridge.lib\");",
+                "        RuntimeDependencies.Add(\"PiperBridge.dll\");",
+                "    }",
+                "}",
+                "```"
+              ]
+            },
+            {
+              "element": "Build Process",
+              "description": "1. Build PiperBridge.dll via BuildBridge.bat, 2. Build Unreal Plugin with standard UE process, 3. Automatic runtime dependency copying"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Testing",
+      "type": "complex",
+      "content": {
+        "description": [
+          "Comprehensive testing framework:"
+        ],
+        "coreElements": {
+          "title": "Testing Framework",
+          "elements": [
+            {
+              "element": "UYuniLingoTestObject",
+              "description": "Blueprint-accessible test object for Piper integration validation: Direct PiperBridge API testing, File/memory-based synthesis, Async operation testing"
+            },
+            {
+              "element": "Test Methods",
+              "description": [
+                "```cpp",
+                "// File-based synthesis",
+                "bool SpeakToFile(const FString& ModelPath, const FString& Text, const FString& OutputWavPath);",
+                "",
+                "// Memory-based synthesis",
+                "FYuniLingoAudioData SpeakToMemory(const FString& ModelPath, const FString& Text, bool& bSuccess);",
+                "",
+                "// Async synthesis",
+                "void SpeakToMemoryAsync(const FString& ModelPath, const FString& Text);",
+                "```"
+              ]
+            },
+            {
+              "element": "Integration Testing",
+              "description": "Component testing: Voice loading/unloading, synthesis modes (batch/streaming), audio playback verification, memory leak detection. Subsystem testing: Concurrent synthesis operations, voice management under memory pressure, cache effectiveness, error condition handling"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Future Enhancements",
+      "type": "complex",
+      "content": {
+        "description": [
+          "Planned feature roadmap:"
+        ],
+        "coreElements": {
+          "title": "Future Roadmap",
+          "elements": [
+            {
+              "element": "Advanced Audio Processing",
+              "description": "SSML Support, Emotion Control, Voice Cloning, Multi-speaker Optimization"
+            },
+            {
+              "element": "Performance Improvements",
+              "description": "GPU Acceleration (CUDA/DirectML), Voice Streaming, Memory Pooling, Predictive Caching"
+            },
+            {
+              "element": "Platform Support",
+              "description": "Mobile Platforms (iOS/Android), Console Platforms (Xbox/PlayStation), Web Platforms (HTML5/WebAssembly)"
+            },
+            {
+              "element": "Developer Experience",
+              "description": "Visual Voice Editor, Performance Profiling, Audio Waveform Visualization, Automated Voice Asset Processing"
+            },
+            {
+              "element": "Architectural Improvements",
+              "description": "Modular Voice Engines, Voice Marketplace, Custom Voice Models, Advanced Caching (Semantic/Compressed/Cloud), Real-time Features (Lip Sync, Voice Modulation, Audio Effects)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Conclusion",
+      "type": "text",
+      "content": "YuniLingo represents a comprehensive, production-ready TTS solution for Unreal Engine with careful attention to performance, reliability, and developer experience. The bridge architecture successfully solves C++ runtime compatibility issues while maintaining high performance and clean APIs. The modular design allows for future enhancements while the current implementation provides robust text-to-speech capabilities suitable for games, simulations, and interactive applications."
+    }
+  ]
+}

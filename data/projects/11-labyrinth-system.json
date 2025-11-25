@@ -1,0 +1,86 @@
+{
+  "headerImage": "images/galleries/labyrinth/image2.png",
+  "logo": "images/yuni_logo.png",
+  "projectName": "Labyrinth System",
+  "projectImage": "images/galleries/labyrinth/image2.png",
+  "projectType": ["Game Feature"],
+  "date": "April 2023",
+  "systems": [],
+  "otherFeatures": [],
+  "status": "",
+  "categories": ["ai"],
+  "sections": [
+    {
+      "title": "Overview",
+      "type": "complex",
+      "content": {
+        "description": [
+          "A dynamic labyrinth feature designed to adapt and evolve based on player progress, enhancing narrative-driven gameplay."
+        ],
+        "items": {
+          "title": "Key Features",
+          "items": [
+            "Dynamic labyrinth structure changes triggered by in-game events.",
+            "Customizable labyrinth states defined in advance by game designers.",
+            "Interactive wall actors capable of toggling their state to create new pathways.",
+            "Matrix-based system for dynamically evolving level layouts."
+          ]
+        }
+      }
+    },
+    {
+      "title": "Technologies Used",
+      "type": "complex",
+      "content": {
+        "items": [
+          "UE 5.2",
+          "Blueprints"
+        ]
+      }
+    },
+    {
+      "title": "Idea",
+      "type": "complex",
+      "content": {
+        "description": [
+          "Developed as part of a collaboration with a scriptwriter, the Labyrinth System brings a dynamic and engaging level design to life. Its ever-changing layout reacts to player progress, creating new pathways and keeping gameplay unpredictable and challenging."
+        ]
+      }
+    },
+    {
+      "title": "Design",
+      "type": "complex",
+      "content": {
+        "description": [
+          "The Labyrinth System leverages Unreal Engine's actor-based system to generate flexible and adaptive pathways. Walls designed as 'switchers' toggle states to alter the labyrinth, creating limitless exploration possibilities while maintaining narrative coherence."
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Dynamic Labyrinth Actors",
+              "description": "Matrix of actors forming the labyrinth, enabling dynamic layout changes with predefined states."
+            },
+            {
+              "element": "Wall Actors",
+              "description": "Equipped with toggling capabilities to dynamically create or block pathways."
+            },
+            {
+              "element": "State Mapping",
+              "description": "Maps defining the state of each wall actor, ensuring synchronized and cohesive changes."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Result",
+      "type": "complex",
+      "content": {
+        "description": [
+          "The Labyrinth System successfully integrates into the narrative-driven gameplay, providing a unique and engaging player experience. The dynamic labyrinth reacts to player actions, maintaining interest and challenge throughout the game."
+        ]
+      }
+    }
+  ]
+}
