@@ -55,7 +55,7 @@
       "type": "complex",
       "content": {
         "items": [
-          "Unreal Engine 5.x",
+          "Unreal Engine 5.5",
           "C++",
           "Blueprint",
           "llama.cpp",

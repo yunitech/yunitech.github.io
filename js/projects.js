@@ -80,8 +80,12 @@ function getProjectDescription(project) {
 // Helper function to get technologies from Technologies Used section
 function getProjectTechnologies(project) {
     const techContent = getSectionContent(project, 'Technologies Used');
-    if (techContent && techContent.items && Array.isArray(techContent.items)) {
-        return techContent.items;
+    if (techContent && techContent.items) {
+        if (Array.isArray(techContent.items)) {
+            return techContent.items;
+        } else if (typeof techContent.items === 'object' && techContent.items.items && Array.isArray(techContent.items.items)) {
+            return techContent.items.items;
+        }
     }
     return project.tools || []; // Fallback
 }
