@@ -1,6 +1,6 @@
 {
   "projects": [
-    "1-true-fps-template.json",
+    "1-true-fps-framework.json",
     "2-yunillama-llm-engine.json",
     "3-yunilingo-tts-plugin.json",
     "4-fps-gas-core.json",
