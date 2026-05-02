@@ -1,0 +1,302 @@
+{
+  "headerImage": "images/true_fps_header.png",
+  "logo": "images/yuni_logo.png",
+  "projectName": "True FPS — Multiplayer Playground",
+  "projectImage": "images/true_fps_card.png",
+  "projectType": [
+    "Framework"
+  ],
+  "date": "April 2025",
+  "status": "In Development",
+  "categories": [
+    "networking"
+  ],
+  "systems": [
+    "Gameplay Ability System (GAS)",
+    "Enhanced Input",
+    "Replication Framework",
+    "Animation Blueprint Layers"
+  ],
+  "sections": [
+    {
+      "title": "Overview",
+      "type": "complex",
+      "content": {
+        "description": [
+          "A live multiplayer FPS framework built in Unreal Engine 5, designed as a personal research playground for testing scalable systems under real networked conditions. The project runs inside my Epic Games dev organization where I actively playtest with a group of members, so every system here has been validated against genuine multiplayer sessions — not just PIE.",
+          "The driving idea is to build a foundation that mirrors the structural decisions of production FPS titles: ability-driven combat, true first-person body awareness, equipment-based weapons with full mod support, team-based game logic, and a data-driven progression layer — all layered together in a way that remains easy to extend and modify."
+        ],
+        "items": {
+          "title": "Systems at a Glance",
+          "items": [
+            " Immersive Perspective: Full-body first-person with layered animation.",
+            " Ability-Driven Combat: GAS abilities, attributes, spread and recoil.",
+            " Weapon Ecosystem: Equipment framework, weapon customization (mods), pickups.",
+            " Team & Game Logic: Team assignment, friendly fire, mode abstraction.",
+            " World Awareness: Layered minimap with indicator, effect, and team marker groups.",
+            " Combat Analytics: Tag-driven event and property tracking across sessions.",
+            " Progression & Unlocks: Data-driven level progression and composable unlock conditions."
+          ]
+        }
+      }
+    },
+    {
+      "title": "Technologies Used",
+      "type": "complex",
+      "content": {
+        "items": [
+          "Unreal Engine 5",
+          "C++",
+          "Blueprints",
+          "Gameplay Ability System (GAS)",
+          "Enhanced Input",
+          "Replication Framework"
+        ]
+      }
+    },
+    {
+      "title": "Immersive Perspective",
+      "type": "complex",
+      "content": {
+        "badge": "Pillar I",
+        "description": [
+          "The core differentiator of this project is a full-body-aware first-person setup. Rather than the floating-hands approach common in many FPS games, the character mesh is fully visible and correctly aligned with camera, animation, and IK at all times — creating genuine spatial awareness without breaking the first-person illusion."
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Full-Body First Person",
+              "description": "The player sees their own body in first person. Camera, skeletal mesh, and animation layers are kept in sync through careful Blueprint layering to avoid the typical clipping and misalignment issues."
+            },
+            {
+              "element": "Animation Blueprint Layers",
+              "description": "Upper and lower body are driven by separate animation layers, allowing weapon animations, locomotion, and aiming to blend correctly without conflicts."
+            }
+          ]
+        },
+        "embedLink": "https://www.youtube.com/embed/PLACEHOLDER"
+      }
+    },
+    {
+      "title": "Ability-Driven Combat",
+      "type": "complex",
+      "content": {
+        "badge": "Pillar II",
+        "description": [
+          "All combat interactions — firing, aiming, reloading, and interacting with the world — are implemented as GAS abilities. This keeps combat logic modular, replication-friendly, and composable: equipping a weapon or attaching a mod can grant new abilities or modify existing behavior purely through GAS, with no hardcoded character logic required."
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Weapon Fire & Aim Abilities",
+              "description": "Core combat actions are GAS abilities, making them easy to replicate, cancel, and modify through tags and effects rather than direct function calls."
+            },
+            {
+              "element": "Spread & Recoil System",
+              "description": "Spread is driven by a heat model: each shot adds heat mapped through configurable curves to a spread angle. Separate multipliers for standing still, crouching, aiming, and jumping blend smoothly in real time. Horizontal recoil strength and random offset are also configurable per weapon."
+            },
+            {
+              "element": "Attribute-Driven Movement Speed",
+              "description": "Player speed is a GAS attribute, not a hardcoded value. Any gameplay effect — a debuff, a weapon's weight penalty, a buff from a mod — can modify it through the attribute system without touching movement code directly."
+            },
+            {
+              "element": "Weapon Weight Influence",
+              "description": "Each weapon defines equipped and unequipped weight values that feed into the speed attribute. Carrying a heavy weapon slows the player; holstering it partially recovers speed — adding a real cost to loadout decisions."
+            },
+            {
+              "element": "Drop Grenade & Claymore Abilities",
+              "description": "Throwable and placeable equipment are GAS abilities with full replication, cooldown management, and world-space interaction."
+            }
+          ]
+        },
+        "embedLink": "https://www.youtube.com/embed/PLACEHOLDER"
+      }
+    },
+    {
+      "title": "Weapon Ecosystem",
+      "type": "complex",
+      "content": {
+        "badge": "Pillar III",
+        "description": [
+          "Weapons are Equipment — replicated instances of the equipment framework (UGASEquipmentInstance subclasses) that manage state, abilities, and lifecycle on the character. Their physical presence in the world is a separate AWeaponActor spawned and owned by the equipment instance. This separation is intentional: the weapon's state — ammo count, attached mods, stats — belongs to the instance and is preserved across its full lifecycle, including when it is dropped and picked up by another player."
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Equipment Framework",
+              "description": "Weapons are granted and removed through UGASEquipmentManagerComponent, which handles GAS ability set grants, actor spawning, and sub-object replication. Equipping a weapon automatically grants its defined ability sets to the character; unequipping revokes them cleanly."
+            },
+            {
+              "element": "Weapon Customization (Mods)",
+              "description": "Weapon accessories follow the same equipment pattern. Each mod can optionally grant additional GAS abilities to the character while attached, and can directly modify weapon properties — fire rate, recoil, damage range, sound suppression — through an accumulated stat system. Multiple mods compose their multipliers without order dependency."
+            },
+            {
+              "element": "Quick-Swap System",
+              "description": "Players can switch between weapons rapidly with a swap system that respects animation state and ability cooldowns, preventing exploits while keeping the experience responsive."
+            },
+            {
+              "element": "Dynamic Loadout Support",
+              "description": "Loadout composition is data-driven. Weapon slots, allowed weapon types, and starting configurations can be defined per game mode without code changes."
+            },
+            {
+              "element": "Pickup System with State Retention",
+              "description": "Dropped weapons keep their individual state — magazine count, attached mods, current stats — when they land. Another player picking them up receives the weapon exactly as it was left."
+            },
+            {
+              "element": "Sound-Synced Physics Drops",
+              "description": "Weapons dropped in the world play physically accurate landing sounds timed to the actual collision, giving drops a tactile feel and communicating information to nearby players."
+            },
+            {
+              "element": "Explosive Props with Shared Logic",
+              "description": "Claymores, barrels, and other destructible actors share the same health + ability base class. Any actor that needs to take damage and react to it plugs into the same system."
+            }
+          ]
+        },
+        "embedLink": "https://www.youtube.com/embed/PLACEHOLDER"
+      }
+    },
+    {
+      "title": "Team & Game Logic",
+      "type": "complex",
+      "content": {
+        "badge": "Pillar IV",
+        "description": [
+          "The multiplayer layer is designed to support both free-for-all and team-based modes through a clean abstraction. Game rules — who damages whom, how teams are assigned, what the win condition is — are separated from character and weapon logic so switching modes doesn't cascade into other systems."
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Team Assignment & Alignment",
+              "description": "Players are assigned to teams at spawn time. All game logic that depends on team membership (damage, indicators, scoring) queries team state through a shared interface rather than direct references."
+            },
+            {
+              "element": "Friendly Fire Toggle",
+              "description": "Team damage can be enabled or disabled at the game mode level without touching weapon or ability code. The damage pipeline checks team alignment before applying any hit."
+            },
+            {
+              "element": "Mode-Agnostic Character Logic",
+              "description": "Character abilities, stats, and behavior are identical in both FFA and team modes. Only the game mode layer changes, keeping the character codebase stable across configurations."
+            }
+          ]
+        },
+        "embedLink": "https://www.youtube.com/embed/PLACEHOLDER"
+      }
+    },
+    {
+      "title": "World Awareness",
+      "type": "complex",
+      "content": {
+        "badge": "Pillar V",
+        "description": [
+          "Players need to read the battlefield at a glance. The minimap and marker systems are built to be fast, readable, and extensible — adding a new indicator type or a new gameplay effect is a data change, not a code change."
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Layered Minimap",
+              "description": "Texture-based minimap built on three independent layer groups: the raw texture-based mini-map layer, an indicator layer for places of interest, sound reports, player and objective positions, and an effect layer for gameplay-driven visual overlays. Each effect (UAV sweep, signal interference, etc.) declares which layer group it targets."
+            },
+            {
+              "element": "World Marker Ability",
+              "description": "Players can place up to two markers in the world at any time. Markers appear on both the minimap and as world-space indicators, supporting quick team communication without a voice channel."
+            }
+          ]
+        },
+        "embedLink": "https://www.youtube.com/embed/PLACEHOLDER"
+      }
+    },
+    {
+      "title": "Combat Analytics",
+      "type": "complex",
+      "content": {
+        "badge": "Pillar VI",
+        "description": [
+          "A tag-driven, data-driven event tracking system that records gameplay events alongside their full context across a session. Every tracked event carries a tag set describing what happened and a property set describing how — was the player moving, crouching, aiming; was the target in the air; what was the engagement distance. The output is a structured per-event breakdown with counts, timestamps, per-property occurrence ratios, and numeric aggregates.",
+          "Example — Eliminations with M16 across a session:",
+          "Tags: CombatAnalytics.Event.Elimination + Weapon.Name.M16 | Count: 36",
+          "Properties: IsHeadshot 3/36 (8.3%) · IsAiming 34/36 (94.4%) · IsMoving 23/36 (63.9%) · Distance Avg=17.1m Min=3.6m Max=47.8m"
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Tag-Driven Event Model",
+              "description": "Events are identified by gameplay tag pairs: an event tag (e.g. CombatAnalytics.Event.Elimination) combined with a context tag (e.g. Weapon.Name.M16). Any combination is tracked without registering new code paths."
+            },
+            {
+              "element": "Property Extractors",
+              "description": "Each event fires a configurable chain of extractor objects that inspect game state at the moment of the event — player stance, movement, aiming state, target state, engagement distance — and attach the results to the event record."
+            },
+            {
+              "element": "Aggregation Rules",
+              "description": "Aggregation rule objects define how properties roll up: boolean properties become occurrence ratios; numeric properties become statistical ranges. New aggregations are new objects, not new code branches."
+            },
+            {
+              "element": "Session Persistence",
+              "description": "Analytics data accumulates across server travel and feeds directly into the Unlock Condition system for evaluating long-term achievement goals."
+            }
+          ]
+        },
+        "embedLink": "https://www.youtube.com/embed/PLACEHOLDER"
+      }
+    },
+    {
+      "title": "Progression & Unlocks",
+      "type": "complex",
+      "content": {
+        "badge": "Pillar VII",
+        "description": [
+          "Two interconnected data-driven systems: a level progression layer that maps metrics to levels through configurable calculator objects, and a composable unlock condition layer that gates content behind arbitrarily complex requirements — all defined in data assets, no Blueprint subclassing required."
+        ],
+        "coreElements": {
+          "title": "",
+          "elements": [
+            {
+              "element": "Level Progression Definitions",
+              "description": "Each progression is a data asset that maps a metric tag to a level tag through a calculator object. A single definition can serve both global progressions (player XP level) and context-specific ones (weapon mastery): a context calculator override map resolves which calculator to use per context tag, supporting different XP curves per weapon type, weapon name, or any tag hierarchy."
+            },
+            {
+              "element": "Context Resolution",
+              "description": "Calculator selection follows a priority chain: exact tag match → most specific parent tag match → cross-branch group lookup (ContextGroupMap, for mapping weapon names to type buckets across unrelated tag branches) → default calculator. Resolution is O(1) at runtime via a cache rebuilt on load."
+            },
+            {
+              "element": "Composable Unlock Conditions",
+              "description": "Unlock requirements are built by composing modular condition objects on a data asset. Available types include level thresholds (Player.Level >= 10), analytics property thresholds (50 headshot eliminations with a specific weapon), and logical operators (AND, OR, NOT) for combining conditions. Any item references an unlock definition; the system evaluates it live."
+            },
+            {
+              "element": "Unlock Notifications",
+              "description": "When a condition is met, a notification is dispatched through a local player subsystem. Notifications stack with a hold timer."
+            }
+          ]
+        },
+        "embedLink": "https://www.youtube.com/embed/PLACEHOLDER"
+      }
+    },
+    {
+      "title": "Architecture Notes",
+      "type": "complex",
+      "content": {
+        "description": [
+          "The project maintains a clear separation across three layers: the Equipment layer (replicated UObject instances managing weapon state and ability grants), the Actor layer (AWeaponActor and other world-space representations spawned and owned by equipment instances), and the Ability layer (GAS abilities granted by equipment or mods, driving all gameplay interactions). Changes in one layer don't ripple into the others.",
+          "GAS is the communication bus for anything gameplay-relevant: attributes, effects, abilities, and tags all flow through it. Systems that need to influence character behavior — equipping a weapon, attaching a suppressor, applying a movement debuff — do so by granting or modifying GAS constructs, not by reaching into character code directly.",
+          "The three data systems (Combat Analytics, Level Progression, Unlock Conditions) compose through a shared tag vocabulary without internal coupling. An unlock condition can ask 'did the player reach weapon mastery level 5 for assault rifles AND land 50 headshots with an M16?' without any of those systems knowing about each other.",
+          "All systems are designed and tested under live networking from day one. Nothing is prototyped for PIE and retrofitted later."
+        ]
+      }
+    },
+    {
+      "title": "Current Status",
+      "type": "complex",
+      "content": {
+        "description": [
+          "Active development, playtested regularly with a group through my Epic Games dev organization. Core systems across all seven pillars are functional and multiplayer-validated. Upcoming work focuses on expanding game mode variety and adding more ability types to the combat layer."
+        ]
+      }
+    }
+  ]
+}
