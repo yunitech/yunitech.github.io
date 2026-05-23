@@ -60,22 +60,22 @@
       "content": {
         "badge": "Pillar I",
         "description": [
-          "The core differentiator of this project is a full-body-aware first-person setup. Rather than the floating-hands approach common in many FPS games, the character mesh is fully visible and correctly aligned with camera, animation, and IK at all times — creating genuine spatial awareness without breaking the first-person illusion."
+          "The project implements a full-body first-person architecture where the player remains embodied in a single, world-consistent character mesh. Instead of a detached “floating hands” setup, camera, skeletal mesh, and animation systems operate within the same character framework. The goal is spatial and systemic coherence: what the player sees in first person corresponds directly to the character that exists in the simulation and over the network."
         ],
         "coreElements": {
           "title": "",
           "elements": [
             {
               "element": "Full-Body First Person",
-              "description": "The player sees their own body in first person. Camera, skeletal mesh, and animation layers are kept in sync through careful Blueprint layering to avoid the typical clipping and misalignment issues."
+              "description": "The player sees their complete character mesh in first person. The camera is integrated into the character hierarchy rather than driving a separate visual-only model. Skeletal alignment and IK are coordinated to maintain consistency between aiming, locomotion, and world interaction while preserving gameplay readability."
             },
             {
               "element": "Animation Blueprint Layers",
-              "description": "Upper and lower body are driven by separate animation layers, allowing weapon animations, locomotion, and aiming to blend correctly without conflicts."
+              "description": "The Animation Blueprint is structured with separate upper- and lower-body layers. Locomotion, aiming, and weapon handling are blended through controlled layering, allowing independent animation behavior without breaking pose integrity."
             }
           ]
         },
-        "embedLink": "https://www.youtube.com/embed/PLACEHOLDER"
+        "embedLink": "https://www.youtube.com/embed/1Gcye8wUgDQ"
       }
     },
     {
