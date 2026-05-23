@@ -1,8 +1,8 @@
 {
-  "headerImage": "images/true_fps_header.png",
+  "headerImage": "images/true_fps_framework_card.png",
   "logo": "images/yuni_logo.png",
   "projectName": "True FPS — Multiplayer Playground",
-  "projectImage": "images/true_fps_card.png",
+  "projectImage": "images/true_fps_framework_card.png",
   "projectType": [
     "Framework"
   ],
